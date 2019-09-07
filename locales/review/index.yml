@@ -38,14 +38,14 @@ texts:
     **[How To Do A Code Review](reviewer/)**: A detailed guide for code
         reviewers.
   ja: >-
-    **[コードレビューの仕方](ja/reviewer/)**: コードレビュアーのための詳細なガイド
+    **[コードレビューの仕方](reviewer/)**: コードレビュアーのための詳細なガイド
 ---
 texts:
   en: >-
     **[The CL Author's Guide](developer/)**: A detailed guide for developers
         whose CLs are going through review.
   ja: >-
-    **[CL 作成者のガイド](ja/developer/)**: CL がレビューを受けている開発者のための詳細なガイド
+    **[CL 作成者のガイド](developer/)**: CL がレビューを受けている開発者のための詳細なガイド
 ---
 texts:
   en: What Do Code Reviewers Look For? {#look_for}
@@ -102,7 +102,7 @@ texts:
 ---
 texts:
   en: See **[How To Do A Code Review](reviewer/)** for more information.
-  ja: "詳細は**[コードレビューに仕方](ja/reviewer/)**を確認してください。"
+  ja: "詳細は**[コードレビューに仕方](reviewer/)**を確認してください。"
 ---
 texts:
   en: Picking the Best Reviewers {#best_reviewers}
@@ -168,10 +168,10 @@ texts:
 ---
 texts:
   en: "[How To Do A Code Review](reviewer/): A detailed guide for code reviewers."
-  ja: "[コードレビューの仕方](ja/reviewer/): コードレビュアーのための詳細なガイド"
+  ja: "[コードレビューの仕方](reviewer/): コードレビュアーのための詳細なガイド"
 ---
 texts:
   en: >-
     [The CL Author's Guide](developer/): A detailed guide for developers whose
         CLs are going through review.
-  ja: "[CL 作成者のガイド](ja/developer/): CL がレビューを受けている開発者のための詳細なガイド"
+  ja: "[CL 作成者のガイド](developer/): CL がレビューを受けている開発者のための詳細なガイド"
