@@ -170,7 +170,7 @@ texts:
 ---
 texts:
   en: Mentoring
-  ja: __COPY__
+  ja: メンタリング
 ---
 texts:
   en: >-
@@ -187,15 +187,22 @@ texts:
     the standards described in this document, prefix it with "Nit: " or otherwise
 
     indicate that it's not mandatory for the author to resolve it in this CL.
-  ja: __COPY__
+  ja: >-
+    コードレビューは、開発者に言語、フレームワーク、あるいはソフトウェア設計の一般的な原則に関して新しいことを教える重要な機会になります。
+
+    開発者が新しいことを学ぶヒントになるコメントは、いつでも歓迎されます。
+
+    知識の共有は、時間をかけてシステムのコードの健全性を改善する試みの一部分です。
+
+    一点だけ頭に入れていただきたいのは、コメントが純粋に教育目的であって、このドキュメントで説明している基準を満たす上で重要でなければ、「Nit: 」などのプレフィックスを付けるか、この CL で作成者が解決する義務はないと付け加えてください。
 ---
 texts:
   en: Principles {#principles}
-  ja: __COPY__
+  ja: 原則 {#principles}
 ---
 texts:
   en: Technical facts and data overrule opinions and personal preferences.
-  ja: __COPY__
+  ja: 技術的な事実とデータが個人的な意見と好みをくつがえす。
 ---
 texts:
   en: >-
@@ -204,7 +211,7 @@ texts:
         not in the style guide is a matter of personal preference. The style should
         be consistent with what is there. If there is no previous style, accept the
         author's.
-  ja: __COPY__
+  ja: "スタイルに関しては、[スタイルガイド](http://google.github.io/styleguide/)が絶対的な権威である。スタイルガイドの記載のない純粋なスタイルの選択（空白をどうするかなど）は個人の好みの問題である。スタイルはシステム内で一貫している必要がある。スタイルの選択に前例がなければ、CL 作成者のやり方を受けれるべきである。"
 ---
 texts:
   en: >-
@@ -215,18 +222,18 @@ texts:
         or based on solid engineering principles) that several approaches are
         equally valid, then the reviewer should accept the preference of the author.
         Otherwise the choice is dictated by standard principles of software design.
-  ja: __COPY__
+  ja: "ソフトウェア設計に関する論点は純粋なスタイルの問題でもなければ個人的な好みの問題でもない。それは基本的な原則に基づいており、ただの個人的な意見によるのではなく、その原則に重点を置くべきである。有効な選択肢がいくつかある場合がある。複数の方法が同等に有効であると作成者が（データを示したり堅固な工学原理に基づいて説明したりして）証明できるとき、レビュアーは作成者の選好を受け入れるべきである。そうでない場合、選択はソフトウェア設計の標準的な原則によって決定される。"
 ---
 texts:
   en: >-
     If no other rule applies, then the reviewer may ask the author to be
         consistent with what is in the current codebase, as long as that doesn't
         worsen the overall code health of the system.
-  ja: __COPY__
+  ja: "他のルールが適用されない場合、システムのコード全体の健全性を悪化させない限りは、レビュアーは CL 作成者に現在のコードベースとの一貫性を維持するよう求めることができる。"
 ---
 texts:
   en: Resolving Conflicts {#conflicts}
-  ja: __COPY__
+  ja: コンフリクトの解決 {#conflicts}
 ---
 texts:
   en: >-
