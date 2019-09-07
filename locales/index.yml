@@ -1,6 +1,6 @@
 texts:
   en: Google Engineering Practices Documentation
-  ja: __COPY__
+  ja: Google Engineering Practices Documentation (日本語訳)
 ---
 texts:
   en: >-
@@ -13,53 +13,62 @@ texts:
     projects or other organizations would benefit from this knowledge, so we work to
 
     make it available publicly when possible.
-  ja: __COPY__
+  ja: >-
+    Google には、あらゆる言語とあらゆるプロジェクトをカバーする広範なエンジニアリングの慣行があります。
+    
+    ここにあるドキュメントは私達が経験からさまざまなベストプラクティスを長年にわたって培ってきたことを表しています。
+
+    この知識がオープンソースプロジェクトや他の組織の利益になるかもしれませんから、私達は可能なときにはそれを公開します。
 ---
 texts:
   en: "Currently this contains the following documents:"
-  ja: __COPY__
+  ja: "現在、以下のドキュメントがあります。"
 ---
 texts:
   en: >-
     [Google's Code Review Guidelines](review/index.md), which are actually two
         separate sets of documents:
-  ja: __COPY__
+  ja: >-
+    [Google コードレビューガイドライン](ja/review/index.md)。これは 2 つのドキュメントに分けられます。
 ---
 texts:
   en: "[The Code Reviewer's Guide](review/reviewer/index.md)"
-  ja: __COPY__
+  ja: "[コードレビュワーのガイド](ja/review/reviewer/index.md)"
 ---
 texts:
   en: "[The Change Author's Guide](review/developer/index.md)"
-  ja: __COPY__
+  ja: "[変更作成者のガイド](ja/review/developer/index.md)"
 ---
 texts:
   en: Terminology
-  ja: __COPY__
+  ja: 用語
 ---
 texts:
   en: >-
     There is some Google-internal terminology used in some of these documents, which
 
     we clarify here for external readers:
-  ja: __COPY__
+  ja: >-
+    ここにあるドキュメントには、Google 内部で使われる用語があります。外部の読者のために意味を掲載しておきます。
 ---
 texts:
   en: >-
     **CL**: Stands for "changelist," which means one self-contained change that
         has been submitted to version control or which is undergoing code review.
         Other organizations often call this a "change" or a "patch."
-  ja: __COPY__
+  ja: >-
+    **CL**: 「changelist」の略。一つの独立した変更を意味していて、バージョン管理下に送信されたものや、まだコードレビュー中のものを指すこともあります。他組織では「変更」「パッチ」とよく呼ばれます。
 ---
 texts:
   en: >-
     **LGTM**: Means "Looks Good to Me." It is what a code reviewer says when
         approving a CL.
-  ja: __COPY__
+  ja: >-
+    **LGTM**: 「Looks Good to Me」(私には良さそうに見える) という意味。コードレビュワーが CL を承認するときに言う。
 ---
 texts:
   en: License
-  ja: __COPY__
+  ja: ライセンス
 ---
 texts:
   en: >-
@@ -68,7 +77,7 @@ texts:
     encourages you to share these documents. See
 
     https://creativecommons.org/licenses/by/3.0/ for more details.
-  ja: __COPY__
+  ja: このプロジェクトのドキュメントは CC-By 3.0 License の下にあり、ここにあるドキュメントをシェアすることが奨励されます。詳細は https://creativecommons.org/licenses/by/3.0/ をご覧ください。
 ---
 texts:
   en: <a rel="license" href="https://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
