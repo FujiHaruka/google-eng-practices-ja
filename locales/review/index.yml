@@ -1,0 +1,160 @@
+texts:
+  en: Code Review Developer Guide
+  ja: __COPY__
+---
+texts:
+  en: Introduction {#intro}
+  ja: __COPY__
+---
+texts:
+  en: >-
+    A code review is a process where someone other than the author(s) of a piece of
+
+    code examines that code.
+  ja: __COPY__
+---
+texts:
+  en: At Google we use code review to maintain the quality of our code and products.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    This documentation is the canonical description of Google's code review
+
+    processes and policies.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    This page is an overview of our code review process. There are two other large
+
+    documents that are a part of this guide:
+  ja: __COPY__
+---
+texts:
+  en: >-
+    **[How To Do A Code Review](reviewer/)**: A detailed guide for code
+        reviewers.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    **[The CL Author's Guide](developer/)**: A detailed guide for developers
+        whose CLs are going through review.
+  ja: __COPY__
+---
+texts:
+  en: What Do Code Reviewers Look For? {#look_for}
+  ja: __COPY__
+---
+texts:
+  en: "Code reviews should look at:"
+  ja: __COPY__
+---
+texts:
+  en: "**Design**: Is the code well-designed and appropriate for your system?"
+  ja: __COPY__
+---
+texts:
+  en: >-
+    **Functionality**: Does the code behave as the author likely intended? Is
+        the way the code behaves good for its users?
+  ja: __COPY__
+---
+texts:
+  en: >-
+    **Complexity**: Could the code be made simpler? Would another developer be
+        able to easily understand and use this code when they come across it in the
+        future?
+  ja: __COPY__
+---
+texts:
+  en: "**Tests**: Does the code have correct and well-designed automated tests?"
+  ja: __COPY__
+---
+texts:
+  en: >-
+    **Naming**: Did the developer choose clear names for variables, classes,
+        methods, etc.?
+  ja: __COPY__
+---
+texts:
+  en: "**Comments**: Are the comments clear and useful?"
+  ja: __COPY__
+---
+texts:
+  en: >-
+    **Style**: Does the code follow our
+        [style guides](http://google.github.io/styleguide/)?
+  ja: __COPY__
+---
+texts:
+  en: "**Documentation**: Did the developer also update relevant documentation?"
+  ja: __COPY__
+---
+texts:
+  en: See **[How To Do A Code Review](reviewer/)** for more information.
+  ja: __COPY__
+---
+texts:
+  en: Picking the Best Reviewers {#best_reviewers}
+  ja: __COPY__
+---
+texts:
+  en: >-
+    In general, you want to find the *best* reviewers you can who are capable of
+
+    responding to your review within a reasonable period of time.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    The best reviewer is the person who will be able to give you the most thorough
+
+    and correct review for the piece of code you are writing. This usually means the
+
+    owner(s) of the code, who may or may not be the people in the OWNERS file.
+
+    Sometimes this means asking different people to review different parts of the
+
+    CL.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    If you find an ideal reviewer but they are not available, you should at least CC
+
+    them on your change.
+  ja: __COPY__
+---
+texts:
+  en: In-Person Reviews {#in_person}
+  ja: __COPY__
+---
+texts:
+  en: >-
+    If you pair-programmed a piece of code with somebody who was qualified to do a
+
+    good code review on it, then that code is considered reviewed.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    You can also do in-person code reviews where the reviewer asks questions and the
+
+    developer of the change speaks only when spoken to.
+  ja: __COPY__
+---
+texts:
+  en: See Also {#seealso}
+  ja: __COPY__
+---
+texts:
+  en: "[How To Do A Code Review](reviewer/): A detailed guide for code reviewers."
+  ja: __COPY__
+---
+texts:
+  en: >-
+    [The CL Author's Guide](developer/): A detailed guide for developers whose
+        CLs are going through review.
+  ja: __COPY__

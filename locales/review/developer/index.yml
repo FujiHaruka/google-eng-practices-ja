@@ -1,0 +1,35 @@
+texts:
+  en: The CL author's guide to getting through code review
+  ja: __COPY__
+---
+texts:
+  en: >-
+    The pages in this section contain best practices for developers going through
+
+    code review. These guidelines should help you get through reviews faster and
+
+    with higher-quality results. You don't have to read them all, but they are
+
+    intended to apply to every Google developer, and many people have found it
+
+    helpful to read the whole set.
+  ja: __COPY__
+---
+texts:
+  en: "[Writing Good CL Descriptions](cl-descriptions.md)"
+  ja: __COPY__
+---
+texts:
+  en: "[Small CLs](small-cls.md)"
+  ja: __COPY__
+---
+texts:
+  en: "[How to Handle Reviewer Comments](handling-comments.md)"
+  ja: __COPY__
+---
+texts:
+  en: >-
+    See also [How to Do a Code Review](../reviewer/), which gives detailed guidance
+
+    for code reviewers.
+  ja: __COPY__

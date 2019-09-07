@@ -1,0 +1,13 @@
+lang:
+  source: en
+  targets:
+    - ja
+documents:
+  - source: review
+    targets:
+      ja: ja/review
+    locale: locales/review
+  - source: README.md
+    targets:
+      ja: index.md
+    locale: locales/index.yml

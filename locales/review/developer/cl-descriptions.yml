@@ -1,0 +1,252 @@
+texts:
+  en: Writing good CL descriptions
+  ja: __COPY__
+---
+texts:
+  en: >-
+    A CL description is a public record of **what** change is being made and **why**
+
+    it was made. It will become a permanent part of our version control history, and
+
+    will possibly be read by hundreds of people other than your reviewers over the
+
+    years.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    Future developers will search for your CL based on its description. Someone in
+
+    the future might be looking for your change because of a faint memory of its
+
+    relevance but without the specifics handy. If all the important information is
+
+    in the code and not the description, it's going to be a lot harder for them to
+
+    locate your CL.
+  ja: __COPY__
+---
+texts:
+  en: First Line {#firstline}
+  ja: __COPY__
+---
+texts:
+  en: Short summary of what is being done.
+  ja: __COPY__
+---
+texts:
+  en: Complete sentence, written as though it was an order.
+  ja: __COPY__
+---
+texts:
+  en: Follow by empty line.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    The **first line** of a CL description should be a short summary of
+
+    *specifically* **what** *is being done by the CL*, followed by a blank line.
+
+    This is what most future code searchers will see when they are browsing the
+
+    version control history of a piece of code, so this first line should be
+
+    informative enough that they don't have to read your CL or its whole description
+
+    just to get a general idea of what your CL actually *did*.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    By tradition, the first line of a CL description is a complete sentence, written
+
+    as though it were an order (an imperative sentence). For example, say
+
+    \"**Delete** the FizzBuzz RPC and **replace** it with the new system." instead
+
+    of \"**Deleting** the FizzBuzz RPC and **replacing** it with the new system."
+
+    You don't have to write the rest of the description as an imperative sentence,
+
+    though.
+  ja: __COPY__
+---
+texts:
+  en: Body is Informative {#informative}
+  ja: __COPY__
+---
+texts:
+  en: >-
+    The rest of the description should be informative. It might include a brief
+
+    description of the problem that's being solved, and why this is the best
+
+    approach. If there are any shortcomings to the approach, they should be
+
+    mentioned. If relevant, include background information such as bug numbers,
+
+    benchmark results, and links to design documents.
+  ja: __COPY__
+---
+texts:
+  en: Even small CLs deserve a little attention to detail. Put the CL in context.
+  ja: __COPY__
+---
+texts:
+  en: Bad CL Descriptions {#bad}
+  ja: __COPY__
+---
+texts:
+  en: >-
+    "Fix bug" is an inadequate CL description. What bug? What did you do to fix it?
+
+    Other similarly bad descriptions include:
+  ja: __COPY__
+---
+texts:
+  en: '"Fix build."'
+  ja: __COPY__
+---
+texts:
+  en: '"Add patch."'
+  ja: __COPY__
+---
+texts:
+  en: '"Moving code from A to B."'
+  ja: __COPY__
+---
+texts:
+  en: '"Phase 1."'
+  ja: __COPY__
+---
+texts:
+  en: '"Add convenience functions."'
+  ja: __COPY__
+---
+texts:
+  en: '"kill weird URLs."'
+  ja: __COPY__
+---
+texts:
+  en: >-
+    Some of those are real CL descriptions. Their authors may believe they are
+
+    providing useful information, but they are not serving the purpose of a CL
+
+    description.
+  ja: __COPY__
+---
+texts:
+  en: Good CL Descriptions {#good}
+  ja: __COPY__
+---
+texts:
+  en: Here are some examples of good descriptions.
+  ja: __COPY__
+---
+texts:
+  en: Functionality change
+  ja: __COPY__
+---
+texts:
+  en: "rpc: remove size limit on RPC server message freelist."
+  ja: __COPY__
+---
+texts:
+  en: >-
+    Servers like FizzBuzz have very large messages and would benefit from reuse.
+      Make the freelist larger, and add a goroutine that frees the freelist entries
+      slowly over time, so that idle servers eventually release all freelist
+      entries.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    The first few words describe what the CL actually does. The rest of the
+
+    description talks about the problem being solved, why this is a good solution,
+
+    and a bit more information about the specific implementation.
+  ja: __COPY__
+---
+texts:
+  en: Refactoring
+  ja: __COPY__
+---
+texts:
+  en: Construct a Task with a TimeKeeper to use its TimeStr and Now methods.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    Add a Now method to Task, so the borglet() getter method can be removed (which
+      was only used by OOMCandidate to call borglet's Now method). This replaces the
+      methods on Borglet that delegate to a TimeKeeper.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    Allowing Tasks to supply Now is a step toward eliminating the dependency on
+      Borglet. Eventually, collaborators that depend on getting Now from the Task
+      should be changed to use a TimeKeeper directly, but this has been an
+      accommodation to refactoring in small steps.
+  ja: __COPY__
+---
+texts:
+  en: Continuing the long-range goal of refactoring the Borglet Hierarchy.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    The first line describes what the CL does and how this is a change from the
+
+    past. The rest of the description talks about the specific implementation, the
+
+    context of the CL, that the solution isn't ideal, and possible future direction.
+
+    It also explains *why* this change is being made.
+  ja: __COPY__
+---
+texts:
+  en: Small CL that needs some context
+  ja: __COPY__
+---
+texts:
+  en: Create a Python3 build rule for status.py.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    This allows consumers who are already using this as in Python3 to depend on a
+      rule that is next to the original status build rule instead of somewhere in
+      their own tree. It encourages new consumers to use Python3 if they can,
+      instead of Python2, and significantly simplifies some automated build file
+      refactoring tools being worked on currently.
+  ja: __COPY__
+---
+texts:
+  en: >-
+    The first sentence describes what's actually being done. The rest of the
+
+    description explains *why* the change is being made and gives the reviewer a lot
+
+    of context.
+  ja: __COPY__
+---
+texts:
+  en: Review the description before submitting the CL
+  ja: __COPY__
+---
+texts:
+  en: >-
+    CLs can undergo significant change during review. It can be worthwhile to review
+
+    a CL description before submitting the CL, to ensure that the description still
+
+    reflects what the CL does.
+  ja: __COPY__
+---
+texts:
+  en: "Next: [Small CLs](small-cls.md)"
+  ja: __COPY__
