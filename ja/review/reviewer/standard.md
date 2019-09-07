@@ -1,59 +1,43 @@
-# The Standard of Code Review
+# コードレビューの基準
 
-The primary purpose of code review is to make sure that the overall
-code health of Google's code
-base is improving over time. All of the tools and processes of code review are
-designed to this end.
+コードレビューの主な目的は、Google のコードベースが全体として健全であるようにし、また時間とともに改善することを保証することです。
+コードレビューのすべてのツールとプロセスは、その目的のために設計されています。
 
-In order to accomplish this, a series of trade-offs have to be balanced.
+これを実現するため、さまざまなトレードオフがバランスを取る必要があります。
 
-First, developers must be able to _make progress_ on their tasks. If you never
-submit an improvement to the codebase, then the codebase never improves. Also,
-if a reviewer makes it very difficult for _any_ change to go in, then developers
-are disincentivized to make improvements in the future.
+まず、開発者は自分のタスクを**進める**ことができなければなりません。
+コードベースに改善を提出できなければ、コードベースは改善しません。
+また、レビュアーが**どんな**変更でもそれを取り入れるを非常に困難にしている場合、開発者は将来の改善を行う意欲を失います。
 
-On the other hand, it is the duty of the reviewer to make sure that each CL is
-of such a quality that the overall code health of their codebase is not
-decreasing as time goes on. This can be tricky, because often, codebases degrade
-through small decreases in code health over time, especially when a team is
-under significant time constraints and they feel that they have to take
-shortcuts in order to accomplish their goals.
+一方、CL の品質が、コードベース全体のコードの健全性を時間とともに減少させるようなものではないということを確認するのはレビュアーの責任です。
+これは骨の折れるやっかいな仕事になることがあります。
+というのも多くの場合、時間の経過とともにコードの健全性を小さく減少させる要因が重なり、コードベースの品質は下がっていきます。
+特に、チームが無視できない時間的制約のもとにあり、チームがゴールを達成するためにショートカットをしなければならないと感じているときには、コードベースの品質は下がりやすいのです。
 
-Also, a reviewer has ownership and responsibility over the code they are
-reviewing. They want to ensure that the codebase stays consistent, maintainable,
-and all of the other things mentioned in
-["What to look for in a code review."](looking-for.md)
+また、レビュアーにはレビューしているコードに対して所有権と責任があります。
+レビュアーはコードベースの一貫性と保守可能性を維持し、[「コードレビューで求めるものは何か」](looking-for.md)で言及されている事柄が守られるように保証したいと考えています。
 
-Thus, we get the following rule as the standard we expect in code reviews:
+そのため、私達はコードレビューにおいて期待する基準として、次のルールを見出しました。
 
-**In general, reviewers should favor approving a CL once it is in a state where
-it definitely improves the overall
-code health of the system
-being worked on, even if the CL isn't perfect.**
+**一般に、CL が完璧でなくても、その変更が作業中のシステムの全体的なコードの健全性を間違いなく改善するとわかれば、レビュアーは CL を積極的に承認すべきである。**
 
-That is _the_ senior principle among all of the code review guidelines.
+これはすべてのコードレビューガイドラインの中で**最上位の**原則です。
 
-There are limitations to this, of course. For example, if a CL adds a feature
-that the reviewer doesn't want in their system, then the reviewer can certainly
-deny approval even if the code is well-designed.
+もちろん、このルールに制限はあります。たとえば、CL がシステムにレビュアーが望んでいない機能を追加している場合、コードがうまく設計されてるとしてもレビュアーは承認を拒否することができます。
 
-A key point here is that there is no such thing as "perfect" code—there is
-only _better_ code. Reviewers should not require the author to polish every tiny
-piece of a CL before granting approval. Rather, the reviewer should balance out
-the need to make forward progress compared to the importance of the changes they
-are suggesting. Instead of seeking perfection, what a reviewer should seek is
-_continuous improvement_. A CL that, as a whole, improves the maintainability,
-readability, and understandability of the system shouldn't be delayed for days
-or weeks because it isn't "perfect."
+ここでのポイントは、「完璧な」コードといったものは存在しないということです—あるのは**より良い**コードだけです。
+レビュアーは CL を承認する前にコードのすみずみまで磨きをかけることを作成者に要求すべきではありません。
+むしろ、前に進めるべきかどうかの必要性を、CL 作成者が提案している変更の重要性と比較して、レビュアーはバランスよく検討すべきです。
+レビュアーが追求すべきは、完璧さではなく**継続的な改善**です。
+CL が全体としてシステムの保守性、可読性、理解可能性を向上させるのなら、それが「完璧」でないからといって数日も数週間も遅らせるべきではありません。
 
-Reviewers should _always_ feel free to leave comments expressing that something
-could be better, but if it's not very important, prefix it with something like
-"Nit: " to let the author know that it's just a point of polish that they could
-choose to ignore.
+レビュアーは何か改善できそうな点を見つけたら、コメントを残すのに躊躇する必要はありません。
+**いつでも**気軽にコメントを残すべきです。
+その際に、もし重要でない指摘であれば、「Nit: 」（あら探しという意味）のようなプレフィックスを付けて、
+CL 作成者にこれはただ磨きをかけるための指摘なので無視してもらっても構わない、と知らせると良いでしょう。
 
-Note: Nothing in this document justifies checking in CLs that definitely
-_worsen_ the overall code health of the system. The only time you would do that
-would be in an [emergency](../emergencies.md).
+（注）このドキュメントは、システムのコード全体の健全性を**悪化**させるとわかりきっている CL を正当化しません。
+唯一それが許されるケースは、[緊急事態](../emergencies.md)にあります。
 
 ## Mentoring
 
