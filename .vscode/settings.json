@@ -1,0 +1,20 @@
+{
+  "editor.tokenColorCustomizations": {
+    "[dark-plus-syntax]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "string",
+            "string.tag",
+            "string.value",
+            "meta.preprocessor.string"
+          ],
+          "settings": {
+            "foreground": "#d4d4d4"
+          }
+        }
+      ]
+    }
+  },
+  "yaml.completion": false,
+}
