@@ -33,7 +33,7 @@ texts:
 ---
 texts:
   en: "[The Code Reviewer's Guide](review/reviewer/index.md)"
-  ja: "[コードレビュワーのガイド](ja/review/reviewer/index.md)"
+  ja: "[コードレビュアーのガイド](ja/review/reviewer/index.md)"
 ---
 texts:
   en: "[The Change Author's Guide](review/developer/index.md)"
@@ -64,7 +64,7 @@ texts:
     **LGTM**: Means "Looks Good to Me." It is what a code reviewer says when
         approving a CL.
   ja: >-
-    **LGTM**: 「Looks Good to Me」(私には良さそうに見える) という意味。コードレビュワーが CL を承認するときに言う。
+    **LGTM**: 「Looks Good to Me」(私には良さそうに見える) という意味。コードレビュアーが CL を承認するときに言う。
 ---
 texts:
   en: License
