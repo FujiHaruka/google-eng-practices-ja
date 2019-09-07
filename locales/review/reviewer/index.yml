@@ -1,6 +1,6 @@
 texts:
   en: How to do a code review
-  ja: __COPY__
+  ja: コードレビューの仕方
 ---
 texts:
   en: >-
@@ -13,35 +13,41 @@ texts:
     all, but many people have found it very helpful to themselves and their team to
 
     read the entire set.
-  ja: __COPY__
+  ja: >-
+    このセクションでは、長年の経験に基づいて、コードレビューをする最良の方法に関していろいろな推奨事項を説明しています。
+
+    各ページをひとまとめにして一つの完全なドキュメントになりますが、多くのセクションに分割しています。
+
+    すべてを読む必要はありませんが、ドキュメント全体を読むのが個人としてもチームとしても非常に有益であるという感想を持つ人が多いです。
 ---
 texts:
   en: "[The Standard of Code Review](standard.md)"
-  ja: __COPY__
+  ja: "[コードレビューの基準](standard.md)"
 ---
 texts:
   en: "[What to Look For In a Code Review](looking-for.md)"
-  ja: __COPY__
+  ja: "[コードレビューに求めることは何か](looking-for.md)"
 ---
 texts:
   en: "[Navigating a CL in Review](navigate.md)"
-  ja: __COPY__
+  ja: "[レビューで CL を閲覧する](navigate.md)"
 ---
 texts:
   en: "[Speed of Code Reviews](speed.md)"
-  ja: __COPY__
+  ja: "[コードレビューのスピード](speed.md)"
 ---
 texts:
   en: "[How to Write Code Review Comments](comments.md)"
-  ja: __COPY__
+  ja: "[コードレビューコメントの書き方](comments.md)"
 ---
 texts:
   en: "[Handling Pushback in Code Reviews](pushback.md)"
-  ja: __COPY__
+  ja: "[コードレビューの差し戻し処理](pushback.md)"
 ---
 texts:
   en: >-
     See also the [CL Author's Guide](../developer/), which gives detailed guidance
 
     to developers whose CLs are undergoing review.
-  ja: __COPY__
+  ja: >-
+    [CL 作成者のガイド](../developer/)も参考にしてください。こちらは CL がコードレビューを受けている開発者のための詳細なガイドです。

@@ -1,17 +1,14 @@
-# How to do a code review
+# コードレビューの仕方
 
-The pages in this section contain recommendations on the best way to do code
-reviews, based on long experience. All together they represent one complete
-document, broken up into many separate sections. You don't have to read them
-all, but many people have found it very helpful to themselves and their team to
-read the entire set.
+このセクションでは、長年の経験に基づいて、コードレビューをする最良の方法に関していろいろな推奨事項を説明しています。
+各ページをひとまとめにして一つの完全なドキュメントになりますが、多くのセクションに分割しています。
+すべてを読む必要はありませんが、ドキュメント全体を読むのが個人としてもチームとしても非常に有益であるという感想を持つ人が多いです。
 
-- [The Standard of Code Review](standard.md)
-- [What to Look For In a Code Review](looking-for.md)
-- [Navigating a CL in Review](navigate.md)
-- [Speed of Code Reviews](speed.md)
-- [How to Write Code Review Comments](comments.md)
-- [Handling Pushback in Code Reviews](pushback.md)
+- [コードレビューの基準](standard.md)
+- [コードレビューに求めることは何か](looking-for.md)
+- [レビューで CL を閲覧する](navigate.md)
+- [コードレビューのスピード](speed.md)
+- [コードレビューコメントの書き方](comments.md)
+- [コードレビューの差し戻し処理](pushback.md)
 
-See also the [CL Author's Guide](../developer/), which gives detailed guidance
-to developers whose CLs are undergoing review.
+[CL 作成者のガイド](../developer/)も参考にしてください。こちらは CL がコードレビューを受けている開発者のための詳細なガイドです。
