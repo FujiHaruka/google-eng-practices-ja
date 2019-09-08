@@ -34,49 +34,40 @@ CL が必要以上に複雑になっていないでしょうか？ CL のあら�
 開発者には、**今**解決する必要のある既知の問題に取り組むべきであって、将来解決する必要が出てくる**かもしれない**推測に基づいた問題には目を向けないよう勧めてください。
 将来の問題はそれが発生してから取り組めばよいのです。問題が発生すれば、この物理的な宇宙の中でその実際の形と要件を知ることができます。
 
-## Tests
+## テスト
 
-Ask for unit, integration, or end-to-end
-tests as appropriate for the change. In general, tests should be added in the
-same CL as the production code unless the CL is handling an
-[emergency](../emergencies.md).
+変更に適したユニットテスト、結合テスト、E2E テストを依頼してください。
+一般に、テストはプロダクションコードと同じ CL に追加してください。
+例外は、CL が[緊急事態](../emergencies.md)に対処している場合です。
 
-Make sure that the tests in the CL are correct, sensible, and useful. Tests do
-not test themselves, and we rarely write tests for our tests—a human must ensure
-that tests are valid.
+CL の中のテストが正確で、適切で、有用であることを確認してください。
+テストがテストコード自体をテストすることはありませんし、テストのためのテストコードを書くこともめったにありません。テストの有効性は人間が確認しなければなりません。
 
-Will the tests actually fail when the code is broken? If the code changes
-beneath them, will they start producing false positives? Does each test make
-simple and useful assertions? Are the tests separated appropriately between
-different test methods?
+コードが壊れているときにテストはきちんと失敗するでしょうか？
+そのテストの下でコードを変更すると、テストが誤検知を起こさないでしょうか？
+各テストはシンプルで有用なアサーションを使っているでしょうか？
+テストは異なるテストメソッドごとに適切に分割されているでしょうか？
 
-Remember that tests are also code that has to be maintained. Don't accept
-complexity in tests just because they aren't part of the main binary.
+テストもまた保守すべきコードであることを覚えていてください。
+メインのバイナリに含まれないからといって、テストが複雑になるのを許容しないでください。
 
-## Naming
+## 命名
 
-Did the developer pick good names for everything? A good name is long enough to
-fully communicate what the item is or does, without being so long that it
-becomes hard to read.
+開発者はあらゆるものに適切な名前を与えているでしょうか？
+適切な名前とは、それが何であるか／何をするかを伝えるのに十分に長く、しかし読むのに困難を覚えないほど短いものです。
 
-## Comments
+## コメント
 
-Did the developer write clear comments in understandable English? Are all of the
-comments actually necessary? Usually comments are useful when they **explain
-why** some code exists, and should not be explaining *what* some code is doing.
-If the code isn't clear enough to explain itself, then the code should be made
-simpler. There are some exceptions (regular expressions and complex algorithms
-often benefit greatly from comments that explain what they're doing, for
-example) but mostly comments are for information that the code itself can't
-possibly contain, like the reasoning behind a decision.
+開発者はわかりやすい英語で明確なコメントを書きましたか？
+すべてのコメントは実際に必要でしょうか？
+コメントは普通、あるコードが**「なぜ」**存在するのかを説明するのに役立ちますが、コードが**「何」**をしているのかを説明すべきではありません。
+コードがそれ自身を説明するほど明確でないのなら、コードをもっとシンプルにすべきです。
+例外はあります（たとえば正規表現や複雑なアルゴリズムでは何をしているのかを説明するコメントは非常に有益です）が、ほとんどの場合、コメントは決定の背後にある理由のような、コードそのものが語ることのできない情報を伝えるために書きます。
 
-It can also be helpful to look at comments that were there before this CL. Maybe
-there is a TODO that can be removed now, a comment advising against this change
-being made, etc.
+CL の前にその箇所にあったコメントに注目するのが有益であることもあります。
+今となっては削除すべき TODO があるかもしれませんし、この変更を行うべきではないと助言するコメントなどがあるかもしれません。
 
-Note that comments are different from *documentation* of classes, modules, or
-functions, which should instead express the purpose of a piece of code, how it
-should be used, and how it behaves when used.
+なお、コメントはクラス、モジュール、関数の**ドキュメンテーション**とは違います。ドキュメンテーションコメントはコードの目的や、使い方や、使われたときのふるまいを記述するものです。
 
 ## Style
 
