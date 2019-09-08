@@ -1,62 +1,38 @@
-# What to look for in a code review
+# コードレビューの観点
 
-Note: Always make sure to take into account
-[The Standard of Code Review](standard.md) when considering each of these
-points.
+（注）以下のポイントを検討する際にはつねに[コードレビューの基準](standard.md)を忘れないでください。
 
-## Design
+## 設計
 
-The most important thing to cover in a review is the overall design of the CL.
-Do the interactions of various pieces of code in the CL make sense? Does this
-change belong in your codebase, or in a library? Does it integrate well with the
-rest of your system? Is now a good time to add this functionality?
+レビューで確認すべき最も大切なことは、CL の全体的な設計です。
+CL のコードの各部分は相互にきちんと連携するでしょうか？この変更はコードベースに属するものでしょうか、それともあるライブラリに属するものでしょうか？システムの他の部分とうまく統合するでしょうか？この機能を追加するタイミングは今がふさわしいでしょうか？
 
-## Functionality
+## 機能性
 
-Does this CL do what the developer intended? Is what the developer intended good
-for the users of this code? The "users" are usually both end-users (when they
-are affected by the change) and developers (who will have to "use" this code in
-the future).
+この CL は開発者の意図通りに動作しますか？開発者の意図はこのコードのユーザーにとって良いものでしょうか？「ユーザー」とは普通、エンドユーザー（その変更によって影響を受ける場合）と開発者（将来このコードを「使う」必要のある人）の両方を指します。
 
-Mostly, we expect developers to test CLs well-enough that they work correctly by
-the time they get to code review. However, as the reviewer you should still be
-thinking about edge cases, looking for concurrency problems, trying to think
-like a user, and making sure that there are no bugs that you see just by reading
-the code.
+通常、CL がコードレビューに至るまでには、コードが正しく動作することを開発者が十分にテストしていると期待できます。
+それでもレビュアーはエッジケースを想定する、並行処理の問題を探す、ユーザーになりきって考えるなど、コードを読むだけではわからない不具合がないかを確認してください。
 
-You *can* validate the CL if you want—the time when it's most important for a
-reviewer to check a CL's behavior is when it has a user-facing impact, such as a
-**UI change**. It's hard to understand how some changes will impact a user when
-you're just reading the code. For changes like that, you can have the developer
-give you a demo of the functionality if it's too inconvenient to patch in the CL
-and try it yourself.
+必要に応じて CL を検証**しても構いません**。特に、**UI の変更**といった、ユーザーに影響する変更があるときは、レビュアーが CL の動作を確認するべき最も重要な機会です。
+変更がユーザーにどのような影響を与えるかはコードを読むだけではわかりにくいものです。
+そのような変更に対しては、CL の変更を反映して自分で動作確認するのが大変なら、開発者にその機能のデモを依頼することもできます。
 
-Another time when it's particularly important to think about functionality
-during a code review is if there is some sort of **parallel programming** going
-on in the CL that could theoretically cause deadlocks or race conditions. These
-sorts of issues are very hard to detect by just running the code and usually
-need somebody (both the developer and the reviewer) to think through them
-carefully to be sure that problems aren't being introduced. (Note that this is
-also a good reason not to use concurrency models where race conditions or
-deadlocks are possible—it can make it very complex to do code reviews or
-understand the code.)
+また別のケースですが、コードレビュー中に機能についてしっかり考えることが特に重要なのは、CL にある種の**並行プログラミング**が行われていて、理論的にデッドロックや競合状態を引き起こす可能性がある場合です。
+こういう問題はコードを実行するだけでは不具合の発見が難しいため、通常、コード全体を見て問題が発生していないことを注意深く確認する人（開発者とレビュアーの両方）が必要です。
+（なお、これこそがやはり、競合状態やデッドロックが発生しうるところで並行処理モデルを採用すべきでない十分な理由です。コードレビューを行うのもコードを理解するのも非常に複雑になりうるからです。）
 
-## Complexity
+## 複雑性
 
-Is the CL more complex than it should be? Check this at every level of the
-CL—are individual lines too complex? Are functions too complex? Are classes too
-complex? "Too complex" usually means **"can't be understood quickly by code
-readers."** It can also mean **"developers are likely to introduce bugs when
-they try to call or modify this code."**
+CL が必要以上に複雑になっていないでしょうか？ CL のあらゆるレベルで確認してください。
+一行一行は複雑すぎないでしょうか？関数は複雑すぎないでしょうか？クラスは複雑すぎないでしょうか？
+「複雑すぎる」とは通常、**「コードを読んですぐに理解できない」**という意味です。
+あるいは、**「開発者がこのコードを呼び出したり修正したりしようとするときに不具合を生み出しそうである」**という意味でもあります。
 
-A particular type of complexity is **over-engineering**, where developers have
-made the code more generic than it needs to be, or added functionality that
-isn't presently needed by the system. Reviewers should be especially vigilant
-about over-engineering. Encourage developers to solve the problem they know
-needs to be solved *now*, not the problem that the developer speculates *might*
-need to be solved in the future. The future problem should be solved once it
-arrives and you can see its actual shape and requirements in the physical
-universe.
+あるタイプの複雑性は、**オーバーエンジニアリング**です。開発者が必要以上にコードを一般化していたり、現在のシステムにとってまだ必要のない機能を盛り込んでいたりするということです。
+レビュアーはオーバーエンジニアリングを特に警戒すべきです。
+開発者には、**今**解決する必要のある既知の問題に取り組むべきであって、将来解決する必要が出てくる**かもしれない**推測に基づいた問題には目を向けないよう勧めてください。
+将来の問題はそれが発生してから取り組めばよいのです。問題が発生すれば、この物理的な宇宙の中でその実際の形と要件を知ることができます。
 
 ## Tests
 
