@@ -26,7 +26,7 @@ texts:
 ---
 texts:
   en: "[What to Look For In a Code Review](looking-for.md)"
-  ja: "[コードレビューに求めることは何か](looking-for.md)"
+  ja: "[コードレビューの観点](looking-for.md)"
 ---
 texts:
   en: "[Navigating a CL in Review](navigate.md)"
