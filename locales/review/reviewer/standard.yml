@@ -244,7 +244,8 @@ texts:
     this document and the other documents in [The CL Author's Guide](../developer/)
 
     and this [Reviewer Guide](index.md).
-  ja: __COPY__
+  ja: >-
+    コードレビューでコンフリクトがあれば、最初のステップで必ず行うべきは、このドキュメントと[CL 作成者のガイド](../developer/)、またこの[レビュアーガイド](index.md)の他のドキュメントに基づいて、開発者とレビュアーの間でコンセンサスが得られるように試みることです。
 ---
 texts:
   en: >-
@@ -257,7 +258,10 @@ texts:
     this, though, make sure to record the results of the discussion in a comment on
 
     the CL, for future readers.)
-  ja: __COPY__
+  ja: >-
+    コンセンサスを得るのが特に難しいときには、レビュアーと作成者で対面でのミーティングやテレビ会議をもつほうが、コードレビューコメントのやり取りだけでコンフリクトを解消しようとするよりも効果があることがあります。
+
+    （このやり方の場合、未来の読者のために CL のコメントにディスカッションの結果を記録するのを忘れないでください。）
 ---
 texts:
   en: >-
@@ -272,8 +276,13 @@ texts:
     out. **Don't let a CL sit around because the author and the reviewer can't come
 
     to an agreement.**
-  ja: __COPY__
+  ja: >-
+    それでも状況が変わらない場合、通例では、巻き込む人を増やすのが解決する方法です。
+
+    より広範にチーム内で議論したり、TL に検討してもらったり、コードのメンテナーに決めてもらうようお願いしたり、技術マネージャーに助力を求めたりできます。
+
+    **作成者とレビュアーが合意に達することができないからといって、CL をそのまま放置しないでください。**
 ---
 texts:
   en: "Next: [What to look for in a code review](looking-for.md)"
-  ja: __COPY__
+  ja: "次: [コードレビューで求めるものは何か](looking-for.md)"
