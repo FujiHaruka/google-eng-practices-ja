@@ -69,33 +69,24 @@ CL の前にその箇所にあったコメントに注目するのが有益で�
 
 なお、コメントはクラス、モジュール、関数の**ドキュメンテーション**とは違います。ドキュメンテーションコメントはコードの目的や、使い方や、使われたときのふるまいを記述するものです。
 
-## Style
+## スタイル
 
-We have [style guides](http://google.github.io/styleguide/) at Google for all
-of our major languages, and even for most of the minor languages. Make sure the
-CL follows the appropriate style guides.
+Google には[スタイルガイド](http://google.github.io/styleguide/)があります。メジャーな言語に関してはすべて、マイナーな言語でも多くはスタイルガイドが揃っています。
+CL が適切なスタイルガイドを従っているかを確認してください。
 
-If you want to improve some style point that isn't in the style guide, prefix
-your comment with "Nit:" to let the developer know that it's a nitpick that you
-think would improve the code but isn't mandatory. Don't block CLs from being
-submitted based only on personal style preferences.
+スタイルガイドに記載のないスタイルの改善をしたい場合、コメントに「Nit:」というプレフィックスを付けて、それが細かい指摘 (nitpick) であることを開発者に知らせるのがよいでしょう。そうすると、コードを改善してほしいが強制ではないということが伝わります。
+個人的なスタイルの好みで CL の提出をブロックしないでください。
 
-The author of the CL should not include major style changes combined with other
-changes. It makes it hard to see what is being changed in the CL, makes merges
-and rollbacks more complex, and causes other problems. For example, if the
-author wants to reformat the whole file, have them send you just the
-reformatting to as one CL, and then send another CL with their functional
-changes after that.
+CL の作成者はスタイル上の大きな変更を他の変更に混ぜないようにしてください。
+それをすると CL で何が変更されているのかを見るのが大変になり、マージ後にロールバックするのはもっと大変で、また他の問題も引き起こします。
+たとえば、作成者がファイル全体を再フォーマットしたいと思ったら、再フォーマットするだけの変更を一つの  CL として提出し、その後で機能的な変更を別の CL として提出するようにしてください。
 
-## Documentation
+## ドキュメンテーション
 
-If a CL changes how users build, test, interact with, or release code, check to
-see that it also updates associated documentation, including
-READMEs, g3doc pages, and any generated
-reference docs. If the CL deletes or deprecates code, consider whether the
-documentation should also be deleted.
-If documentation is
-missing, ask for it.
+CL がコードのビルド、テスト、相互作用、リリースのやり方を変更する場合、それに関連するドキュメンテーションも更新しているかを確認してください。
+関連するドキュメンテーションには、README、g3doc ページ、自動生成されたリファレンスドキュメントなどがあります。
+CL がコードを削除または非推奨にしたら、ドキュメンテーションもも削除するべきかどうか考えてください。
+ドキュメンテーションがなければ、作成するように依頼してください。
 
 ## Every Line {#every_line}
 

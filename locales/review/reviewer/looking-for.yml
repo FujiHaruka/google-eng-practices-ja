@@ -289,7 +289,7 @@ texts:
 ---
 texts:
   en: Style
-  ja: __COPY__
+  ja: スタイル
 ---
 texts:
   en: >-
@@ -298,7 +298,10 @@ texts:
     of our major languages, and even for most of the minor languages. Make sure the
 
     CL follows the appropriate style guides.
-  ja: __COPY__
+  ja: >-
+    Google には[スタイルガイド](http://google.github.io/styleguide/)があります。メジャーな言語に関してはすべて、マイナーな言語でも多くはスタイルガイドが揃っています。
+
+    CL が適切なスタイルガイドを従っているかを確認してください。
 ---
 texts:
   en: >-
@@ -309,7 +312,10 @@ texts:
     think would improve the code but isn't mandatory. Don't block CLs from being
 
     submitted based only on personal style preferences.
-  ja: __COPY__
+  ja: >-
+    スタイルガイドに記載のないスタイルの改善をしたい場合、コメントに「Nit:」というプレフィックスを付けて、それが細かい指摘 (nitpick) であることを開発者に知らせるのがよいでしょう。そうすると、コードを改善してほしいが強制ではないということが伝わります。
+
+    個人的なスタイルの好みで CL の提出をブロックしないでください。
 ---
 texts:
   en: >-
@@ -324,11 +330,16 @@ texts:
     reformatting to as one CL, and then send another CL with their functional
 
     changes after that.
-  ja: __COPY__
+  ja: >-
+    CL の作成者はスタイル上の大きな変更を他の変更に混ぜないようにしてください。
+
+    それをすると CL で何が変更されているのかを見るのが大変になり、マージ後にロールバックするのはもっと大変で、また他の問題も引き起こします。
+
+    たとえば、作成者がファイル全体を再フォーマットしたいと思ったら、再フォーマットするだけの変更を一つの  CL として提出し、その後で機能的な変更を別の CL として提出するようにしてください。
 ---
 texts:
   en: Documentation
-  ja: __COPY__
+  ja: ドキュメンテーション
 ---
 texts:
   en: >-
@@ -345,7 +356,14 @@ texts:
     If documentation is
 
     missing, ask for it.
-  ja: __COPY__
+  ja: >-
+    CL がコードのビルド、テスト、相互作用、リリースのやり方を変更する場合、それに関連するドキュメンテーションも更新しているかを確認してください。
+
+    関連するドキュメンテーションには、README、g3doc ページ、自動生成されたリファレンスドキュメントなどがあります。
+
+    CL がコードを削除または非推奨にしたら、ドキュメンテーションもも削除するべきかどうか考えてください。
+
+    ドキュメンテーションがなければ、作成するように依頼してください。
 ---
 texts:
   en: Every Line {#every_line}
