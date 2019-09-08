@@ -49,7 +49,7 @@ texts:
 ---
 texts:
   en: What Do Code Reviewers Look For? {#look_for}
-  ja: コードレビュアーが求めるものは何か？ {#look_for}
+  ja: コードレビュアーはどんな観点でレビューすべきか？ {#look_for}
 ---
 texts:
   en: "Code reviews should look at:"

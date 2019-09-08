@@ -9,17 +9,17 @@
 コードベースに改善を提出できなければ、コードベースは改善しません。
 また、レビュアーが**どんな**変更でもそれを取り入れるを非常に困難にしている場合、開発者は将来の改善を行う意欲を失います。
 
-一方、CL の品質が、コードベース全体のコードの健全性を時間とともに減少させるようなものではないということを確認するのはレビュアーの責任です。
+一方、CL の品質を確認するのはレビュアーの義務です。CL を取り入れてコードベースのコード全体の健康状態 (code health) がだんだんと悪化するのは問題ですから、きちんと確認しなければなりません。
 これは骨の折れるやっかいな仕事になることがあります。
-というのも多くの場合、時間の経過とともにコードの健全性を小さく減少させる要因が重なり、コードベースの品質は下がっていきます。
-特に、チームが無視できない時間的制約のもとにあり、チームがゴールを達成するためにショートカットをしなければならないと感じているときには、コードベースの品質は下がりやすいのです。
+というのも、多くの場合、コードの健康状態を悪化させる要因が徐々に積み重なり、コードベースの品質は下がっていきます。
+特に、チームが無視できない時間的制約に縛られていて、ゴールを達成するためにはショートカットをするしかないと感じているときには、コードベースの品質は下がりやすいものです。
 
 また、レビュアーにはレビューしているコードに対して所有権と責任があります。
-レビュアーはコードベースの一貫性と保守可能性を維持し、[「コードレビューで求めるものは何か」](looking-for.md)で言及されている事柄が守られるように保証したいと考えています。
+レビュアーはコードベースの一貫性と保守可能性を維持し、[「コードレビューの観点」](looking-for.md)で言及されている事柄が守られるように保証したいと考えています。
 
-そのため、私達はコードレビューにおいて期待する基準として、次のルールを見出しました。
+そのため、私達はコードレビューに期待する基準として、次のルールを見出しました。
 
-**一般に、CL が完璧でなくても、その変更が作業中のシステムの全体的なコードの健全性を間違いなく改善するとわかれば、レビュアーは CL を積極的に承認すべきである。**
+**一般に、CL が完璧でなくても、その変更がシステムのコード全体の健康状態を改善すると確実にわかれば、レビュアーは CL を積極的に承認すべきである。**
 
 これはすべてのコードレビューガイドラインの中で**最上位の**原則です。
 
@@ -36,59 +36,35 @@ CL が全体としてシステムの保守性、可読性、理解可能性を�
 その際に、もし重要でない指摘であれば、「Nit: 」（あら探しという意味）のようなプレフィックスを付けて、
 CL 作成者にこれはただ磨きをかけるための指摘なので無視してもらっても構わない、と知らせると良いでしょう。
 
-（注）このドキュメントは、システムのコード全体の健全性を**悪化**させるとわかりきっている CL を正当化しません。
+（注）このドキュメントは、システムのコード全体のを**悪化**させるとわかりきっている CL を正当化しません。
 唯一それが許されるケースは、[緊急事態](../emergencies.md)にあります。
 
-## Mentoring
+## メンタリング
 
-Code review can have an important function of teaching developers something new
-about a language, a framework, or general software design principles. It's
-always fine to leave comments that help a developer learn something new. Sharing
-knowledge is part of improving the code health of a system over time. Just keep
-in mind that if your comment is purely educational, but not critical to meeting
-the standards described in this document, prefix it with "Nit: " or otherwise
-indicate that it's not mandatory for the author to resolve it in this CL.
+コードレビューは、開発者に言語、フレームワーク、あるいはソフトウェア設計の一般的な原則に関して新しいことを教える重要な機会になります。
+開発者が新しいことを学ぶヒントになるコメントは、いつでも歓迎されます。
+知識の共有は、時間をかけてシステムのコードの健康状態を改善する試みの一部分です。
+一点だけ頭に入れていただきたいのは、コメントが純粋に教育目的であって、このドキュメントで説明している基準を満たす上で重要でなければ、「Nit: 」などのプレフィックスを付けるか、この CL で作成者が解決する義務はないと付け加えてください。
 
-## Principles {#principles}
+## 原則 {#principles}
 
-- Technical facts and data overrule opinions and personal preferences.
+- 技術的な事実とデータが個人的な意見と好みをくつがえす。
 
-- On matters of style, the [style guide](http://google.github.io/styleguide/)
-  is the absolute authority. Any purely style point (whitespace, etc.) that is
-  not in the style guide is a matter of personal preference. The style should
-  be consistent with what is there. If there is no previous style, accept the
-  author's.
+- スタイルに関しては、[スタイルガイド](http://google.github.io/styleguide/)が絶対的な権威である。スタイルガイドの記載のない純粋なスタイルの選択（空白をどうするかなど）は個人の好みの問題である。スタイルはシステム内で一貫している必要がある。スタイルの選択に前例がなければ、CL 作成者のやり方を受けれるべきである。
 
-- **Aspects of software design are almost never a pure style issue or just a
-  personal preference.** They are based on underlying principles and should be
-  weighed on those principles, not simply by personal opinion. Sometimes there
-  are a few valid options. If the author can demonstrate (either through data
-  or based on solid engineering principles) that several approaches are
-  equally valid, then the reviewer should accept the preference of the author.
-  Otherwise the choice is dictated by standard principles of software design.
+- ソフトウェア設計に関する論点は純粋なスタイルの問題でもなければ個人的な好みの問題でもない。それは基本的な原則に基づいており、ただの個人的な意見によるのではなく、その原則に重点を置くべきである。有効な選択肢がいくつかある場合がある。複数の方法が同等に有効であると作成者が（データを示したり堅固な工学原理に基づいて説明したりして）証明できるとき、レビュアーは作成者の選好を受け入れるべきである。そうでない場合、選択はソフトウェア設計の標準的な原則によって決定される。
 
-- If no other rule applies, then the reviewer may ask the author to be
-  consistent with what is in the current codebase, as long as that doesn't
-  worsen the overall code health of the system.
+- 他のルールが適用されない場合、システムのコード全体の健康状態を悪化させない限りは、レビュアーは CL 作成者に現在のコードベースとの一貫性を維持するよう求めることができる。
 
-## Resolving Conflicts {#conflicts}
+## コンフリクトの解決 {#conflicts}
 
-In any conflict on a code review, the first step should always be for the
-developer and reviewer to try to come to consensus, based on the contents of
-this document and the other documents in [The CL Author's Guide](../developer/)
-and this [Reviewer Guide](index.md).
+コードレビューでコンフリクトがあれば、最初のステップで必ず行うべきは、このドキュメントと[CL 作成者のガイド](../developer/)、またこの[レビュアーガイド](index.md)の他のドキュメントに基づいて、開発者とレビュアーの間でコンセンサスが得られるように試みることです。
 
-When coming to consensus becomes especially difficult, it can help to have a
-face-to-face meeting or a VC between the reviewer and the author, instead of
-just trying to resolve the conflict through code review comments. (If you do
-this, though, make sure to record the results of the discussion in a comment on
-the CL, for future readers.)
+コンセンサスを得るのが特に難しいときには、レビュアーと作成者で対面でのミーティングやテレビ会議をもつほうが、コードレビューコメントのやり取りだけでコンフリクトを解消しようとするよりも効果があることがあります。
+（このやり方の場合、未来の読者のために CL のコメントにディスカッションの結果を記録するのを忘れないでください。）
 
-If that doesn't resolve the situation, the most common way to resolve it would
-be to escalate. Often the
-escalation path is to a broader team discussion, having a TL weigh in, asking
-for a decision from a maintainer of the code, or asking an Eng Manager to help
-out. **Don't let a CL sit around because the author and the reviewer can't come
-to an agreement.**
+それでも状況が変わらない場合、通例では、巻き込む人を増やすのが解決する方法です。
+より広範にチーム内で議論したり、TL に検討してもらったり、コードのメンテナーに決めてもらうようお願いしたり、技術マネージャーに助力を求めたりできます。
+**作成者とレビュアーが合意に達することができないからといって、CL をそのまま放置しないでください。**
 
-Next: [What to look for in a code review](looking-for.md)
+次: [コードレビューの観点](looking-for.md)
