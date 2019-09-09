@@ -501,7 +501,7 @@ texts:
 ---
 texts:
   en: Good Things {#good_things}
-  ja: __COPY__
+  ja: 良いこと {#good_things}
 ---
 texts:
   en: >-
@@ -514,65 +514,70 @@ texts:
     practices, as well. It’s sometimes even more valuable, in terms of mentoring, to
 
     tell a developer what they did right than to tell them what they did wrong.
-  ja: __COPY__
+  ja: >-
+    CL の中に素敵なものを見つけたら、開発者に教えてあげてください。特に、あなたのレビューコメントの一つに取り組んで素晴らしくやり遂げたらそうしてください。
+
+    コードレビューは間違いにばかり目が行きがちですが、良い実践に対しての励ましや感謝の言葉も伝えるべきです。
+
+    メンタリングの観点では、開発者が正しいこと行ったときにそれを伝えるほうが、間違いを指摘するよりもずっと価値がある場合があります。
 ---
 texts:
   en: Summary
-  ja: __COPY__
+  ja: 要約
 ---
 texts:
   en: "In doing a code review, you should make sure that:"
-  ja: __COPY__
+  ja: "コードレビューをする際には、次のことを確認してください。"
 ---
 texts:
   en: The code is well-designed.
-  ja: __COPY__
+  ja: コードがうまく設計されている
 ---
 texts:
   en: The functionality is good for the users of the code.
-  ja: __COPY__
+  ja: 機能性がコードのユーザーにとって適切である
 ---
 texts:
   en: Any UI changes are sensible and look good.
-  ja: __COPY__
+  ja: UI の変更がある場合、よく考えられていて見た目も適切である
 ---
 texts:
   en: Any parallel programming is done safely.
-  ja: __COPY__
+  ja: 並行処理がある場合、安全に行われている
 ---
 texts:
   en: The code isn't more complex than it needs to be.
-  ja: __COPY__
+  ja: コードが必要以上に複雑でない
 ---
 texts:
   en: >-
     The developer isn't implementing things they *might* need in the future but
         don't know they need now.
-  ja: __COPY__
+  ja: 開発者は将来必要になる**かもしれない**ものではなく現在必要だとわかっているものを実装している
 ---
 texts:
   en: Code has appropriate unit tests.
-  ja: __COPY__
+  ja: コードには適切なユニットテストがある
 ---
 texts:
   en: Tests are well-designed.
-  ja: __COPY__
+  ja: テストがうまく設計されている
 ---
 texts:
   en: The developer used clear names for everything.
-  ja: __COPY__
+  ja: 開発者はあらゆるものに明確な名前を使った
 ---
 texts:
   en: Comments are clear and useful, and mostly explain *why* instead of *what*.
-  ja: __COPY__
+  ja: コメントは明確で役立つもので、**「何」**ではなく**「なぜ」**を説明している
 ---
 texts:
   en: Code is appropriately documented (generally in g3doc).
-  ja: __COPY__
+  ja: コードは適切にドキュメント化されている（一般的には g3doc で）
 ---
 texts:
   en: The code conforms to our style guides.
-  ja: __COPY__
+  ja: コードはスタイルガイドに準拠している
 ---
 texts:
   en: >-
@@ -581,8 +586,9 @@ texts:
     the **context**, make sure you're **improving code health**, and compliment
 
     developers on **good things** that they do.
-  ja: __COPY__
+  ja: >-
+    レビューを依頼されたコードを**一行ずつ**レビューすること、**コンテキスト**を確認すること、**コードの健康状態を改善**しているかを見極めること、開発者が**良いこと**をしたらそれを褒めることを忘れずに。
 ---
 texts:
   en: "Next: [Navigating a CL in Review](navigate.md)"
-  ja: __COPY__
+  ja: "次: [レビューで CL を閲覧する](navigate.md)"

@@ -116,34 +116,29 @@ CL をシステム全体のコンテキストの中に置いて考えてみる�
 ほとんどのシステムは小さな変更が積み重なってだんだんと複雑化します。
 だからこそ、新たな変更があったときに小さな複雑性でも混入させないようにするのが大切です。
 
-## Good Things {#good_things}
+## 良いこと {#good_things}
 
-If you see something nice in the CL, tell the developer, especially when they
-addressed one of your comments in a great way. Code reviews often just focus on
-mistakes, but they should offer encouragement and appreciation for good
-practices, as well. It’s sometimes even more valuable, in terms of mentoring, to
-tell a developer what they did right than to tell them what they did wrong.
+CL の中に素敵なものを見つけたら、開発者に教えてあげてください。特に、あなたのレビューコメントの一つに取り組んで素晴らしくやり遂げたらそうしてください。
+コードレビューは間違いにばかり目が行きがちですが、良い実践に対しての励ましや感謝の言葉も伝えるべきです。
+メンタリングの観点では、開発者が正しいこと行ったときにそれを伝えるほうが、間違いを指摘するよりもずっと価値がある場合があります。
 
-## Summary
+## 要約
 
-In doing a code review, you should make sure that:
+コードレビューをする際には、次のことを確認してください。
 
-- The code is well-designed.
-- The functionality is good for the users of the code.
-- Any UI changes are sensible and look good.
-- Any parallel programming is done safely.
-- The code isn't more complex than it needs to be.
-- The developer isn't implementing things they *might* need in the future but
-  don't know they need now.
-- Code has appropriate unit tests.
-- Tests are well-designed.
-- The developer used clear names for everything.
-- Comments are clear and useful, and mostly explain *why* instead of *what*.
-- Code is appropriately documented (generally in g3doc).
-- The code conforms to our style guides.
+- コードがうまく設計されている
+- 機能性がコードのユーザーにとって適切である
+- UI の変更がある場合、よく考えられていて見た目も適切である
+- 並行処理がある場合、安全に行われている
+- コードが必要以上に複雑でない
+- 開発者は将来必要になる**かもしれない**ものではなく現在必要だとわかっているものを実装している
+- コードには適切なユニットテストがある
+- テストがうまく設計されている
+- 開発者はあらゆるものに明確な名前を使った
+- コメントは明確で役立つもので、**「何」**ではなく**「なぜ」**を説明している
+- コードは適切にドキュメント化されている（一般的には g3doc で）
+- コードはスタイルガイドに準拠している
 
-Make sure to review **every line** of code you've been asked to review, look at
-the **context**, make sure you're **improving code health**, and compliment
-developers on **good things** that they do.
+レビューを依頼されたコードを**一行ずつ**レビューすること、**コンテキスト**を確認すること、**コードの健康状態を改善**しているかを見極めること、開発者が**良いこと**をしたらそれを褒めることを忘れずに。
 
-Next: [Navigating a CL in Review](navigate.md)
+次: [レビューで CL を閲覧する](navigate.md)
