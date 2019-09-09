@@ -9,8 +9,7 @@ texts:
     [The Standard of Code Review](standard.md) when considering each of these
 
     points.
-  ja: >-
-    （注）以下のポイントを検討する際にはつねに[コードレビューの基準](standard.md)を忘れないでください。
+  ja: （注）以下のポイントを検討する際にはつねに[コードレビューの基準](standard.md)を忘れないでください。
 ---
 texts:
   en: Design
@@ -284,8 +283,7 @@ texts:
     functions, which should instead express the purpose of a piece of code, how it
 
     should be used, and how it behaves when used.
-  ja: >-
-    なお、コメントはクラス、モジュール、関数の**ドキュメンテーション**とは違います。ドキュメンテーションコメントはコードの目的や、使い方や、使われたときのふるまいを記述するものです。
+  ja: なお、コメントはクラス、モジュール、関数の**ドキュメンテーション**とは違います。ドキュメンテーションコメントはコードの目的や、使い方や、使われたときのふるまいを記述するものです。
 ---
 texts:
   en: Style
@@ -327,15 +325,15 @@ texts:
 
     author wants to reformat the whole file, have them send you just the
 
-    reformatting to as one CL, and then send another CL with their functional
+    reformatting as one CL, and then send another CL with their functional changes
 
-    changes after that.
+    after that.
   ja: >-
     CL の作成者はスタイル上の大きな変更を他の変更に混ぜないようにしてください。
 
     それをすると CL で何が変更されているのかを見るのが難しくなるばかりか、マージ後にロールバックするのはもっと大変ですし、さらに他の問題も引き起こします。
 
-    たとえば、作成者がファイル全体を再フォーマットしたいと思ったら、再フォーマットするだけの変更を一つの  CL として提出し、その後で機能的な変更を別の CL として提出するようにしてください。
+    たとえば、作成者がファイル全体を再フォーマットしたいと思ったら、再フォーマットだけを一つの CL として提出し、その後で機能的な変更を別の CL として提出するようにしてください。
 ---
 texts:
   en: Documentation
@@ -527,7 +525,7 @@ texts:
 ---
 texts:
   en: "In doing a code review, you should make sure that:"
-  ja: "コードレビューをする際には、次のことを確認してください。"
+  ja: コードレビューをする際には、次のことを確認してください。
 ---
 texts:
   en: The code is well-designed.
@@ -586,8 +584,7 @@ texts:
     the **context**, make sure you're **improving code health**, and compliment
 
     developers on **good things** that they do.
-  ja: >-
-    レビューを依頼されたコードを**一行ずつ**レビューすること、**コンテキスト**を確認すること、**コードの健康状態を改善**しているかを見極めること、開発者が**良いこと**をしたらそれを褒めることを忘れずに。
+  ja: レビューを依頼されたコードを**一行ずつ**レビューすること、**コンテキスト**を確認すること、**コードの健康状態を改善**しているかを見極めること、開発者が**良いこと**をしたらそれを褒めることを忘れずに。
 ---
 texts:
   en: "Next: [Navigating a CL in Review](navigate.md)"
