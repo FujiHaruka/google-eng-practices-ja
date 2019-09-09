@@ -25,43 +25,30 @@
 CL が書かれる前にもっとコミュニケーションが必要です。
 人々が 1 トンもの仕事をしてその後で破棄や大部分の書き直しを迫られるよりは、事前に「ノー」と言えるほうが良いでしょう。
 
-## Step Two: Examine the main parts of the CL {#step_two}
+## ステップ 2: CL の主要部分を調べる {#step_two}
 
-Find the file or files that are the "main" part of this CL. Often, there is one
-file that has the largest number of logical changes, and it's the major piece of
-the CL. Look at these major parts first. This helps give context to all of the
-smaller parts of the CL, and generally accelerates doing the code review. If the
-CL is too large for you to figure out which parts are the major parts, ask the
-developer what you should look at first, or ask them to
-[split up the CL into multiple CLs](../developer/small-cls.md).
+この CL の「メイン」の部分になっているファイル（1 ファイルとは限りません）を見つけてください。
+よくあるのは、ロジック上の変更が最も多いファイルが一つあり、それが CL の主要部分となる場合です。
+これが CL の別の小さな部分にコンテキストを提供していて、それによってコードレビューが概してスムーズになります。
+CL があまりに巨大でどの部分が主要部分なのか判別できなければ、開発者にどこを最初に見るべきか質問してもよいですし、あるいは [CL を複数の CL に分割する](../developer/small-cls.md)ように依頼してください。
 
-If you see some major design problems with this part of the CL, you should send
-those comments immediately, even if you don't have time to review the rest of
-the CL right now. In fact, reviewing the rest of the CL might be a waste of
-time, because if the design problems are significant enough, a lot of the other
-code under review is going to disappear and not matter anyway.
+CL の主要部分に設計上の重大な問題が見つかれば、すぐにコメントを残してください。
+CL の残りの部分をレビューする時間があってもコメントを送るのが先です。
+実際、CL の残りの部分をレビューしても時間の無駄になるかもしれません。設計上の問題が重大なものであれば、レビュー対象の他のコードは消されることになり、見ても見なくても関係なくなるからです。
 
-There are two major reasons it's so important to send these major design
-comments out immediately:
+設計上の重大な問題に関するコメントをただちに送ることが大切な理由は二つあります。
 
-- Developers often mail a CL and then immediately start new work based on that
-  CL while they wait for review. If there are major design problems in the CL
-  you're reviewing, they're also going to have to re-work their later CL. You
-  want to catch them before they've done too much extra work on top of the
-  problematic design.
-- Major design changes take longer to do than small changes. Developers nearly
-  all have deadlines; in order to make those deadlines and still have quality
-  code in the codebase, the developer needs to start on any major re-work of
-  the CL as soon as possible.
+- 開発者は CL を投稿すると、レビューを待ちながらその CL をベースに新しい作業をすぐに始めることがよくあります。
+  レビュー中の CL に設計上の重大な問題があると、開発者は次の CL もやり直さなければならなくなります。
+  開発者が問題含みの設計の上にさらに仕事を積み上げてしまう前に引き止めたいものです。
+- 大きな設計の変更は小さな変更よりも時間がかかります。
+  開発者にはたいてい納期がありますが、納期を守りつつコードベースのコードの品質を保つには、CL のやり直しが重大なものであるほど、できるだけ早にやり直しに着手する必要があります。
 
-## Step Three: Look through the rest of the CL in an appropriate sequence {#step_three}
+## ステップ 3: CL の残りを適切な順序で見る {#step_three}
 
-Once you've confirmed there are no major design problems with the CL as a whole,
-try to figure out a logical sequence to look through the files while also making
-sure you don't miss reviewing any file. Usually after you've looked through the
-major files, it's simplest to just go through each file in the order that
-the code review tool presents them to you. Sometimes it's also helpful to read the tests
-first before you read the main code, because then you have an idea of what the
-change is supposed to be doing.
+全体として CL に設計上の重大な問題がないことが確認できたら、次は全ファイルを一通り見て、論理的な順序を理解するようにしてください。またその際に、レビューもれのファイルがないように気をつけてください。
+主要なファイルを確認し終えたら、普通はコードレビューツールが表示してくれる順序で各ファイルを調べるのがいちばん簡単です。
+主要なコードを読む前にテストをまず読むのが効果的な場合もあります。
+そうするとこの変更が何をしようとしているのかイメージがつくからです。
 
-Next: [Speed of Code Reviews](speed.md)
+次: [コードレビューのスピード](speed.md)
