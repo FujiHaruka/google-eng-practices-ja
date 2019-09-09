@@ -88,44 +88,33 @@ CL がコードのビルド、テスト、相互作用、リリースのやり�
 CL がコードを削除または非推奨にしたら、ドキュメンテーションもも削除するべきかどうか考えてください。
 ドキュメンテーションがなければ、作成するように依頼してください。
 
-## Every Line {#every_line}
+## 一行ずつ {#every_line}
 
-Look at *every* line of code that you have been assigned to review. Some things
-like data files, generated code, or large data structures you can scan over
-sometimes, but don't scan over a human-written class, function, or block of code
-and assume that what's inside of it is okay. Obviously some code deserves more
-careful scrutiny than other code—that's a judgment call that you have to
-make—but you should at least be sure that you *understand* what all the
-code is doing.
+レビューをアサインされたらコードを**一行ずつ**見てください。
+データファイル、自動生成されたコード、巨大なデータ構造などはざっと見れば済むこともありますが、人間の書いたクラス、関数、コードブロックなどはそうはいきません。
+コードの中に書かれているものが正しいと決めてかからず、じっくり読んでください。
+明らかに、他のコードよりも精密に調べるに値するコードもあります—そうすべきかどうかは自分で判断しなければなりません—が、少なくとも全コードが何をしているかを確実に**理解**するようにしてください。
 
-If it's too hard for you to read the code and this is slowing down the review,
-then you should let the developer know that
-and wait for them to clarify it before you try to review it. At Google, we hire
-great software engineers, and you are one of them. If you can't understand the
-code, it's very likely that other developers won't either. So you're also
-helping future developers understand this code, when you ask the developer to
-clarify it.
+コードが読みにくく、そのことがレビューを遅らせているなら、レビューをいったん置いて開発者に知らせ、コードを明確にしてくれるのを待ちましょう。
+Google には優秀なソフトウェアエンジニアが雇われていますし、あなたはその一人です。
+あなたがコードを理解できないのなら、他の開発者もきっと理解できません。
+ですから、開発者にコードを明確にするよう依頼するのは、未来の開発者のためにこのコードを理解しやすくする手助けでもあります。
 
-If you understand the code but you don't feel qualified to do some part of the
-review, make sure there is a reviewer on the CL who is qualified, particularly
-for complex issues such as security, concurrency, accessibility,
-internationalization, etc.
+コードを理解できてもレビューのある部分でレビューする資格がないと感じる場合、その CL について他にもふさわしいレビュアーがいることを忘れないでください。
+特に、セキュリティ、並行処理、アクセシビリティ、インターナショナライゼーションなどの複雑な問題に関しては適任者がいます。
 
-## Context
+## コンテキスト
 
-It is often helpful to look at the CL in a broad context. Usually the code
-review tool will only show you a few lines of code around the parts that are
-being changed. Sometimes you have to look at the whole file to be sure that the
-change actually makes sense. For example, you might see only four new lines
-being added, but when you look at the whole file, you see those four lines are
-in a 50-line method that now really needs to be broken up into smaller methods.
+CL を広いコンテキストの中に置いて眺めることが役に立つ場合がよくあります。
+普通コードレビューツールは変更のあった箇所の周りを数行ほど表示するだけです。
+変更がうまく機能することを確認するためにファイル全体を見なければならないときもあります。
+たとえば、追加された行が 4 行だけだったとしても、ファイル全体を眺めたらそれが 50 行に及ぶメソッドの中に書かれていることがわかり、メソッドを分割する必要があると判明することもあります。
 
-It's also useful to think about the CL in the context of the system as a whole.
-Is this CL improving the code health of the system or is it making the whole
-system more complex, less tested, etc.? **Don't accept CLs that degrade the code
-health of the system.** Most systems become complex through many small changes
-that add up, so it's important to prevent even small complexities in new
-changes.
+CL をシステム全体のコンテキストの中に置いて考えてみることも有益です。
+この CL はシステムのコードの健康状態を改善しているでしょうか、それともシステム全体を複雑にし、テスト不足な状態にしているでしょうか？
+**コードの健康状態を悪化させる CL を受け入れないでください。**
+ほとんどのシステムは小さな変更が積み重なってだんだんと複雑化します。
+だからこそ、新たな変更があったときに小さな複雑性でも混入させないようにするのが大切です。
 
 ## Good Things {#good_things}
 

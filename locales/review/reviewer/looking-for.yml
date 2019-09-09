@@ -367,7 +367,7 @@ texts:
 ---
 texts:
   en: Every Line {#every_line}
-  ja: __COPY__
+  ja: 一行ずつ {#every_line}
 ---
 texts:
   en: >-
@@ -380,7 +380,14 @@ texts:
     and assume that what's inside of it is okay. Obviously some code deserves more
 
     careful scrutiny than other code
-  ja: __COPY__
+  ja: >-
+    レビューをアサインされたらコードを**一行ずつ**見てください。
+
+    データファイル、自動生成されたコード、巨大なデータ構造などはざっと見れば済むこともありますが、人間の書いたクラス、関数、コードブロックなどはそうはいきません。
+
+    コードの中に書かれているものが正しいと決めてかからず、じっくり読んでください。
+
+    明らかに、他のコードよりも精密に調べるに値するコードもあります
 ---
 texts:
   en: —
@@ -391,7 +398,7 @@ texts:
     that's a judgment call that you have to
 
     make
-  ja: __COPY__
+  ja: そうすべきかどうかは自分で判断しなければなりません
 ---
 texts:
   en: —
@@ -402,7 +409,7 @@ texts:
     but you should at least be sure that you *understand* what all the
 
     code is doing.
-  ja: __COPY__
+  ja: が、少なくとも全コードが何をしているかを確実に**理解**するようにしてください。
 ---
 texts:
   en: >-
@@ -419,7 +426,14 @@ texts:
     helping future developers understand this code, when you ask the developer to
 
     clarify it.
-  ja: __COPY__
+  ja: >-
+    コードが読みにくく、そのことがレビューを遅らせているなら、レビューをいったん置いて開発者に知らせ、コードを明確にしてくれるのを待ちましょう。
+
+    Google には優秀なソフトウェアエンジニアが雇われていますし、あなたはその一人です。
+
+    あなたがコードを理解できないのなら、他の開発者もきっと理解できません。
+
+    ですから、開発者にコードを明確にするよう依頼するのは、未来の開発者のためにこのコードを理解しやすくする手助けでもあります。
 ---
 texts:
   en: >-
@@ -430,11 +444,14 @@ texts:
     for complex issues such as security, concurrency, accessibility,
 
     internationalization, etc.
-  ja: __COPY__
+  ja: >-
+    コードを理解できてもレビューのある部分でレビューする資格がないと感じる場合、その CL について他にもふさわしいレビュアーがいることを忘れないでください。
+
+    特に、セキュリティ、並行処理、アクセシビリティ、インターナショナライゼーションなどの複雑な問題に関しては適任者がいます。
 ---
 texts:
   en: Context
-  ja: __COPY__
+  ja: コンテキスト
 ---
 texts:
   en: >-
@@ -449,7 +466,14 @@ texts:
     being added, but when you look at the whole file, you see those four lines are
 
     in a 50-line method that now really needs to be broken up into smaller methods.
-  ja: __COPY__
+  ja: >-
+    CL を広いコンテキストの中に置いて眺めることが役に立つ場合がよくあります。
+
+    普通コードレビューツールは変更のあった箇所の周りを数行ほど表示するだけです。
+
+    変更がうまく機能することを確認するためにファイル全体を見なければならないときもあります。
+
+    たとえば、追加された行が 4 行だけだったとしても、ファイル全体を眺めたらそれが 50 行に及ぶメソッドの中に書かれていることがわかり、メソッドを分割する必要があると判明することもあります。
 ---
 texts:
   en: >-
@@ -464,7 +488,16 @@ texts:
     that add up, so it's important to prevent even small complexities in new
 
     changes.
-  ja: __COPY__
+  ja: >-
+    CL をシステム全体のコンテキストの中に置いて考えてみることも有益です。
+
+    この CL はシステムのコードの健康状態を改善しているでしょうか、それともシステム全体を複雑にし、テスト不足な状態にしているでしょうか？
+
+    **コードの健康状態を悪化させる CL を受け入れないでください。**
+
+    ほとんどのシステムは小さな変更が積み重なってだんだんと複雑化します。
+
+    だからこそ、新たな変更があったときに小さな複雑性でも混入させないようにするのが大切です。
 ---
 texts:
   en: Good Things {#good_things}
