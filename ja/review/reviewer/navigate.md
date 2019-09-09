@@ -1,39 +1,29 @@
-# Navigating a CL in review
+# レビューで CL を閲覧する
 
-## Summary
+## 要約
 
-Now that you know [what to look for](looking-for.md), what's the most efficient
-way to manage a review that's spread across multiple files?
+前節で[コードレビューの観点](looking-for.md)を学びましたが、では複数ファイルにまたがった変更をレビューする最も効果的な方法は何でしょうか？
 
-1. Does the change make sense? Does it have a good
-   [description](../developer/cl-descriptions.md)?
-2. Look at the most important part of the change first. Is it well-designed
-   overall?
-3. Look at the rest of the CL in an appropriate sequence.
+1. 変更はうまく機能するでしょうか？適切な[ディスクリプション](../developer/cl-descriptions.md)はあるでしょうか？
+2. いちばん重要な変更を最初に確認してください。それは全体としてうまく設計されているでしょうか？
+3. CL の残りの部分を適切な順序で見てください。
 
-## Step One: Take a broad view of the change {#step_one}
+## ステップ 1: 変更を広く眺める {#step_one}
 
-Look at the [CL description](../developer/cl-descriptions.md) and what the CL
-does in general. Does this change even make sense? If this change shouldn't have
-happened in the first place, please respond immediately with an explanation of
-why the change should not be happening. When you reject a change like this, it's
-also a good idea to suggest to the developer what they should have done instead.
+[CL のディスクリプション](../developer/cl-descriptions.md)と CL が大まかに何をしているかを確認してください。
+この変更は機能しているでしょうか？
+そもそもこの変更がしてははならないものであれば、変更すべきでない理由を添えてすぐに返信してください。
+そのように変更を却下する場合、代わりに何をすべきかを開発者に提案するのも良い考えです。
 
-For example, you might say "Looks like you put some good work into this, thanks!
-However, we're actually going in the direction of removing the FooWidget system
-that you're modifying here, and so we don't want to make any new modifications
-to it right now. How about instead you refactor our new BarWidget class?"
+たとえば、次のように伝えることができます。「これに関して良い仕事をしてくださっているように思えます。ありがとう！ですが、実はあなたがここで修正した FooWidget システムは削除する方向で進めているため、今のところ新しい修正をしたくないのです。代わりに新しい BarWidget クラスをリファクタリングしていただくのはどうでしょうか？」
 
-Note that not only did the reviewer reject the current CL and provide an
-alternative suggestion, but they did it *courteously*. This kind of courtesy is
-important because we want to show that we respect each other as developers even
-when we disagree.
+注意していただきたいのですが、レビュアーは現在の CL を却下して代わりの提案をしただけではなくて、それを礼儀正しく伝えました。
+このような礼儀正しさは重要です。私達は意見が一致しないときでも開発者として互いを尊重し合うということを示したいからです。
 
-If you get more than a few CLs that represent changes you don't want to make,
-you should consider re-working your team's development process or the posted
-process for external contributors so that there is more communication before CLs
-are written. It's better to tell people "no" before they've done a ton of work
-that now has to be thrown away or drastically re-written.
+変更してほしくない部分を変更する CL がいくつも送られる場合、
+チームの開発プロセスや外部のコントリビューター向けに投稿されたプロセスを再検討してください。
+CL が書かれる前にもっとコミュニケーションが必要です。
+人々が 1 トンもの仕事をしてその後で破棄や大部分の書き直しを迫られるよりは、事前に「ノー」と言えるほうが良いでしょう。
 
 ## Step Two: Examine the main parts of the CL {#step_two}
 
