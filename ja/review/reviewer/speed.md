@@ -1,79 +1,50 @@
-# Speed of Code Reviews
+# コードレビューのスピード
 
-## Why Should Code Reviews Be Fast? {#why}
+## なぜコードレビューは素早く行うべきか？ {#why}
 
-**At Google, we optimize for the speed at which a team of developers can produce
-a product together**, as opposed to optimizing for the speed at which an
-individual developer can write code. The speed of individual development is
-important, it's just not _as_ important as the velocity of the entire team.
+**Google では開発者のチームが協力してプロダクトを高速に開発するために最適化しており**、開発者個人がコードを高速に書くための最適化はしません。
+開発者個人のスピードは確かに重要ですが、チーム全体のスピードと比べると**同等の**重要性があるわけではありません。
 
-When code reviews are slow, several things happen:
+コードレビューが遅滞するとさまざまなことが起こります。
 
-- **The velocity of the team as a whole is decreased.** Yes, the individual,
-  who doesn't respond quickly to the review, gets other work done. However,
-  new features and bug fixes for the rest of the team are delayed by days,
-  weeks, or months as each CL waits for review and re-review.
-- **Developers start to protest the code review process.** If a reviewer only
-  responds every few days, but requests major changes to the CL each time,
-  that can be frustrating and difficult for developers. Often, this is
-  expressed as complaints about how "strict" the reviewer is being. If the
-  reviewer requests the _same_ substantial changes (changes which really do
-  improve code health) but responds _quickly_ every time the developer makes
-  an update, the complaints tend to disappear. **Most complaints about the
-  code review process are actually resolved by making the process faster.**
-- **Code health can be impacted.** When reviews are slow, there is increased
-  pressure to allow developers to submit CLs that are not as good as they
-  could be. Slow reviews also discourage code cleanups, refactorings, and
-  further improvements to existing CLs.
+- **チーム全体の開発速度が減少します。**もちろん、レビューに素早く反応しなくても個人としては他の仕事を終わらせられます。
+  けれども、チームの他のメンバーが書いた新機能や不具合修正は、CL がレビュー待ち、再レビュー待ちになると何日も何週間も送れることになります。
+- **開発者がコードレビューのプロセスに不満を持ち始めます。**
+  レビュアーが数日おきにしか返信しないのに毎回 CL への大きな変更が要求されると、開発者はストレスをためるし開発が困難になります。
+  よくあることですが、このようなときに表現される不満は、レビュアーが「厳しすぎる」というものです。
+  本質的には**同じ**変更（実際にコードの健康状態を良くする変更）でも開発者の更新に応じてレビュアーが毎回**素早く**返信すれば、このような不満は薄れます。
+  **コードレビューに関する不満はたいていの場合、プロセスをテンポ良く進めるだけで解消します。**
+- **コードの健康状態が悪い影響を受けます。**
+  レビューが遅いと、最高の出来映えといえないような CL でもとにかく提出してしまってよいという雰囲気が開発者の間に広がります。
+  また、レビューの遅れはコードをきれいにしたり、リファクタリングしたり、既存の CL をさらに改善したりする意欲をそぎます。
 
-## How Fast Should Code Reviews Be? {#fast}
+## コードレビューはどれほど急ぐべきか？ {#fast}
 
-If you are not in the middle of a focused task, **you should do a code review
-shortly after it comes in.**
+あるタスクに集中的に取り組んでいる最中でなければ、**コードレビューの依頼が来たらすぐに着手してください。**
 
-**One business day is the maximum time it should take to respond** to a code
-review request (i.e. first thing the next morning).
+コードレビューのリクエストに返信するまでの**最長の時間は一営業日**です（つまり遅くとも翌朝一番に返信すべきです）。
 
-Following these guidelines means that a typical CL should get multiple rounds of
-review (if needed) within a single day.
+このガイドラインに従うと、典型的な CL は（必要なら）一日以内に複数ラウンドに渡ってレビューが行われることになります。
 
-## Speed vs. Interruption {#interruption}
+## スピード vs 割り込み {#interruption}
 
-There is one time where the consideration of personal velocity trumps team
-velocity. **If you are in the middle of a focused task, such as writing code,
-don't interrupt yourself to do a code review.** Research has shown that it can
-take a long time for a developer to get back into a smooth flow of development
-after being interrupted. So interrupting yourself while coding is actually
-_more_ expensive to the team than making another developer wait a bit for a code
-review.
+チームの速度よりも個人の速度を尊重したほうが効率が良い場合があります。
+**コードを書くような集中的に取り組むべきタスク**の最中には、自分のタスクを中断してコードレビューしてはいけません。研究結果によれば、開発者が割り込み作業のあとでスムーズな開発フローに戻るには長い時間がかかることがあります。
+そのため、コーディングの最中に中断すると、他の開発者がコードレビューを多少待つよりも結果的に**余計な**コストがかかります。
 
-Instead, wait for a break point in your work before you respond to a request for
-review. This could be when your current coding task is completed, after lunch,
-returning from a meeting, coming back from the microkitchen, etc.
+それよりは仕事のブレークポイントを待ってからレビューのリクエストに返信しましょう。
+たとえば今のコーディングが完了したときや、ランチの後や、ミーティングから帰ったとき、マイクロキッチンから戻ったときなどです。
 
-## Fast Responses {#responses}
+## 素早い応答 {#responses}
 
-When we talk about the speed of code reviews, it is the _response_ time that we
-are concerned with, as opposed to how long it takes a CL to get through the
-whole review and be submitted. The whole process should also be fast, ideally,
-but **it's even more important for the _individual responses_ to come quickly
-than it is for the whole process to happen rapidly.**
+コードレビューのスピードについて話すとき、私達の関心は**応答**時間の長さであり、レビュー全体が完了して提出されるまでの時間の長さではありません。
+理想的にはプロセス全体も短時間で行うべきですが、**_個々の応答_を素早く行うことのほうが、プロセス全体を短時間で終えることよりも遥かに重要です。**
 
-Even if it sometimes takes a long time to get through the entire review
-_process_, having quick responses from the reviewer throughout the process
-significantly eases the frustration developers can feel with "slow" code
-reviews.
+たとえレビュー全体の**プロセス**に長い時間がかかってもレビュアーから素早く応答がもらえていれば、開発者が「遅い」コードレビューに感じる不満を大きく軽減できます。
 
-If you are too busy to do a full review on a CL when it comes in, you can still
-send a quick response that lets the developer know when you will get to it,
-suggest other reviewers who might be able to respond more quickly, or
-[provide some initial broad comments](navigate.md). (Note: none of this means
-you should interrupt coding even to send a response like this—send the
-response at a reasonable break point in your work.)
+あなたが非常に忙しくて CL のレビュー依頼をされても十分な時間が取れない場合、それでも素早く応答することはできます。いつ着手できるかを開発者に伝えたり、もっと短時間で応答できる他のレビュアーを紹介したり、[広い観点で見た初期段階のコメントを残したり](navigate.md)できます。（注：そういった返信をするとしてもコーディングを中断するべきではありません—仕事中にちょうどいいブレークポイントを見つけて返信してください。）
 
-**It is important that reviewers spend enough time on review that they are
-certain their "LGTM" means "this code meets [our standards](standard.md)."**
-However, individual responses should still ideally be [fast](#fast).
+**レビュアーが十分な時間を取って、「LGTM」が個人の感想でなく「このコードは[私達の基準](standard.md)を満たしている」という意味だと言えるくらいにレビューするのは大切なことです。**同時に、理想的には個々の応答は[素早く](#fast)返信すべきです。
 
 ## Cross-Time-Zone Reviews {#tz}
 
