@@ -46,46 +46,29 @@
 
 **レビュアーが十分な時間を取って、「LGTM」が個人の感想でなく「このコードは[私達の基準](standard.md)を満たしている」という意味だと言えるくらいにレビューするのは大切なことです。**同時に、理想的には個々の応答は[素早く](#fast)返信すべきです。
 
-## Cross-Time-Zone Reviews {#tz}
+## タイムゾーンをまたがるレビュー {#tz}
 
-When dealing with time zone differences, try to get back to the author when they
-are still in the office. If they have already gone home, then try to make sure
-your review is done before they get back to the office the next day.
+タイムゾーンの違いを取り回すには、CL 作成者がいつオフィスに確実にいるかを確認するようにしてください。すでに家に帰ってしまったかもしれません。そのときには翌日に作成者がオフィスに戻る前にレビューを完了するように心がけてください。
 
-## LGTM With Comments {#lgtm-with-comments}
+## コメント付きの LGTM {#lgtm-with-comments}
 
-In order to speed up code reviews, there are certain situations in which a
-reviewer should give LGTM/Approval even though they are also leaving unresolved
-comments on the CL. This is done when either:
+コードレビューのスピードを上げるために、レビュアーが CL に未解決のコメントを残しつつも LGTM / 承認を与えるというケースがあります。これは次のいずれかに当てはまる場合にそうするべきです。
 
-- The reviewer is confident that the developer will appropriately address all
-  the reviewer's remaining comments.
-- The remaining changes are minor and don't _have_ to be done by the
-  developer.
+- 開発者がレビュアーの残したコメントに後で着実に取り組んでくれるとレビュアーが信頼できるとき
+- 先送りにした変更がさほど重要でなく、開発者本人が**必ずしも**行う必要のないとき
 
-The reviewer should specify which of these options they intend, if it is not
-otherwise clear.
+これらのうちどちらがレビュアーの意図なのかをはっきりさせておかないと、曖昧な態度は開発者を混乱させます。
 
-LGTM With Comments is especially worth considering when the developer and
-reviewer are in different time zones and otherwise the developer would be
-waiting for a whole day just to get "LGTM, Approval."
+コメント付きの LGTM が価値を発揮するのは、特に開発者とレビュアーが別々のタイムゾーンで仕事をしているときです。このやり方でレビューを進めないと、開発者は「LGTM / 承認」をもらうためだけに丸一日待たなければならなくなります。
 
-## Large CLs {#large}
+## 大きな CL {#large}
 
-If somebody sends you a code review that is so large you're not sure when you
-will be able to have time to review it, your typical response should be to ask
-the developer to
-[split the CL into several smaller CLs](../developer/small-cls.md) that build on
-each other, instead of one huge CL that has to be reviewed all at once. This is
-usually possible and very helpful to reviewers, even if it takes additional work
-from the developer.
+送られてきたコードレビューがあまりに巨大で、じっくりレビューする時間を取れるか不安なときには、開発者にその CL を[小さな CL に分割する](../developer/small-cls.md)よう依頼するのがよくある対応策です。
+一度にレビューするのが大変な一つの巨大な CL ではなく、それぞれが関連している小さな CL に分割するのです。
+これは開発者にとってみれば仕事が増えますが、普通の CL では不可能な作業でもなく、レビュアーにとっては非常に助かります。
 
-If a CL *can't* be broken up into smaller CLs, and you don't have time to review
-the entire thing quickly, then at least write some comments on the overall
-design of the CL and send it back to the developer for improvement. One of your
-goals as a reviewer should be to always unblock the developer or enable them to
-take some sort of further action quickly, without sacrificing code health to do
-so.
+CL が小さな CL に分割**できない**場合、またさらにレビュアーがすぐにコード全体をレビューする時間が取れないとき、それでも少なくとも CL の全体的な設計に関してコメントを書き送り、開発者に改善を求めることができます。
+いつでも言えることですが、レビュアーとしてのゴールの一つは開発者を作業を滞らせないこと、あるいは次のアクションをすぐに起こせる状態にしておくことです。もちろんコードの健康状態を犠牲にしてはいけませんが。
 
 ## Code Review Improvements Over Time {#time}
 

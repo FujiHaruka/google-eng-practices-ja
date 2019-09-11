@@ -202,7 +202,7 @@ texts:
 ---
 texts:
   en: Cross-Time-Zone Reviews {#tz}
-  ja: __COPY__
+  ja: タイムゾーンをまたがるレビュー {#tz}
 ---
 texts:
   en: >-
@@ -211,11 +211,11 @@ texts:
     are still in the office. If they have already gone home, then try to make sure
 
     your review is done before they get back to the office the next day.
-  ja: __COPY__
+  ja: タイムゾーンの違いを取り回すには、CL 作成者がいつオフィスに確実にいるかを確認するようにしてください。すでに家に帰ってしまったかもしれません。そのときには翌日に作成者がオフィスに戻る前にレビューを完了するように心がけてください。
 ---
 texts:
   en: LGTM With Comments {#lgtm-with-comments}
-  ja: __COPY__
+  ja: コメント付きの LGTM {#lgtm-with-comments}
 ---
 texts:
   en: >-
@@ -224,26 +224,26 @@ texts:
     reviewer should give LGTM/Approval even though they are also leaving unresolved
 
     comments on the CL. This is done when either:
-  ja: __COPY__
+  ja: コードレビューのスピードを上げるために、レビュアーが CL に未解決のコメントを残しつつも LGTM / 承認を与えるというケースがあります。これは次のいずれかに当てはまる場合にそうするべきです。
 ---
 texts:
   en: >-
     The reviewer is confident that the developer will appropriately address all
         the reviewer's remaining comments.
-  ja: __COPY__
+  ja: 開発者がレビュアーの残したコメントに後で着実に取り組んでくれるとレビュアーが信頼できるとき
 ---
 texts:
   en: >-
     The remaining changes are minor and don't _have_ to be done by the
         developer.
-  ja: __COPY__
+  ja: 先送りにした変更がさほど重要でなく、開発者本人が**必ずしも**行う必要のないとき
 ---
 texts:
   en: >-
     The reviewer should specify which of these options they intend, if it is not
 
     otherwise clear.
-  ja: __COPY__
+  ja: これらのうちどちらがレビュアーの意図なのかをはっきりさせておかないと、曖昧な態度は開発者を混乱させます。
 ---
 texts:
   en: >-
@@ -252,11 +252,11 @@ texts:
     reviewer are in different time zones and otherwise the developer would be
 
     waiting for a whole day just to get "LGTM, Approval."
-  ja: __COPY__
+  ja: コメント付きの LGTM が価値を発揮するのは、特に開発者とレビュアーが別々のタイムゾーンで仕事をしているときです。このやり方でレビューを進めないと、開発者は「LGTM / 承認」をもらうためだけに丸一日待たなければならなくなります。
 ---
 texts:
   en: Large CLs {#large}
-  ja: __COPY__
+  ja: 大きな CL {#large}
 ---
 texts:
   en: >-
@@ -273,7 +273,12 @@ texts:
     usually possible and very helpful to reviewers, even if it takes additional work
 
     from the developer.
-  ja: __COPY__
+  ja: >-
+    送られてきたコードレビューがあまりに巨大で、じっくりレビューする時間を取れるか不安なときには、開発者にその CL を[小さな CL に分割する](../developer/small-cls.md)よう依頼するのがよくある対応策です。
+
+    一度にレビューするのが大変な一つの巨大な CL ではなく、それぞれが関連している小さな CL に分割するのです。
+
+    これは開発者にとってみれば仕事が増えますが、普通の CL では不可能な作業でもなく、レビュアーにとっては非常に助かります。
 ---
 texts:
   en: >-
@@ -288,7 +293,10 @@ texts:
     take some sort of further action quickly, without sacrificing code health to do
 
     so.
-  ja: __COPY__
+  ja: >-
+    CL が小さな CL に分割**できない**場合、またさらにレビュアーがすぐにコード全体をレビューする時間が取れないとき、それでも少なくとも CL の全体的な設計に関してコメントを書き送り、開発者に改善を求めることができます。
+
+    いつでも言えることですが、レビュアーとしてのゴールの一つは開発者を作業を滞らせないこと、あるいは次のアクションをすぐに起こせる状態にしておくことです。もちろんコードの健康状態を犠牲にしてはいけませんが。
 ---
 texts:
   en: Code Review Improvements Over Time {#time}
