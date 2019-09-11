@@ -300,7 +300,7 @@ texts:
 ---
 texts:
   en: Code Review Improvements Over Time {#time}
-  ja: __COPY__
+  ja: コードレビューを長期的に改善する {#time}
 ---
 texts:
   en: >-
@@ -321,22 +321,29 @@ texts:
     the [code review standards](standard.md) or quality for an imagined improvement
 
     in velocity**
-  ja: __COPY__
+  ja: >-
+    あなたがこのガイドラインに準拠してコードレビューを厳密に行っていけば、全体的なコードレビューのプロセスが時間をかけてだんだんと速くなっていくのがわかるはずです。
+
+    開発者は健康的なコードを書くために何が必要かを学び、最初から質の高い CL を送るようになり、レビューに必要な時間はだんだんと減っていきます。
+
+    レビュアーは素早く応答することを学び、レビュープロセスに無駄な遅延がなくなります。
+
+    それでも、**[コードレビューの基準](standard.md)に妥協しないでください。スピードを上げてもコードの品質の改善に妥協しないでください。**
 ---
 texts:
   en: —
-  ja: __COPY__
+  ja: ""
 ---
 texts:
   en: >-
     it's not actually going to make anything happen more
 
     quickly, in the long run.
-  ja: __COPY__
+  ja: 長期的にみれば、レビューが短時間で終えられたからといって、それだけでひとかどの仕事をしたことにはなりませんから。
 ---
 texts:
   en: Emergencies
-  ja: __COPY__
+  ja: 緊急事態
 ---
 texts:
   en: >-
@@ -349,8 +356,11 @@ texts:
     a description of which situations actually qualify as emergencies and which
 
     don't.
-  ja: __COPY__
+  ja: >-
+    [緊急事態](../emergencies.md)というものもあります。緊急事態の CL は**全**レビュープロセスを素早く終えなければなりませんし、品質に関するガイドラインは緩められます。
+
+    けれども、どんな状況が緊急事態に該当するのか、逆にどんな状況が緊急事態に該当しないのかを判断するために[何が緊急事態か？](../emergencies.md#what)を確認してください。
 ---
 texts:
   en: "Next: [How to Write Code Review Comments](comments.md)"
-  ja: __COPY__
+  ja: "次: [コードレビューのコメントの書き方](comments.md)"

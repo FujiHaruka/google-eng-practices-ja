@@ -70,25 +70,16 @@
 CL が小さな CL に分割**できない**場合、またさらにレビュアーがすぐにコード全体をレビューする時間が取れないとき、それでも少なくとも CL の全体的な設計に関してコメントを書き送り、開発者に改善を求めることができます。
 いつでも言えることですが、レビュアーとしてのゴールの一つは開発者を作業を滞らせないこと、あるいは次のアクションをすぐに起こせる状態にしておくことです。もちろんコードの健康状態を犠牲にしてはいけませんが。
 
-## Code Review Improvements Over Time {#time}
+## コードレビューを長期的に改善する {#time}
 
-If you follow these guidelines and you are strict with your code reviews, you
-should find that the entire code review process tends to go faster and faster
-over time. Developers learn what is required for healthy code, and send you CLs
-that are great from the start, requiring less and less review time. Reviewers
-learn to respond quickly and not add unnecessary latency into the review
-process.
-But **don't compromise on
-the [code review standards](standard.md) or quality for an imagined improvement
-in velocity**—it's not actually going to make anything happen more
-quickly, in the long run.
+あなたがこのガイドラインに準拠してコードレビューを厳密に行っていけば、全体的なコードレビューのプロセスが時間をかけてだんだんと速くなっていくのがわかるはずです。
+開発者は健康的なコードを書くために何が必要かを学び、最初から質の高い CL を送るようになり、レビューに必要な時間はだんだんと減っていきます。
+レビュアーは素早く応答することを学び、レビュープロセスに無駄な遅延がなくなります。
+それでも、**[コードレビューの基準](standard.md)に妥協しないでください。スピードを上げてもコードの品質の改善に妥協しないでください。**長期的にみれば、レビューが短時間で終えられたからといって、それだけでひとかどの仕事をしたことにはなりませんから。
 
-## Emergencies
+## 緊急事態
 
-There are also [emergencies](../emergencies.md) where CLs must pass through the
-_whole_ review process very quickly, and where the quality guidelines would be
-relaxed. However, please see [What Is An Emergency?](../emergencies.md#what) for
-a description of which situations actually qualify as emergencies and which
-don't.
+[緊急事態](../emergencies.md)というものもあります。緊急事態の CL は**全**レビュープロセスを素早く終えなければなりませんし、品質に関するガイドラインは緩められます。
+けれども、どんな状況が緊急事態に該当するのか、逆にどんな状況が緊急事態に該当しないのかを判断するために[何が緊急事態か？](../emergencies.md#what)を確認してください。
 
-Next: [How to Write Code Review Comments](comments.md)
+次: [コードレビューのコメントの書き方](comments.md)
