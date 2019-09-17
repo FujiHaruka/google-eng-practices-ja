@@ -1,34 +1,34 @@
 texts:
   en: How to write code review comments
-  ja: __COPY__
+  ja: レビューコメントの書き方
 ---
 texts:
   en: Summary
-  ja: __COPY__
+  ja: 要約
 ---
 texts:
   en: Be kind.
-  ja: __COPY__
+  ja: コメントは丁重に
 ---
 texts:
   en: Explain your reasoning.
-  ja: __COPY__
+  ja: 理由を説明してください
 ---
 texts:
   en: >-
     Balance giving explicit directions with just pointing out problems and
         letting the developer decide.
-  ja: __COPY__
+  ja: 問題の指摘に加えて明確な方向性を示すことと、開発者本人に決定を委ねることをバランス良く行ってください
 ---
 texts:
   en: >-
     Encourage developers to simplify code or add code comments instead of just
         explaining the complexity to you.
-  ja: __COPY__
+  ja: 複雑なコードを見つけたらそれを説明してもらうだけで終わらせず、コードをシンプルにしてもらうとかコードにコメントを追加するよう開発者に勧めてください
 ---
 texts:
   en: Courtesy
-  ja: __COPY__
+  ja: 礼儀正しさ
 ---
 texts:
   en: >-
@@ -45,14 +45,21 @@ texts:
     this practice, but you should definitely use it when saying something that might
 
     otherwise be upsetting or contentious. For example:
-  ja: __COPY__
+  ja: >-
+    一般論として、あなたがレビューしているコードの開発者にコメントを送るとき、明確で有益な内容であることもちろん大切ですが、礼儀正しく敬意を払った書き方であることも大切です。
+
+    それを実践する一つの方法は、必ず**コード**についてコメントし、**開発者本人**についてコメントしないよう心がけることです。
+
+    この慣例に杓子定規に従う必要はありませんが、相手を傷つけたり怒らせたりするかもしれない繊細な内容を書くときには必ずそうするようにしてください。
+
+    以下はその例です。
 ---
 texts:
   en: >-
     Bad: "Why did **you** use threads here when there's obviously no benefit to be
 
     gained from concurrency?"
-  ja: __COPY__
+  ja: 悪い例「並行処理にしても明らかにメリットがないのに、どうして**あなたは**スレッドを使ったのですか？」
 ---
 texts:
   en: >-
@@ -63,11 +70,11 @@ texts:
     benefit, it's best for this code to be single-threaded instead of using multiple
 
     threads."
-  ja: __COPY__
+  ja: 良い例「見たところ、ここで使った並行処理モデルは実際にはパフォーマンス上のメリットがないまま、ただシステムを複雑にしています。パフォーマンス上のメリットがないので、複数スレッドを使わずにシングルスレッドのコードにするのが最善です」
 ---
 texts:
   en: Explain Why {#why}
-  ja: __COPY__
+  ja: 「なぜ」を説明する {#why}
 ---
 texts:
   en: >-
@@ -80,11 +87,16 @@ texts:
     to give a bit more explanation around your intent, the best practice you're
 
     following, or how your suggestion improves code health.
-  ja: __COPY__
+  ja: >-
+    上の「良い例」でひとつお気づきでしょうが、あなたが書いているコメントの「理由」を開発者が理解することは有益です。
+
+    レビューコメントに必ずこの情報を含める必要があるかというと、そうではありませんが、それが適切な場合があります。
+
+    そういうときには、コメントの意図についてもう少し詳しく説明したり、あなたが参考にしているベストプラクティスを教えたり、あなたの提案がどのようにコードの健康状態を良くするのかを解説したりしてください。
 ---
 texts:
   en: Giving Guidance {#guidance}
-  ja: __COPY__
+  ja: 指示を与える {#guidance}
 ---
 texts:
   en: >-
@@ -93,7 +105,8 @@ texts:
     reviewer's.** You are not required to do detailed design of a solution or write
 
     code for the developer.
-  ja: __COPY__
+  ja: >-
+    **CL を修正するのは一般的に開発者の責任であって、レビュアーの責任ではありません。**ソリューションの詳細な設計をしたり開発者の代わりのコードを書いたりする仕事はレビュアーに求められていません。
 ---
 texts:
   en: >-
@@ -108,7 +121,14 @@ texts:
     can result in a better solution, because the developer is closer to the code
 
     than the reviewer is.
-  ja: __COPY__
+  ja: >-
+    とはいえ、レビュアーは手助けしないでただ突き放せばよいということではありません。
+
+    一般にレビュアーは、問題を指摘することと指示を直接与えることを適度にバランス良く行うべきです。
+
+    問題を指摘して決定を開発者本人に任せることは、しばしば開発者が自分で学ぶ機会になりますし、コードレビューが楽になります。
+
+    また、開発者はレビュアーよりもコードを間近で見ているので、開発者に任せるほうが良いソリューションになることもあります。
 ---
 texts:
   en: >-
@@ -119,11 +139,16 @@ texts:
     secondary goal is improving the skills of developers so that they require less
 
     and less review over time.
-  ja: __COPY__
+  ja: >-
+    その一方で、直接的な指示や提案や、ときにはコードを見せることがさらに有益になる場合もあります。
+
+    コードレビューの主要な目的は CL の品質をできる限り良くすることです。
+
+    第二の目的は、開発者のスキルを向上させ、長期的にレビューを不要にすることです。
 ---
 texts:
   en: Accepting Explanations {#explanations}
-  ja: __COPY__
+  ja: 説明を受け入れる {#explanations}
 ---
 texts:
   en: >-
@@ -134,7 +159,10 @@ texts:
     Occasionally, adding a comment in the code is also an appropriate response, as
 
     long as it's not just explaining overly complex code.
-  ja: __COPY__
+  ja: >-
+    あなたが理解できないコードを開発者に説明してもらうのは、多くの場合、**コードをもっと明確に書き直してもらう**ほうが良い結果になります。
+
+    ときには、複雑すぎるコードを説明してもらうだけでなく、コードにコメントを追加するのも適切な応答になります。
 ---
 texts:
   en: >-
@@ -145,8 +173,8 @@ texts:
     you are reviewing an area you are not very familiar with and the developer
 
     explains something that normal readers of the code would have already known.
-  ja: __COPY__
+  ja: "**コードレビューツールの中に説明を書き残しても、将来そのコードを読む人にとって役に立ちません。**ツールにコメントを残すのが受け入れられるケースは、限られた状況だけです。たとえば、あなたがあまり詳しくない分野のレビューをしていて、通常そのコードを読む開発者はすでによく知っているような情報を説明してもらうときには、ツールにコメントを残せば十分です。"
 ---
 texts:
   en: "Next: [Handling Pushback in Code Reviews](pushback.md)"
-  ja: __COPY__
+  ja: "次: [コードレビューの差し戻し処理](pushback.md)"

@@ -1,68 +1,47 @@
-# How to write code review comments
+# レビューコメントの書き方
 
-## Summary
+## 要約
 
-- Be kind.
-- Explain your reasoning.
-- Balance giving explicit directions with just pointing out problems and
-  letting the developer decide.
-- Encourage developers to simplify code or add code comments instead of just
-  explaining the complexity to you.
+- コメントは丁重に
+- 理由を説明してください
+- 問題の指摘に加えて明確な方向性を示すことと、開発者本人に決定を委ねることをバランス良く行ってください
+- 複雑なコードを見つけたらそれを説明してもらうだけで終わらせず、コードをシンプルにしてもらうとかコードにコメントを追加するよう開発者に勧めてください
 
-## Courtesy
+## 礼儀正しさ
 
-In general, it is important to be
-courteous and respectful while also being
-very clear and helpful to the developer whose code you are reviewing. One way to
-do this is to be sure that you are always making comments about the *code* and
-never making comments about the *developer*. You don't always have to follow
-this practice, but you should definitely use it when saying something that might
-otherwise be upsetting or contentious. For example:
+一般論として、あなたがレビューしているコードの開発者にコメントを送るとき、明確で有益な内容であることもちろん大切ですが、礼儀正しく敬意を払った書き方であることも大切です。
+それを実践する一つの方法は、必ず**コード**についてコメントし、**開発者本人**についてコメントしないよう心がけることです。
+この慣例に杓子定規に従う必要はありませんが、相手を傷つけたり怒らせたりするかもしれない繊細な内容を書くときには必ずそうするようにしてください。
+以下はその例です。
 
-Bad: "Why did **you** use threads here when there's obviously no benefit to be
-gained from concurrency?"
+悪い例「並行処理にしても明らかにメリットがないのに、どうして**あなたは**スレッドを使ったのですか？」
 
-Good: "The concurrency model here is adding complexity to the system without any
-actual performance benefit that I can see. Because there's no performance
-benefit, it's best for this code to be single-threaded instead of using multiple
-threads."
+良い例「見たところ、ここで使った並行処理モデルは実際にはパフォーマンス上のメリットがないまま、ただシステムを複雑にしています。パフォーマンス上のメリットがないので、複数スレッドを使わずにシングルスレッドのコードにするのが最善です」
 
-## Explain Why {#why}
+## 「なぜ」を説明する {#why}
 
-One thing you'll notice about the "good" example from above is that it helps the
-developer understand *why* you are making your comment. You don't always need to
-include this information in your review comments, but sometimes it's appropriate
-to give a bit more explanation around your intent, the best practice you're
-following, or how your suggestion improves code health.
+上の「良い例」でひとつお気づきでしょうが、あなたが書いているコメントの「理由」を開発者が理解することは有益です。
+レビューコメントに必ずこの情報を含める必要があるかというと、そうではありませんが、それが適切な場合があります。
+そういうときには、コメントの意図についてもう少し詳しく説明したり、あなたが参考にしているベストプラクティスを教えたり、あなたの提案がどのようにコードの健康状態を良くするのかを解説したりしてください。
 
-## Giving Guidance {#guidance}
+## 指示を与える {#guidance}
 
-**In general it is the developer's responsibility to fix a CL, not the
-reviewer's.** You are not required to do detailed design of a solution or write
-code for the developer.
+**CL を修正するのは一般的に開発者の責任であって、レビュアーの責任ではありません。**ソリューションの詳細な設計をしたり開発者の代わりのコードを書いたりする仕事はレビュアーに求められていません。
 
-This doesn't mean the reviewer should be unhelpful, though. In general you
-should strike an appropriate balance between pointing out problems and providing
-direct guidance. Pointing out problems and letting the developer make a decision
-often helps the developer learn, and makes it easier to do code reviews. It also
-can result in a better solution, because the developer is closer to the code
-than the reviewer is.
+とはいえ、レビュアーは手助けしないでただ突き放せばよいということではありません。
+一般にレビュアーは、問題を指摘することと指示を直接与えることを適度にバランス良く行うべきです。
+問題を指摘して決定を開発者本人に任せることは、しばしば開発者が自分で学ぶ機会になりますし、コードレビューが楽になります。
+また、開発者はレビュアーよりもコードを間近で見ているので、開発者に任せるほうが良いソリューションになることもあります。
 
-However, sometimes direct instructions, suggestions, or even code are more
-helpful. The primary goal of code review is to get the best CL possible. A
-secondary goal is improving the skills of developers so that they require less
-and less review over time.
+その一方で、直接的な指示や提案や、ときにはコードを見せることがさらに有益になる場合もあります。
+コードレビューの主要な目的は CL の品質をできる限り良くすることです。
+第二の目的は、開発者のスキルを向上させ、長期的にレビューを不要にすることです。
 
-## Accepting Explanations {#explanations}
+## 説明を受け入れる {#explanations}
 
-If you ask a developer to explain a piece of code that you don't understand,
-that should usually result in them **rewriting the code more clearly**.
-Occasionally, adding a comment in the code is also an appropriate response, as
-long as it's not just explaining overly complex code.
+あなたが理解できないコードを開発者に説明してもらうのは、多くの場合、**コードをもっと明確に書き直してもらう**ほうが良い結果になります。
+ときには、複雑すぎるコードを説明してもらうだけでなく、コードにコメントを追加するのも適切な応答になります。
 
-**Explanations written only in the code review tool are not helpful to future
-code readers.** They are acceptable only in a few circumstances, such as when
-you are reviewing an area you are not very familiar with and the developer
-explains something that normal readers of the code would have already known.
+**コードレビューツールの中に説明を書き残しても、将来そのコードを読む人にとって役に立ちません。**ツールにコメントを残すのが受け入れられるケースは、限られた状況だけです。たとえば、あなたがあまり詳しくない分野のレビューをしていて、通常そのコードを読む開発者はすでによく知っているような情報を説明してもらうときには、ツールにコメントを残せば十分です。
 
-Next: [Handling Pushback in Code Reviews](pushback.md)
+次: [コードレビューの差し戻し処理](pushback.md)
