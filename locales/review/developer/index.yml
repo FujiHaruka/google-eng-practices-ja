@@ -1,6 +1,6 @@
 texts:
   en: The CL author's guide to getting through code review
-  ja: __COPY__
+  ja: コードレビューを通過するための CL 作成者のガイド
 ---
 texts:
   en: >-
@@ -13,23 +13,23 @@ texts:
     intended to apply to every Google developer, and many people have found it
 
     helpful to read the whole set.
-  ja: __COPY__
+  ja: このセクションでは、開発者がコードレビューにパスするためのベストプラクティスを説明します。ここにあるガイドラインは開発者がコードレビューを素早く通過し、品質の高い結果を残すのに役立つでしょう。すべてを読む必要はありませんが、このガイドラインは Google の全開発者に適用できるように作られているため、全体を通して読むのが有益であるという感想を持つ人が多いです。
 ---
 texts:
   en: "[Writing Good CL Descriptions](cl-descriptions.md)"
-  ja: __COPY__
+  ja: "[適切な CL のディスクリプションを書く](cl-descriptions.md)"
 ---
 texts:
   en: "[Small CLs](small-cls.md)"
-  ja: __COPY__
+  ja: "[小さな CL](small-cls.md)"
 ---
 texts:
   en: "[How to Handle Reviewer Comments](handling-comments.md)"
-  ja: __COPY__
+  ja: "[レビューコメントの対応の仕方](handling-comments.md)"
 ---
 texts:
   en: >-
     See also [How to Do a Code Review](../reviewer/), which gives detailed guidance
 
     for code reviewers.
-  ja: __COPY__
+  ja: "[コードレビューの仕方](../reviewer/)も参考にしてください。こちらはコードレビュアーのための詳細なガイドです。"
