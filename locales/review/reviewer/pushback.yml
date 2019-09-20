@@ -1,6 +1,6 @@
 texts:
   en: Handling pushback in code reviews
-  ja: __COPY__
+  ja: コードレビューの差し戻し処理
 ---
 texts:
   en: >-
@@ -9,11 +9,11 @@ texts:
     with your suggestion or they will complain that you are being too strict in
 
     general.
-  ja: __COPY__
+  ja: 開発者がコードレビューを差し戻すことがあります。開発者があなたの提案に同意できないこともありますし、あなたのレビューが厳格すぎて開発者が不満を抱くために差し戻すこともあります。
 ---
 texts:
   en: Who is right? {#who_is_right}
-  ja: __COPY__
+  ja: 正しいのは誰か？ {#who_is_right}
 ---
 texts:
   en: >-
@@ -26,7 +26,14 @@ texts:
     argument make sense? Does it make sense from a code health perspective? If so,
 
     let them know that they are right and let the issue drop.
-  ja: __COPY__
+  ja: >-
+    開発者があなたの提案に同意できないとき、最初に少し考慮していただきたいのは、開発者のほうが正しいのではないかということです。
+
+    よくあることですが、開発者はあなたよりもコードを間近で見ているため、ある側面では開発者のほうが良い洞察を持っていることもあります。
+
+    開発者の議論は筋が通っているでしょうか？コードの健康状態という視点から理にかなっているでしょうか？
+
+    そうであれば、開発者が正しいということを認め、問題を水に流しましょう。
 ---
 texts:
   en: >-
@@ -37,7 +44,10 @@ texts:
     explanation demonstrates both an understanding of the developer's reply, and
 
     additional information about why the change is being requested.
-  ja: __COPY__
+  ja: >-
+    しかしながら、いつでも開発者が正しいとは限りません。その場合、レビュアーはどうして自分の提案が正しいと思うのかを踏み込んで説明しましょう。
+
+    まず開発者の応答に理解を示し、次に変更が必要な理由を付け加えるのが良い説明です。
 ---
 texts:
   en: >-
@@ -48,7 +58,10 @@ texts:
     resulting code quality improvement justifies the additional work requested.
 
     **Improving code health tends to happen in small steps.**
-  ja: __COPY__
+  ja: >-
+    特に、レビュアーがコードの健康状態を良くする提案をしていると考えられる場合には、その変更によってさらに作業が発生するもののそれに見合うだけコードの品質が改善すると見込まれれば、粘り強く変更を勧めるべきです。
+
+    **コードの健康状態の改善は、スモールステップで行われます。**
 ---
 texts:
   en: >-
@@ -57,11 +70,12 @@ texts:
     sinks in. Just make sure to always stay [polite](comments.md#courtesy) and let
 
     the developer know that you *hear* what they're saying, you just don't *agree*.
-  ja: __COPY__
+  ja: >-
+    提案がきちんと理解してもらえるまで何ラウンドか説明しなければならないときもありますが、いつも[丁重](comments.md#courtesy)に説明するのを忘れず、開発者の言葉をきちんと**聞いた**上で**同意**できないだけなのだということを知らせてください。
 ---
 texts:
   en: Upsetting Developers {#upsetting_developers}
-  ja: __COPY__
+  ja: 人を悩ませる開発者 {#upsetting_developers}
 ---
 texts:
   en: >-
