@@ -177,4 +177,4 @@ texts:
 ---
 texts:
   en: "Next: [Handling Pushback in Code Reviews](pushback.md)"
-  ja: "次: [コードレビューの差し戻し処理](pushback.md)"
+  ja: "次: [コードレビューの取り下げに対応する](pushback.md)"

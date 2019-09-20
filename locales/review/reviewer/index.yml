@@ -42,7 +42,7 @@ texts:
 ---
 texts:
   en: "[Handling Pushback in Code Reviews](pushback.md)"
-  ja: "[コードレビューの差し戻し処理](pushback.md)"
+  ja: "[コードレビューの取り下げに対応する](pushback.md)"
 ---
 texts:
   en: >-
