@@ -1,6 +1,6 @@
 texts:
   en: Handling pushback in code reviews
-  ja: コードレビューの差し戻し処理
+  ja: コードレビューの取り下げを扱う
 ---
 texts:
   en: >-
@@ -9,7 +9,7 @@ texts:
     with your suggestion or they will complain that you are being too strict in
 
     general.
-  ja: 開発者がコードレビューを差し戻すことがあります。開発者があなたの提案に同意できないこともありますし、あなたのレビューが厳格すぎて開発者が不満を抱くために差し戻すこともあります。
+  ja: 開発者がコードレビュー中に取り下げることがあります。開発者があなたの提案に同意できないこともありますし、あなたのレビューが厳格すぎるために開発者が不満を抱いてそうすることもあります。
 ---
 texts:
   en: Who is right? {#who_is_right}
@@ -29,7 +29,7 @@ texts:
   ja: >-
     開発者があなたの提案に同意できないとき、最初に少し考慮していただきたいのは、開発者のほうが正しいのではないかということです。
 
-    よくあることですが、開発者はあなたよりもコードを間近で見ているため、ある側面では開発者のほうが良い洞察を持っていることもあります。
+    よくあることですが、開発者はあなたよりもコードを間近で見ているため、ある側面では開発者のほうが優れた洞察を持っていることもあります。
 
     開発者の議論は筋が通っているでしょうか？コードの健康状態という視点から理にかなっているでしょうか？
 
@@ -47,7 +47,7 @@ texts:
   ja: >-
     しかしながら、いつでも開発者が正しいとは限りません。その場合、レビュアーはどうして自分の提案が正しいと思うのかを踏み込んで説明しましょう。
 
-    まず開発者の応答に理解を示し、次に変更が必要な理由を付け加えるのが良い説明です。
+    まず開発者の応答に理解を示し、それから変更が必要な理由を付け加えるのが良い説明です。
 ---
 texts:
   en: >-
@@ -59,7 +59,7 @@ texts:
 
     **Improving code health tends to happen in small steps.**
   ja: >-
-    特に、レビュアーがコードの健康状態を良くする提案をしていると考えられる場合には、その変更によってさらに作業が発生するもののそれに見合うだけコードの品質が改善すると見込まれれば、粘り強く変更を勧めるべきです。
+    特に、レビュアーがコードの健康状態を良くする提案をしていると思われる場合には、その変更によってさらに作業が発生するもののそれに見合うだけコードの品質が改善すると見込まれれば、粘り強く変更を勧めるべきです。
 
     **コードの健康状態の改善は、スモールステップで行われます。**
 ---
@@ -71,7 +71,7 @@ texts:
 
     the developer know that you *hear* what they're saying, you just don't *agree*.
   ja: >-
-    提案がきちんと理解してもらえるまで何ラウンドか説明しなければならないときもありますが、いつも[丁重](comments.md#courtesy)に説明するのを忘れず、開発者の言葉をきちんと**聞いた**上で**同意**できないだけなのだということを知らせてください。
+    提案がきちんと理解してもらえるまで何ラウンドか説明しなければならないときもありますが、いつも[丁重](comments.md#courtesy)に説明するのを忘れず、開発者の言葉にきちんと**耳を傾けた**上でただ**同意**できないだけなのだということを知らせてください。
 ---
 texts:
   en: Upsetting Developers {#upsetting_developers}
@@ -94,11 +94,16 @@ texts:
     [the way comments are written](comments.md#courtesy) than about the reviewer's
 
     insistence on code quality.
-  ja: __COPY__
+  ja: >-
+    レビュアーが改善を要求すると開発者が傷つくのではないかとレビュアーが思い込んでいる場合があります。確かに開発者が傷つくこともありますが、普通はそれは一時的なことで、時が経つとコードの品質改善に協力してくれたことに深く感謝するようになるものです。
+
+    [丁重](comments.md#courtesy)なコメントを心がけていれば、実際、開発者は傷ついたりしません。そういった心配はレビュアーの杞憂です。
+
+    傷つくことがあるとすれば、コードの品質改善の要求よりも[コメントの書き方](comments.md#courtesy)のほうに原因があるものです。
 ---
 texts:
   en: Cleaning It Up Later {#later}
-  ja: __COPY__
+  ja: あとで片付ける {#later}
 ---
 texts:
   en: >-
@@ -127,7 +132,14 @@ texts:
     code is in the codebase and "done." Letting people "clean things up later" is a
 
     common way for codebases to degenerate.
-  ja: __COPY__
+  ja: >-
+    CL 取り下げのよくある理由は、（もっともなことですが）開発者が仕事を完了させたいからです。この CL を取り入れてもらうために何度もレビューのラウンドを重ねたくないのです。そのため、開発者はこう言います。あとで別の CL でその問題を片付けるから、**この** CL については今は LGTM してほしい、と。
+
+    きちんと有言実行し、問題を解決するフォローアップの CL をすぐに書いてくれる開発者もいます。けれども、経験則が示すところによると、開発者が最初の CL を書いてから時間が経てば経つほど、その問題を片付ける可能性は低くなります。
+
+    事実、開発者が現在の CL の**直後に**問題を片付けるのでなければ、その機会は完全に消失します。こうなるのは開発者が無責任だからではなく、開発者がたくさんの仕事を抱えていて、他の仕事が押し流されて問題を片付けるのを忘れてしまったり時間を取れなくなったりするからです。
+
+    ですから、最良の選択肢は普通、CL がコードベースに取り込まれて「完了 (done)」する前に、開発者に**今**片付けてもらうことです。「あとで片付ける」を許容するとコードベースは悪化します。
 ---
 texts:
   en: >-
@@ -142,11 +154,11 @@ texts:
     can optionally also write a TODO comment in the code that references the filed
 
     bug.
-  ja: __COPY__
+  ja: CL が複雑さを新たに持ち込む場合、[緊急事態](../emergencies.md)でない限り、それが取り込まれる前にきちんと問題を片付ける必要があります。CL が周辺の問題を顕在化しているのに開発者がすぐにその問題に取り組めないときには、問題解決のためにバグを整理保存し、忘れないように自身をアサインしておきます。コードの直すべき箇所に任意で TODO コメントを入れることもできます。
 ---
 texts:
   en: General Complaints About Strictness {#strictness}
-  ja: __COPY__
+  ja: 厳格さに関するよくある不満 {#strictness}
 ---
 texts:
   en: >-
@@ -157,7 +169,7 @@ texts:
     [speed](speed.md) of your code reviews usually causes these complaints to fade
 
     away.
-  ja: __COPY__
+  ja: 以前はゆるいコードレビューをしていた人が急に厳格なレビューをするようになると、開発者があからさまに不満を言うようになることがあります。コードレビューの[スピード](speed.md)を改善すると、そうした不満は解消されることが多いです。
 ---
 texts:
   en: >-
@@ -170,11 +182,12 @@ texts:
     strongest supporters once something happens that causes them to really see the
 
     value you're adding by being strict.
-  ja: __COPY__
+  ja: >-
+    ときには数カ月間にわたってこうした不満がくすぶり続けることもありますが、厳格なレビュープロセスによってコードの品質が向上しているのが目に見えてわかるようになるにつれて、厳格なコードレビューの価値を見直すようになります。それどころか、厳格なレビューによって付加された価値にちょっとしたきっかけで気づくようになると、最もあからさまに反対していた開発者が、最も熱心な支持者になることさえあります。
 ---
 texts:
   en: Resolving Conflicts {#conflicts}
-  ja: __COPY__
+  ja: 意見の対立の解消 {#conflicts}
 ---
 texts:
   en: >-
@@ -185,4 +198,4 @@ texts:
     [The Standard of Code Review](standard.md) for guidelines and principles that
 
     can help resolve the conflict.
-  ja: __COPY__
+  ja: 上記の原則に従ってレビューした結果、それでもレビュアーと開発者の間で解決できない意見の対立が生じた場合、対立を解消するためのガイドラインおよび原則として[コードレビューの基準](standard.md)を参考にしてください。

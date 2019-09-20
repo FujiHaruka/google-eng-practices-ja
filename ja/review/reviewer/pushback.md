@@ -1,81 +1,43 @@
-# Handling pushback in code reviews
+# コードレビューの取り下げを扱う
 
-Sometimes a developer will push back on a code review. Either they will disagree
-with your suggestion or they will complain that you are being too strict in
-general.
+開発者がコードレビュー中に取り下げることがあります。開発者があなたの提案に同意できないこともありますし、あなたのレビューが厳格すぎるために開発者が不満を抱いてそうすることもあります。
 
-## Who is right? {#who_is_right}
+## 正しいのは誰か？ {#who_is_right}
 
-When a developer disagrees with your suggestion, first take a moment to consider
-if they are correct. Often, they are closer to the code than you are, and so
-they might really have a better insight about certain aspects of it. Does their
-argument make sense? Does it make sense from a code health perspective? If so,
-let them know that they are right and let the issue drop.
+開発者があなたの提案に同意できないとき、最初に少し考慮していただきたいのは、開発者のほうが正しいのではないかということです。
+よくあることですが、開発者はあなたよりもコードを間近で見ているため、ある側面では開発者のほうが優れた洞察を持っていることもあります。
+開発者の議論は筋が通っているでしょうか？コードの健康状態という視点から理にかなっているでしょうか？
+そうであれば、開発者が正しいということを認め、問題を水に流しましょう。
 
-However, developers are not always right. In this case the reviewer should
-further explain why they believe that their suggestion is correct. A good
-explanation demonstrates both an understanding of the developer's reply, and
-additional information about why the change is being requested.
+しかしながら、いつでも開発者が正しいとは限りません。その場合、レビュアーはどうして自分の提案が正しいと思うのかを踏み込んで説明しましょう。
+まず開発者の応答に理解を示し、それから変更が必要な理由を付け加えるのが良い説明です。
 
-In particular, when the reviewer believes their suggestion will improve code
-health, they should continue to advocate for the change, if they believe the
-resulting code quality improvement justifies the additional work requested.
-**Improving code health tends to happen in small steps.**
+特に、レビュアーがコードの健康状態を良くする提案をしていると思われる場合には、その変更によってさらに作業が発生するもののそれに見合うだけコードの品質が改善すると見込まれれば、粘り強く変更を勧めるべきです。
+**コードの健康状態の改善は、スモールステップで行われます。**
 
-Sometimes it takes a few rounds of explaining a suggestion before it really
-sinks in. Just make sure to always stay [polite](comments.md#courtesy) and let
-the developer know that you *hear* what they're saying, you just don't *agree*.
+提案がきちんと理解してもらえるまで何ラウンドか説明しなければならないときもありますが、いつも[丁重](comments.md#courtesy)に説明するのを忘れず、開発者の言葉にきちんと**耳を傾けた**上でただ**同意**できないだけなのだということを知らせてください。
 
-## Upsetting Developers {#upsetting_developers}
+## 人を悩ませる開発者 {#upsetting_developers}
 
-Reviewers sometimes believe that the developer will be upset if the reviewer
-insists on an improvement. Sometimes developers do become upset, but it is
-usually brief and they become very thankful later that you helped them improve
-the quality of their code. Usually, if you are [polite](comments.md#courtesy) in
-your comments, developers actually don't become upset at all, and the worry is
-just in the reviewer's mind. Upsets are usually more about
-[the way comments are written](comments.md#courtesy) than about the reviewer's
-insistence on code quality.
+レビュアーが改善を要求すると開発者が傷つくのではないかとレビュアーが思い込んでいる場合があります。確かに開発者が傷つくこともありますが、普通はそれは一時的なことで、時が経つとコードの品質改善に協力してくれたことに深く感謝するようになるものです。
+[丁重](comments.md#courtesy)なコメントを心がけていれば、実際、開発者は傷ついたりしません。そういった心配はレビュアーの杞憂です。
+傷つくことがあるとすれば、コードの品質改善の要求よりも[コメントの書き方](comments.md#courtesy)のほうに原因があるものです。
 
-## Cleaning It Up Later {#later}
+## あとで片付ける {#later}
 
-A common source of push back is that developers (understandably) want to get
-things done. They don't want to go through another round of review just to get
-this CL in. So they say they will clean something up in a later CL, and thus you
-should LGTM *this* CL now. Some developers are very good about this, and will
-immediately write a follow-up CL that fixes the issue. However, experience shows
-that as more time passes after a developer writes the original CL, the less
-likely this clean up is to happen. In fact, usually unless the developer does
-the clean up *immediately* after the present CL, it never happens. This isn't
-because developers are irresponsible, but because they have a lot of work to do
-and the cleanup gets lost or forgotten in the press of other work. Thus, it is
-usually best to insist that the developer clean up their CL *now*, before the
-code is in the codebase and "done." Letting people "clean things up later" is a
-common way for codebases to degenerate.
+CL 取り下げのよくある理由は、（もっともなことですが）開発者が仕事を完了させたいからです。この CL を取り入れてもらうために何度もレビューのラウンドを重ねたくないのです。そのため、開発者はこう言います。あとで別の CL でその問題を片付けるから、**この** CL については今は LGTM してほしい、と。
+きちんと有言実行し、問題を解決するフォローアップの CL をすぐに書いてくれる開発者もいます。けれども、経験則が示すところによると、開発者が最初の CL を書いてから時間が経てば経つほど、その問題を片付ける可能性は低くなります。
+事実、開発者が現在の CL の**直後に**問題を片付けるのでなければ、その機会は完全に消失します。こうなるのは開発者が無責任だからではなく、開発者がたくさんの仕事を抱えていて、他の仕事が押し流されて問題を片付けるのを忘れてしまったり時間を取れなくなったりするからです。
+ですから、最良の選択肢は普通、CL がコードベースに取り込まれて「完了 (done)」する前に、開発者に**今**片付けてもらうことです。「あとで片付ける」を許容するとコードベースは悪化します。
 
-If a CL introduces new complexity, it must be cleaned up before submission
-unless it is an [emergency](../emergencies.md). If the CL exposes surrounding
-problems and they can't be addressed right now, the developer should file a bug
-for the cleanup and assign it to themselves so that it doesn't get lost. They
-can optionally also write a TODO comment in the code that references the filed
-bug.
+CL が複雑さを新たに持ち込む場合、[緊急事態](../emergencies.md)でない限り、それが取り込まれる前にきちんと問題を片付ける必要があります。CL が周辺の問題を顕在化しているのに開発者がすぐにその問題に取り組めないときには、問題解決のためにバグを整理保存し、忘れないように自身をアサインしておきます。コードの直すべき箇所に任意で TODO コメントを入れることもできます。
 
-## General Complaints About Strictness {#strictness}
+## 厳格さに関するよくある不満 {#strictness}
 
-If you previously had fairly lax code reviews and you switch to having strict
-reviews, some developers will complain very loudly. Improving the
-[speed](speed.md) of your code reviews usually causes these complaints to fade
-away.
+以前はゆるいコードレビューをしていた人が急に厳格なレビューをするようになると、開発者があからさまに不満を言うようになることがあります。コードレビューの[スピード](speed.md)を改善すると、そうした不満は解消されることが多いです。
 
-Sometimes it can take months for these complaints to fade away, but eventually
-developers tend to see the value of strict code reviews as they see what great
-code they help generate. Sometimes the loudest protesters even become your
-strongest supporters once something happens that causes them to really see the
-value you're adding by being strict.
+ときには数カ月間にわたってこうした不満がくすぶり続けることもありますが、厳格なレビュープロセスによってコードの品質が向上しているのが目に見えてわかるようになるにつれて、厳格なコードレビューの価値を見直すようになります。それどころか、厳格なレビューによって付加された価値にちょっとしたきっかけで気づくようになると、最もあからさまに反対していた開発者が、最も熱心な支持者になることさえあります。
 
-## Resolving Conflicts {#conflicts}
+## 意見の対立の解消 {#conflicts}
 
-If you are following all of the above but you still encounter a conflict between
-yourself and a developer that can't be resolved, see
-[The Standard of Code Review](standard.md) for guidelines and principles that
-can help resolve the conflict.
+上記の原則に従ってレビューした結果、それでもレビュアーと開発者の間で解決できない意見の対立が生じた場合、対立を解消するためのガイドラインおよび原則として[コードレビューの基準](standard.md)を参考にしてください。
