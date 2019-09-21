@@ -164,17 +164,18 @@ texts:
 ---
 texts:
   en: When are Large CLs Okay? {#large_okay}
-  ja: __COPY__
+  ja: どのようなときに大きな CL でも良いか？ {#large_okay}
 ---
 texts:
   en: "There are a few situations in which large changes aren't as bad:"
-  ja: __COPY__
+  ja: 大きな変更でも許される状況が例外的にあります。
 ---
 texts:
   en: >-
     You can usually count deletion of an entire file as being just one line of
         change, because it doesn't take the reviewer very long to review.
-  ja: __COPY__
+  ja: >-
+    一つのファイルをまるごと削除する場合は、一行だけの変更とみなしても構いません。レビューするのにそれほど長い時間がかからないからです。
 ---
 texts:
   en: >-
@@ -183,18 +184,19 @@ texts:
         and say that they really do want the change. These CLs can be larger,
         although some of the caveats from above (such as merging and testing) still
         apply.
-  ja: __COPY__
+  ja: >-
+    大規模な CL がリファクタリングツールによって自動生成される場合があります。そのツールをあなたが完全に信頼していれば、そういった CL が大きくても構いません。レビュアーの仕事は正常に動作していることを確認して、意図通りに変更されていると言うだけです。このような CL は大きくなっても構いません。ただし、上で述べた注意書き（マージやテストなど）はこの場合にも適用されます。
 ---
 texts:
   en: Splitting by Files {#splitting-files}
-  ja: __COPY__
+  ja: ファイルによる分割 {#splitting-files}
 ---
 texts:
   en: >-
     Another way to split up a CL is by groupings of files that will require
 
     different reviewers but are otherwise self-contained changes.
-  ja: __COPY__
+  ja: CL を分割する他のやり方として、別々のレビュアーを必要とするという点を除けば自己完結的な変更となる複数のファイルをひとまとめにグループ分けするというのがあります。
 ---
 texts:
   en: >-
@@ -207,7 +209,8 @@ texts:
     you do this, you might want to inform both sets of reviewers about the other CL
 
     that you wrote, so that they have context for your changes.
-  ja: __COPY__
+  ja: >-
+    例1: ある protocol buffer を修正する CL を一つ送り、その proto を使用するコードを変更する CL を別で送ります。proto 変更の CL をコード変更の CL よりも先に提出する必要がありますが、二つの CL は同時にレビューを受けられます。この場合、両レビュアーに変更のコンテキストを提供するため他方の CL に関する情報を知らせてもよいでしょう。
 ---
 texts:
   en: >-
@@ -218,11 +221,12 @@ texts:
     too, if necessary, as configuration/experiment files are sometimes pushed to
 
     production faster than code changes.
-  ja: __COPY__
+  ja: >-
+    例2: コード変更の CL を一つ送り、そのコードを使用する構成や実験のために CL を別で送ります。このやり方では必要ならロールバックも容易にできます。構成・実験用のファイルはコード変更よりも素早くプロダクションにプッシュされることがあるからです。
 ---
 texts:
   en: Separate Out Refactorings {#refactoring}
-  ja: __COPY__
+  ja: リファクタリングを分離する {#refactoring}
 ---
 texts:
   en: >-

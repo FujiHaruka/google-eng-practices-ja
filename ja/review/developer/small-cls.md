@@ -1,103 +1,50 @@
-# Small CLs
+# 小さな CL
 
-## Why Write Small CLs? {#why}
+## どうして小さな CL を書くのか？ {#why}
 
-Small, simple CLs are:
+小さくシンプルな CL には以下のような利点があります。
 
-- **Reviewed more quickly.** It's easier for a reviewer to find five minutes
-  several times to review small CLs than to set aside a 30 minute block to
-  review one large CL.
-- **Reviewed more thoroughly.** With large changes, reviewers and authors tend
-  to get frustrated by large volumes of detailed commentary shifting back and
-  forth—sometimes to the point where important points get missed or dropped.
-- **Less likely to introduce bugs.** Since you're making fewer changes, it's
-  easier for you and your reviewer to reason effectively about the impact of
-  the CL and see if a bug has been introduced.
-- **Less wasted work if they are rejected.** If you write a huge CL and then
-  your reviewer says that the overall direction is wrong, you've wasted a lot
-  of work.
-- **Easier to merge.** Working on a large CL takes a long time, so you will
-  have lots of conflicts when you merge, and you will have to merge
-  frequently.
-- **Easier to design well.** It's a lot easier to polish the design and code
-  health of a small change than it is to refine all the details of a large
-  change.
-- **Less blocking on reviews.** Sending self-contained portions of your
-  overall change allows you to continue coding while you wait for your current
-  CL in review.
-- **Simpler to roll back.** A large CL will more likely touch files that get
-  updated between the initial CL submission and a rollback CL, complicating
-  the rollback (the intermediate CLs will probably need to be rolled back
-  too).
+- **速くレビューできる。**レビュアーにとって、小さな CL をレビューするための 5 分間を数回確保するほうが、一度の大きな CL をレビューするための 30 分をまとめて確保するよりも容易です。
+- **隅々までレビューできる。**変更が大規模だとあっちこっちに詳細なコメントを大量に書かねばならず、レビュアーと作成者がストレスを感じやすくなります。ときには重要な点を見落としたり省略したりしてしまうこともあります。
+- **バグが混入する可能性が減る。**変更箇所が少なければ、開発者もレビュアーも CL の影響範囲が予測しやすく、バグが混入したかどうかを見分けやすくなります。
+- **CL が却下されても無駄になる作業が少ない。**巨大な CL を書いてからレビュアーに全体的な方向性が間違っていると言われると、多くの作業が無駄になってしまいます。
 
-Note that **reviewers have discretion to reject your change outright for the
-sole reason of it being too large.** Usually they will thank you for your
-contribution but request that you somehow make it into a series of smaller
-changes. It can be a lot of work to split up a change after you've already
-written it, or require lots of time arguing about why the reviewer should accept
-your large change. It's easier to just write small CLs in the first place.
+- **マージしやすい。**大規模な CL での作業には時間がかかるため、マージする頃には多くのコンフリクトが発生し、頻繁にマージしなければならなくなります。
+- **設計を改善しやすくなる。**小さな変更の設計やコードの健康状態を改善するほうが、大きな変更の詳細をすべて見直して設計を洗練させるよりもずっと簡単です。
+- **レビューによって作業がブロックされなくなる。**あなたがしようとしている変更全体のうち一部を自己完結的な CL にして提出すれば、現在の CL のレビューを待つ間にコーディング作業を続けることができます。
+- **ロールバックしやすい。**大きな CL は多くのファイルにわたって変更するため、最初に CL を提出してからロールバックの CL までにそれらのファイルが変更され、ロールバックが複雑になります。（その CL 以降の CL もロールバックする必要が生じることもあります）
 
-## What is Small? {#what_is_small}
+注意していただきたいのですが、**レビュアーにはあなたの変更が大きすぎるというそれだけの理由でただちにその変更を却下できる裁量があります。**普通はそこまでせず、レビュアーはあなたの貢献に感謝しつつも、もっと小さな変更に分けて CL を送ってほしいとリクエストするでしょう。すでにコードを書いたあとで変更を分割するのは骨の折れる作業になりますし、あるいは巨大な変更を受け入れてもらうにしてもレビュアーが納得できるよう議論を交わすのにも多くの時間が必要になります。最初から小さな CL を書くほうが簡単です。
 
-In general, the right size for a CL is **one self-contained change**. This means
-that:
+## 「小さい」とはどういうことか？ {#what_is_small}
 
-- The CL makes a minimal change that addresses **just one thing**. This is
-  usually just one part of a feature, rather than a whole feature at once. In
-  general it's better to err on the side of writing CLs that are too small vs.
-  CLs that are too large. Work with your reviewer to find out what an
-  acceptable size is.
-- Everything the reviewer needs to understand about the CL (except future
-  development) is in the CL, the CL's description, the existing codebase, or a
-  CL they've already reviewed.
-- The system will continue to work well for its users and for the developers
-  after the CL is checked in.
-- The CL is not so small that its implications are difficult to understand. If
-  you add a new API, you should include a usage of the API in the same CL so
-  that reviewers can better understand how the API will be used. This also
-  prevents checking in unused APIs.
+一般に、CL の適切なサイズは**単一の自己完結的な変更**です。これは以下のことを意味します。
 
-There are no hard and fast rules about how large is "too large." 100 lines is
-usually a reasonable size for a CL, and 1000 lines is usually too large, but
-it's up to the judgment of your reviewer. The number of files that a change is
-spread across also affects its "size." A 200-line change in one file might be
-okay, but spread across 50 files it would usually be too large.
+- CL が**ただ一つのこと**に取り組むミニマルな変更を行っています。これは普通、ある機能の全体を一度に実装するというより、その中の一部分だけを実装する CL です。小さすぎる CL を書いて失敗するほうが大きすぎる CL を書いて失敗するよりもよほど良いです。レビュアーと協力してどんなサイズの CL なら受け入れられるかを探ってみてください。
+- レビュアーがその CL について理解する必要のあるすべての情報 (将来の開発を除く) が CLや、CL ディスクリプション、既存のコードベース、これまでレビューした CL の中にあります。
+- システムはその CL がチェックインされたあともユーザーにとっても開発者にとっても正常に動作し続けます。
+- CL がその含意がわかりにくくなるほどに過剰に小さくはありません。新しい API を追加するのなら、同じ CL の中にその API の使い方を含めるべきです。それはレビュアーが API の使い方をきちんと理解できるようになるためです。こうすることは、使われていない API のチェックインを防止します。
 
-Keep in mind that although you have been intimately involved with your code from
-the moment you started to write it, the reviewer often has no context. What
-seems like an acceptably-sized CL to you might be overwhelming to your reviewer.
-When in doubt, write CLs that are smaller than you think you need to write.
-Reviewers rarely complain about getting CLs that are too small.
+どれほど大きければ「大きすぎる」と言えるのかを判断する厳密で手っ取り早いルールはありません。大雑把には 100 行の CL は適度なサイズで、1000 行になると大きすぎると言えますが、これもレビュアーの判断次第です。変更するファイル数も CL の「サイズ」に関係あります。200 行の変更が行われていてもそれが 1 つのファイルで完結していれば許容できるかもしれませんが、 50 ファイルにもわたる変更であれば普通は「大きすぎる」と判断されるでしょう。
 
-## When are Large CLs Okay? {#large_okay}
+覚えておいていただきたいのですが、あなたはコードを書き始めた瞬間からコードに没頭していて目を閉じてもコードを思い浮かべられるとしても、レビュアーは何のコンテキストも持たないことがよくあります。あなたにとって許容範囲な CL のサイズのように思えても、レビュアーにとっては大きすぎるかもしれません。CL が小さすぎるからといってそのことで不満をこぼすレビュアーはめったにいません。
 
-There are a few situations in which large changes aren't as bad:
+## どのようなときに大きな CL でも良いか？ {#large_okay}
 
-- You can usually count deletion of an entire file as being just one line of
-  change, because it doesn't take the reviewer very long to review.
-- Sometimes a large CL has been generated by an automatic refactoring tool
-  that you trust completely, and the reviewer's job is just to sanity check
-  and say that they really do want the change. These CLs can be larger,
-  although some of the caveats from above (such as merging and testing) still
-  apply.
+大きな変更でも許される状況が例外的にあります。
 
-### Splitting by Files {#splitting-files}
+- 一つのファイルをまるごと削除する場合は、一行だけの変更とみなしても構いません。レビューするのにそれほど長い時間がかからないからです。
+- 大規模な CL がリファクタリングツールによって自動生成される場合があります。そのツールをあなたが完全に信頼していれば、そういった CL が大きくても構いません。レビュアーの仕事は正常に動作していることを確認して、意図通りに変更されていると言うだけです。このような CL は大きくなっても構いません。ただし、上で述べた注意書き（マージやテストなど）はこの場合にも適用されます。
 
-Another way to split up a CL is by groupings of files that will require
-different reviewers but are otherwise self-contained changes.
+### ファイルによる分割 {#splitting-files}
 
-For example: you send off one CL for modifications to a protocol buffer and
-another CL for changes to the code that uses that proto. You have to submit the
-proto CL before the code CL, but they can both be reviewed simultaneously. If
-you do this, you might want to inform both sets of reviewers about the other CL
-that you wrote, so that they have context for your changes.
+CL を分割する他のやり方として、別々のレビュアーを必要とするという点を除けば自己完結的な変更となる複数のファイルをひとまとめにグループ分けするというのがあります。
 
-Another example: you send one CL for a code change and another for the
-configuration or experiment that uses that code; this is easier to roll back
-too, if necessary, as configuration/experiment files are sometimes pushed to
-production faster than code changes.
+例1: ある protocol buffer を修正する CL を一つ送り、その proto を使用するコードを変更する CL を別で送ります。proto 変更の CL をコード変更の CL よりも先に提出する必要がありますが、二つの CL は同時にレビューを受けられます。この場合、両レビュアーに変更のコンテキストを提供するため他方の CL に関する情報を知らせてもよいでしょう。
 
-## Separate Out Refactorings {#refactoring}
+例2: コード変更の CL を一つ送り、そのコードを使用する構成や実験のために CL を別で送ります。このやり方では必要ならロールバックも容易にできます。構成・実験用のファイルはコード変更よりも素早くプロダクションにプッシュされることがあるからです。
+
+## リファクタリングを分離する {#refactoring}
 
 It's usually best to do refactorings in a separate CL from feature changes or
 bug fixes. For example, moving and renaming a class should be in a different CL
