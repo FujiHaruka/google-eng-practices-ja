@@ -1,6 +1,6 @@
 texts:
   en: How to handle reviewer comments
-  ja: __COPY__
+  ja: レビューコメントの対応の仕方
 ---
 texts:
   en: >-
@@ -9,11 +9,12 @@ texts:
     respond with several comments on your CL. Here are some useful things to know
 
     about handling reviewer comments.
-  ja: __COPY__
+  ja: >-
+    CL をレビューに送ると、レビュアーが CL にいくつかのコメントを残してくれます。ここではレビュアーのコメントに対応するときに知っておくと有益なポイントを紹介します。
 ---
 texts:
   en: Don't Take it Personally {#personal}
-  ja: __COPY__
+  ja: 個人の人格へのコメントとして受け取らない {#personal}
 ---
 texts:
   en: >-
@@ -24,7 +25,8 @@ texts:
     to help you, the codebase, and Google, rather than as a personal attack on you
 
     or your abilities.
-  ja: __COPY__
+  ja: >-
+    レビューの目的は私達のコードベースと私達のプロダクトの品質を維持することです。レビュアーがあなたのコードに苦言を呈したら、それを個人攻撃とかあなたの能力をくさしているとか受け取らずに、レビュアーがあなたを手助けしようとしていると考えてみてください。レビュアーはコードベースを、また Google を良くしようとしているのです。
 ---
 texts:
   en: >-
@@ -37,7 +39,8 @@ texts:
     the reviewer is trying to communicate to me?" and then operate as though that's
 
     what they actually said.
-  ja: __COPY__
+  ja: >-
+    ときにはレビュアーが苛立って、そのイライラをコメントに表現することもあります。これはレビュアーとして褒められた行いではありませんが、開発者としてはこうしたことへの心構えをしましょう。ご自分にこう問いかけてください。「レビュアーが私に伝えようとしている建設的な事柄は何だろう？」と。そして、それがレビュアーの真意だと捉えてください。
 ---
 texts:
   en: >-
@@ -50,7 +53,8 @@ texts:
     for a while, or work on something else until you feel calm enough to reply
 
     politely.
-  ja: __COPY__
+  ja: >-
+    **コードレビューコメントに対して怒りに任せて反応しないでください。**怒りに任せたコメントはプロとしての礼儀作法に違反しますし、それがコードレビューツールに永遠に残ることになります。もしあなたが怒りや苛立ちで丁重に応答できなくなっていれば、しばらく席を立って歩いたり他の作業に当たったりして、気持ちが落ち着いて丁重な応答ができるようになるのを待ってください。
 ---
 texts:
   en: >-
@@ -69,7 +73,8 @@ texts:
     escalate to your manager as
 
     appropriate.
-  ja: __COPY__
+  ja: >-
+    一般に、レビュアーが建設的で礼儀正しい言い方でフィードバックをしてくれない場合、そのことを対面で伝えましょう。対面やビデオ通話で会話する機会が持てなければ、個人的なメールを送りましょう。レビュアーの言い方のどこが嫌でどんなふうに変えてほしいのかを丁重に説明してください。この個人的な会話でもレビュアーが非建設的な言い方で応酬するようなら、あるいは態度が全く変わらないようなら、上司に相談するのが適切です。
 ---
 texts:
   en: Fix the Code {#code}

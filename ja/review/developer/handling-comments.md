@@ -1,36 +1,16 @@
-# How to handle reviewer comments
+# レビューコメントの対応の仕方
 
-When you've sent a CL out for review, it's likely that your reviewer will
-respond with several comments on your CL. Here are some useful things to know
-about handling reviewer comments.
+CL をレビューに送ると、レビュアーが CL にいくつかのコメントを残してくれます。ここではレビュアーのコメントに対応するときに知っておくと有益なポイントを紹介します。
 
-## Don't Take it Personally {#personal}
+## 個人の人格へのコメントとして受け取らない {#personal}
 
-The goal of review is to maintain the quality of our codebase and our products.
-When a reviewer provides a critique of your code, think of it as their attempt
-to help you, the codebase, and Google, rather than as a personal attack on you
-or your abilities.
+レビューの目的は私達のコードベースと私達のプロダクトの品質を維持することです。レビュアーがあなたのコードに苦言を呈したら、それを個人攻撃とかあなたの能力をくさしているとか受け取らずに、レビュアーがあなたを手助けしようとしていると考えてみてください。レビュアーはコードベースを、また Google を良くしようとしているのです。
 
-Sometimes reviewers feel frustrated and they express that frustration in their
-comments. This isn't a good practice for reviewers, but as a developer you
-should be prepared for this. Ask yourself, "What is the constructive thing that
-the reviewer is trying to communicate to me?" and then operate as though that's
-what they actually said.
+ときにはレビュアーが苛立って、そのイライラをコメントに表現することもあります。これはレビュアーとして褒められた行いではありませんが、開発者としてはこうしたことへの心構えをしましょう。ご自分にこう問いかけてください。「レビュアーが私に伝えようとしている建設的な事柄は何だろう？」と。そして、それがレビュアーの真意だと捉えてください。
 
-**Never respond in anger to code review comments.** That is a serious breach of
-professional etiquette that will live forever in the code review tool. If you
-are too angry or annoyed to respond kindly, then walk away from your computer
-for a while, or work on something else until you feel calm enough to reply
-politely.
+**コードレビューコメントに対して怒りに任せて反応しないでください。**怒りに任せたコメントはプロとしての礼儀作法に違反しますし、それがコードレビューツールに永遠に残ることになります。もしあなたが怒りや苛立ちで丁重に応答できなくなっていれば、しばらく席を立って歩いたり他の作業に当たったりして、気持ちが落ち着いて丁重な応答ができるようになるのを待ってください。
 
-In general, if a reviewer isn't providing feedback in a way that's constructive
-and polite, explain this to them in person. If you can't talk to them in person
-or on a video call, then send them a private email. Explain to them in a kind
-way what you don't like and what you'd like them to do differently. If they also
-respond in a non-constructive way to this private discussion, or it doesn't have
-the intended effect, then
-escalate to your manager as
-appropriate.
+一般に、レビュアーが建設的で礼儀正しい言い方でフィードバックをしてくれない場合、そのことを対面で伝えましょう。対面やビデオ通話で会話する機会が持てなければ、個人的なメールを送りましょう。レビュアーの言い方のどこが嫌でどんなふうに変えてほしいのかを丁重に説明してください。この個人的な会話でもレビュアーが非建設的な言い方で応酬するようなら、あるいは態度が全く変わらないようなら、上司に相談するのが適切です。
 
 ## Fix the Code {#code}
 
