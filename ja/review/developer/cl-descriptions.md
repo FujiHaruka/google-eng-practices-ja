@@ -1,50 +1,28 @@
-# Writing good CL descriptions
+# 適切な CL のディスクリプションを書く
 
-A CL description is a public record of **what** change is being made and **why**
-it was made. It will become a permanent part of our version control history, and
-will possibly be read by hundreds of people other than your reviewers over the
-years.
+CL のディスクリプションは**何**が変更され、**なぜ**変更されたのかを説明する公式記録です。この記録はバージョン管理の履歴に永続的に残され、長期にわたって読まれます。レビュアー以外にも数百人もの人が読むこともあります。
 
-Future developers will search for your CL based on its description. Someone in
-the future might be looking for your change because of a faint memory of its
-relevance but without the specifics handy. If all the important information is
-in the code and not the description, it's going to be a lot harder for them to
-locate your CL.
+将来の開発者はあなたの CL をディスクリプションに基づいて検索します。将来の誰かがあなたの作成した変更を見つけようとして、詳細は忘れているけれどもその変更に関するおぼろげな記憶を頼りに検索するかもしれません。重要な情報がすべてコードにあってディスクリプションに記載されていないと、お目当ての CL を探し出すのが非常に難しくなるでしょう。
 
-## First Line {#firstline}
+## 一行目 {#firstline}
 
-- Short summary of what is being done.
-- Complete sentence, written as though it was an order.
-- Follow by empty line.
+- 何を行っているのかを短く要約する
+- 完全な文で、命令のように書く
+- 次の行は空行にする
 
-The **first line** of a CL description should be a short summary of
-*specifically* **what** *is being done by the CL*, followed by a blank line.
-This is what most future code searchers will see when they are browsing the
-version control history of a piece of code, so this first line should be
-informative enough that they don't have to read your CL or its whole description
-just to get a general idea of what your CL actually *did*.
+CL の**一行目**には、その CL が**何**を行っているのかを明確に記した短い要約を書いてください。二行目は空行にしてください。将来コードを検索する人はコードのバージョン管理履歴を拾い読みするのにまずこの箇所を読むことになります。そのときにあなたの CL が何を**した**のか概要をつかむために CL のコードやディスクリプション全体を読まなくて済むように、一行目にしっかりと有益な情報を盛り込んでください。
 
-By tradition, the first line of a CL description is a complete sentence, written
-as though it were an order (an imperative sentence). For example, say
-\"**Delete** the FizzBuzz RPC and **replace** it with the new system." instead
-of \"**Deleting** the FizzBuzz RPC and **replacing** it with the new system."
-You don't have to write the rest of the description as an imperative sentence,
-though.
+伝統的に、CL のディスクリプションの一行目は完全な文で、命令のように (命令形で) 書きます。たとえば、「**Deleting** the FizzBuzz RPC and **replacing** it with the new system.」と書くのではなく「**Delete** the FizzBuzz RPC and **replace** it with the new system.」と書きます。もっとも、ディスクリプションの他の部分まで命令形で書く必要はありません。
 
-## Body is Informative {#informative}
+## 主要部に有益な情報を盛り込む {#informative}
 
-The rest of the description should be informative. It might include a brief
-description of the problem that's being solved, and why this is the best
-approach. If there are any shortcomings to the approach, they should be
-mentioned. If relevant, include background information such as bug numbers,
-benchmark results, and links to design documents.
+二行目移行のディスクリプションには有益な情報を盛り込んでください。解決されている問題に関する短いディスクリプションを書くこともありますし、どうしてこれが最良の方法なのかを説明することもあります。その方法に欠陥があれば、そのことにも言及してください。また関連があれば、バグ番号やベンチマーク結果、設計ドキュメントのリンク等の背景も書いてください。
 
-Even small CLs deserve a little attention to detail. Put the CL in context.
+小さな CL であっても詳細に書くよう心がける価値があります。CL をコンテキストの中に位置付けてください。
 
-## Bad CL Descriptions {#bad}
+## CL ディスクリプションの悪い例 {#bad}
 
-"Fix bug" is an inadequate CL description. What bug? What did you do to fix it?
-Other similarly bad descriptions include:
+「Fix bug」とだけ書いた CL ディスクリプションは情報量不足です。どんなバグでしょうか？バグを修正するために何をしたのでしょうか？他にも悪いディスクリプションの例を以下に示します。
 
 - "Fix build."
 - "Add patch."
@@ -53,65 +31,42 @@ Other similarly bad descriptions include:
 - "Add convenience functions."
 - "kill weird URLs."
 
-Some of those are real CL descriptions. Their authors may believe they are
-providing useful information, but they are not serving the purpose of a CL
-description.
+いくつかのものは実際にあった CL ディスクリプションです。作成者は有益な情報を提供していると思っているかもしれませんが、上の例は CL ディスクリプションの目的を果たせていません。
 
-## Good CL Descriptions {#good}
+## 適切な CL ディスクリプションの例 {#good}
 
-Here are some examples of good descriptions.
+以下は適切なディスクリプションの例です。
 
-### Functionality change
+### 機能変更
 
-> rpc: remove size limit on RPC server message freelist.
+> rpc: RPC サーバーのメッセージフリーリストのサイズ制限を取り除く。(訳注: 英語では命令形)
 >
-> Servers like FizzBuzz have very large messages and would benefit from reuse.
-> Make the freelist larger, and add a goroutine that frees the freelist entries
-> slowly over time, so that idle servers eventually release all freelist
-> entries.
+> FizzBuzz のようなサーバーには巨大なメッセージがあり、再利用することでメリットがある。フリーリストを大きくし、徐々にフリーリストエントリーを解放する goroutine を追加することで、アイドリング中のサーバーが最終的にすべてのフリーリストエントリーを解放するようにした。
 
-The first few words describe what the CL actually does. The rest of the
-description talks about the problem being solved, why this is a good solution,
-and a bit more information about the specific implementation.
+最初の文で CL が実際に何をするのかを説明しています。以降のディスクリプションでは、解決される問題となぜこれが適切な解決なのか、また特定の実装に関する付加情報を記述しています。
 
-### Refactoring
+### リファクタリング
 
-> Construct a Task with a TimeKeeper to use its TimeStr and Now methods.
+> TimeStr と Now メソッドを使用するため Task を TimeKeeper と一緒に初期化する。(訳注: 英語では命令形)
 >
-> Add a Now method to Task, so the borglet() getter method can be removed (which
-> was only used by OOMCandidate to call borglet's Now method). This replaces the
-> methods on Borglet that delegate to a TimeKeeper.
+> Task に Now メソッドを追加することで、borglet() getter method を除去できるようにする (これは OOMCandidate が borglet の Now メソッドを呼び出すために使うだけだった)。これは TimeKeeper に委譲する Borglet のメソッドを置き換える。
 >
-> Allowing Tasks to supply Now is a step toward eliminating the dependency on
-> Borglet. Eventually, collaborators that depend on getting Now from the Task
-> should be changed to use a TimeKeeper directly, but this has been an
-> accommodation to refactoring in small steps.
+> Task に Now を与えられるようにするのは Borglet への依存をなくすための一ステップである。最終的には Task から Now を取得することに依存している部分は TimeKeeper を直接使うように変更すべきだが、これはスモールステップでリファクタリングするための調整である。
 >
-> Continuing the long-range goal of refactoring the Borglet Hierarchy.
+> Borglet の階層構造をリファクタリングする長丁場のゴールに向けて引き続き作業する。
 
-The first line describes what the CL does and how this is a change from the
-past. The rest of the description talks about the specific implementation, the
-context of the CL, that the solution isn't ideal, and possible future direction.
-It also explains *why* this change is being made.
+一行目は CL が何をするのかとどのような変更なのかを説明しています。以降のディスクリプションでは特定の実装と CL のコンテキストを説明しています。CL のソリューションは理想的ではないものの将来の方向性を示しています。またこの説明では**なぜ**この変更が行われるのかにも言及しています。
 
-### Small CL that needs some context
+### コンテキストの説明が必要な小さな CL
 
-> Create a Python3 build rule for status.py.
+> status.py の Python3 ビルドルールを作成する (訳注: 英語では命令形)
 >
-> This allows consumers who are already using this as in Python3 to depend on a
-> rule that is next to the original status build rule instead of somewhere in
-> their own tree. It encourages new consumers to use Python3 if they can,
-> instead of Python2, and significantly simplifies some automated build file
-> refactoring tools being worked on currently.
+> これにより、Python3 ですでにそうしているようにこれを使用しているユーザーが自分の tree の中を探さなくても規定の status ビルドルールの隣のルールに依存できるようになる。そのことで新しいユーザーには可能なら Python2 ではなく Python3 を使用するよう促し、現在作業中の自動化されたビルドファイルのリファクタリングツールが有意に単純化される。
 
-The first sentence describes what's actually being done. The rest of the
-description explains *why* the change is being made and gives the reviewer a lot
-of context.
+一文目は何が実際に行われているのかを説明しています。以降のディスクリプションでは**なぜ**その変更が行われるのかを説明し、レビュアーに十分なコンテキストを提供しています。
 
-## Review the description before submitting the CL
+## CL を提出する前にディスクリプションをレビューする
 
-CLs can undergo significant change during review. It can be worthwhile to review
-a CL description before submitting the CL, to ensure that the description still
-reflects what the CL does.
+CL はレビューの間、重要な変更を被ることがあります。CL を提出する前に CL ディスクリプションをレビューするのが有意義な場合があります。それはディスクリプションが CL の内容を正しく反映してることを確認するためです。
 
-Next: [Small CLs](small-cls.md)
+次: [小さな CL](small-cls.md)

@@ -1,6 +1,6 @@
 texts:
   en: Writing good CL descriptions
-  ja: __COPY__
+  ja: 適切な CL のディスクリプションを書く
 ---
 texts:
   en: >-
@@ -11,7 +11,7 @@ texts:
     will possibly be read by hundreds of people other than your reviewers over the
 
     years.
-  ja: __COPY__
+  ja: CL のディスクリプションは**何**が変更され、**なぜ**変更されたのかを説明する公式記録です。この記録はバージョン管理の履歴に永続的に残され、長期にわたって読まれます。レビュアー以外にも数百人もの人が読むこともあります。
 ---
 texts:
   en: >-
@@ -24,23 +24,23 @@ texts:
     in the code and not the description, it's going to be a lot harder for them to
 
     locate your CL.
-  ja: __COPY__
+  ja: 将来の開発者はあなたの CL をディスクリプションに基づいて検索します。将来の誰かがあなたの作成した変更を見つけようとして、詳細は忘れているけれどもその変更に関するおぼろげな記憶を頼りに検索するかもしれません。重要な情報がすべてコードにあってディスクリプションに記載されていないと、お目当ての CL を探し出すのが非常に難しくなるでしょう。
 ---
 texts:
   en: First Line {#firstline}
-  ja: __COPY__
+  ja: 一行目 {#firstline}
 ---
 texts:
   en: Short summary of what is being done.
-  ja: __COPY__
+  ja: 何を行っているのかを短く要約する
 ---
 texts:
   en: Complete sentence, written as though it was an order.
-  ja: __COPY__
+  ja: 完全な文で、命令のように書く
 ---
 texts:
   en: Follow by empty line.
-  ja: __COPY__
+  ja: 次の行は空行にする
 ---
 texts:
   en: >-
@@ -55,7 +55,7 @@ texts:
     informative enough that they don't have to read your CL or its whole description
 
     just to get a general idea of what your CL actually *did*.
-  ja: __COPY__
+  ja: CL の**一行目**には、その CL が**何**を行っているのかを明確に記した短い要約を書いてください。二行目は空行にしてください。将来コードを検索する人はコードのバージョン管理履歴を拾い読みするのにまずこの箇所を読むことになります。そのときにあなたの CL が何を**した**のか概要をつかむために CL のコードやディスクリプション全体を読まなくて済むように、一行目にしっかりと有益な情報を盛り込んでください。
 ---
 texts:
   en: >-
@@ -70,11 +70,11 @@ texts:
     You don't have to write the rest of the description as an imperative sentence,
 
     though.
-  ja: __COPY__
+  ja: 伝統的に、CL のディスクリプションの一行目は完全な文で、命令のように (命令形で) 書きます。たとえば、「**Deleting** the FizzBuzz RPC and **replacing** it with the new system.」と書くのではなく「**Delete** the FizzBuzz RPC and **replace** it with the new system.」と書きます。もっとも、ディスクリプションの他の部分まで命令形で書く必要はありません。
 ---
 texts:
   en: Body is Informative {#informative}
-  ja: __COPY__
+  ja: 主要部に有益な情報を盛り込む {#informative}
 ---
 texts:
   en: >-
@@ -87,22 +87,22 @@ texts:
     mentioned. If relevant, include background information such as bug numbers,
 
     benchmark results, and links to design documents.
-  ja: __COPY__
+  ja: 二行目移行のディスクリプションには有益な情報を盛り込んでください。解決されている問題に関する短いディスクリプションを書くこともありますし、どうしてこれが最良の方法なのかを説明することもあります。その方法に欠陥があれば、そのことにも言及してください。また関連があれば、バグ番号やベンチマーク結果、設計ドキュメントのリンク等の背景も書いてください。
 ---
 texts:
   en: Even small CLs deserve a little attention to detail. Put the CL in context.
-  ja: __COPY__
+  ja: 小さな CL であっても詳細に書くよう心がける価値があります。CL をコンテキストの中に位置付けてください。
 ---
 texts:
   en: Bad CL Descriptions {#bad}
-  ja: __COPY__
+  ja: CL ディスクリプションの悪い例 {#bad}
 ---
 texts:
   en: >-
     "Fix bug" is an inadequate CL description. What bug? What did you do to fix it?
 
     Other similarly bad descriptions include:
-  ja: __COPY__
+  ja: 「Fix bug」とだけ書いた CL ディスクリプションは情報量不足です。どんなバグでしょうか？バグを修正するために何をしたのでしょうか？他にも悪いディスクリプションの例を以下に示します。
 ---
 texts:
   en: '"Fix build."'
@@ -135,23 +135,23 @@ texts:
     providing useful information, but they are not serving the purpose of a CL
 
     description.
-  ja: __COPY__
+  ja: いくつかのものは実際にあった CL ディスクリプションです。作成者は有益な情報を提供していると思っているかもしれませんが、上の例は CL ディスクリプションの目的を果たせていません。
 ---
 texts:
   en: Good CL Descriptions {#good}
-  ja: __COPY__
+  ja: 適切な CL ディスクリプションの例 {#good}
 ---
 texts:
   en: Here are some examples of good descriptions.
-  ja: __COPY__
+  ja: 以下は適切なディスクリプションの例です。
 ---
 texts:
   en: Functionality change
-  ja: __COPY__
+  ja: 機能変更
 ---
 texts:
   en: "rpc: remove size limit on RPC server message freelist."
-  ja: __COPY__
+  ja: "rpc: RPC サーバーのメッセージフリーリストのサイズ制限を取り除く。(訳注: 英語では命令形)"
 ---
 texts:
   en: >-
@@ -159,7 +159,7 @@ texts:
       Make the freelist larger, and add a goroutine that frees the freelist entries
       slowly over time, so that idle servers eventually release all freelist
       entries.
-  ja: __COPY__
+  ja: "FizzBuzz のようなサーバーには巨大なメッセージがあり、再利用することでメリットがある。フリーリストを大きくし、徐々にフリーリストエントリーを解放する goroutine を追加することで、アイドリング中のサーバーが最終的にすべてのフリーリストエントリーを解放するようにした。"
 ---
 texts:
   en: >-
@@ -168,22 +168,22 @@ texts:
     description talks about the problem being solved, why this is a good solution,
 
     and a bit more information about the specific implementation.
-  ja: __COPY__
+  ja: "最初の文で CL が実際に何をするのかを説明しています。以降のディスクリプションでは、解決される問題となぜこれが適切な解決なのか、また特定の実装に関する付加情報を記述しています。"
 ---
 texts:
   en: Refactoring
-  ja: __COPY__
+  ja: リファクタリング
 ---
 texts:
   en: Construct a Task with a TimeKeeper to use its TimeStr and Now methods.
-  ja: __COPY__
+  ja: "TimeStr と Now メソッドを使用するため Task を TimeKeeper と一緒に初期化する。(訳注: 英語では命令形)"
 ---
 texts:
   en: >-
     Add a Now method to Task, so the borglet() getter method can be removed (which
       was only used by OOMCandidate to call borglet's Now method). This replaces the
       methods on Borglet that delegate to a TimeKeeper.
-  ja: __COPY__
+  ja: Task に Now メソッドを追加することで、borglet() getter method を除去できるようにする (これは OOMCandidate が borglet の Now メソッドを呼び出すために使うだけだった)。これは TimeKeeper に委譲する Borglet のメソッドを置き換える。
 ---
 texts:
   en: >-
@@ -191,11 +191,11 @@ texts:
       Borglet. Eventually, collaborators that depend on getting Now from the Task
       should be changed to use a TimeKeeper directly, but this has been an
       accommodation to refactoring in small steps.
-  ja: __COPY__
+  ja: Task に Now を与えられるようにするのは Borglet への依存をなくすための一ステップである。最終的には Task から Now を取得することに依存している部分は TimeKeeper を直接使うように変更すべきだが、これはスモールステップでリファクタリングするための調整である。
 ---
 texts:
   en: Continuing the long-range goal of refactoring the Borglet Hierarchy.
-  ja: __COPY__
+  ja: Borglet の階層構造をリファクタリングする長丁場のゴールに向けて引き続き作業する。
 ---
 texts:
   en: >-
@@ -206,15 +206,16 @@ texts:
     context of the CL, that the solution isn't ideal, and possible future direction.
 
     It also explains *why* this change is being made.
-  ja: __COPY__
+  ja: >-
+    一行目は CL が何をするのかとどのような変更なのかを説明しています。以降のディスクリプションでは特定の実装と CL のコンテキストを説明しています。CL のソリューションは理想的ではないものの将来の方向性を示しています。またこの説明では**なぜ**この変更が行われるのかにも言及しています。
 ---
 texts:
   en: Small CL that needs some context
-  ja: __COPY__
+  ja: コンテキストの説明が必要な小さな CL
 ---
 texts:
   en: Create a Python3 build rule for status.py.
-  ja: __COPY__
+  ja: "status.py の Python3 ビルドルールを作成する (訳注: 英語では命令形)"
 ---
 texts:
   en: >-
@@ -223,7 +224,7 @@ texts:
       their own tree. It encourages new consumers to use Python3 if they can,
       instead of Python2, and significantly simplifies some automated build file
       refactoring tools being worked on currently.
-  ja: __COPY__
+  ja: これにより、Python3 ですでにそうしているようにこれを使用しているユーザーが自分の tree の中を探さなくても規定の status ビルドルールの隣のルールに依存できるようになる。そのことで新しいユーザーには可能なら Python2 ではなく Python3 を使用するよう促し、現在作業中の自動化されたビルドファイルのリファクタリングツールが有意に単純化される。
 ---
 texts:
   en: >-
@@ -232,11 +233,11 @@ texts:
     description explains *why* the change is being made and gives the reviewer a lot
 
     of context.
-  ja: __COPY__
+  ja: 一文目は何が実際に行われているのかを説明しています。以降のディスクリプションでは**なぜ**その変更が行われるのかを説明し、レビュアーに十分なコンテキストを提供しています。
 ---
 texts:
   en: Review the description before submitting the CL
-  ja: __COPY__
+  ja: CL を提出する前にディスクリプションをレビューする
 ---
 texts:
   en: >-
@@ -245,8 +246,8 @@ texts:
     a CL description before submitting the CL, to ensure that the description still
 
     reflects what the CL does.
-  ja: __COPY__
+  ja: CL はレビューの間、重要な変更を被ることがあります。CL を提出する前に CL ディスクリプションをレビューするのが有意義な場合があります。それはディスクリプションが CL の内容を正しく反映してることを確認するためです。
 ---
 texts:
   en: "Next: [Small CLs](small-cls.md)"
-  ja: __COPY__
+  ja: "次: [小さな CL](small-cls.md)"
