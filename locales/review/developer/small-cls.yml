@@ -237,7 +237,7 @@ texts:
     from fixing a bug in that class. It is much easier for reviewers to understand
 
     the changes introduced by each CL when they are separate.
-  ja: __COPY__
+  ja: 機能変更やバグ修正と、リファクタリングは別の CL にするのが普通はベストです。たとえば、クラスを移動したりクラス名を変更したりはそのクラスのバグ修正とは別の CL にするべきです。別々の CL に分けておけば、レビュアーは変更を理解しやすくなります。
 ---
 texts:
   en: >-
@@ -248,11 +248,12 @@ texts:
     reviewers to decide when a refactoring is so large that it will make the review
 
     more difficult if included in your current CL.
-  ja: __COPY__
+  ja: >-
+    とはいえ、ローカル変数の名前を変えるといった小さな修正は機能変更やバグ修正の CL に含めても構いません。どんなときにリファクタリングが大きすぎるかは開発者とレビュアーの判断により決まります。リファクタリングを現在の CL に含めるとレビューがしにくくなるようなら、CL を分割してください。
 ---
 texts:
   en: Keep related test code in the same CL {#test_code}
-  ja: __COPY__
+  ja: 関連するテストコードを同じ CL に含める {#test_code}
 ---
 texts:
   en: >-
@@ -261,30 +262,32 @@ texts:
     modifications should go into the same CL, even if it increases the code line
 
     count.
-  ja: __COPY__
+  ja: >-
+    テストコードを別の CL に分けるのは避けてください。コードの修正を検証するテストはコード変更の行数が増えるとしても同じ CL に入れてください。
 ---
 texts:
   en: >-
     However, <i>independent</i> test modifications can go into separate CLs first,
 
     similar to the [refactorings guidelines](#refactoring). That includes:
-  ja: __COPY__
+  ja: >-
+    けれども、**独立した**テストの修正は別々の CL にして先に提出しても構いません。[リファクタリングのガイドライン](#refactoring)と同様です。たとえば以下のような場合です。
 ---
 texts:
   en: validating pre-existing, submitted code with new tests.
-  ja: __COPY__
+  ja: 提出済みの既存コードを新たなテストで検証する
 ---
 texts:
   en: refactoring the test code (e.g. introduce helper functions).
-  ja: __COPY__
+  ja: "テストコードのリファクタリング (例: helper 関数の導入)"
 ---
 texts:
   en: introducing larger test framework code (e.g. an integration test).
-  ja: __COPY__
+  ja: "より大きなテストフレームワークのコードの導入 (例: 統合テスト)"
 ---
 texts:
   en: Don't Break the Build {#break}
-  ja: __COPY__
+  ja: ビルドを壊さない {#break}
 ---
 texts:
   en: >-
@@ -297,11 +300,12 @@ texts:
     between your CL submissions (or even longer if something goes wrong unexpectedly
 
     with your later CL submissions).
-  ja: __COPY__
+  ja: >-
+    相互に依存する複数の CL がある場合、CL の提出後もシステム全体が動作するようにする方法を見つける必要があります。そうしないと、すべての CL 提出が完了するまでの間にビルドを壊してしまい、同僚の開発者に迷惑をかけるかもしれません。(あるいは後の CL 提出に何か予期せぬ間違いがあると、ビルドの壊れた状態がもっと長引くこともあります。)
 ---
 texts:
   en: Can't Make it Small Enough {#cant}
-  ja: __COPY__
+  ja: 十分小さくできない場合 {#cant}
 ---
 texts:
   en: >-
@@ -312,7 +316,7 @@ texts:
     almost always find a way to decompose functionality into a series of small
 
     changes.
-  ja: __COPY__
+  ja: "CL を大きく**せざるをえない**ように思える状況になることがあります。非常に稀ですが、そういう状況は確かにあります。小さな CL を書く習慣が定着している開発者は、ほとんどどんな場合でも一機能を複数の小さな変更に分解する方法を見出すことができます。"
 ---
 texts:
   en: >-
@@ -323,7 +327,8 @@ texts:
     see if anybody has thoughts on how to implement the functionality in small CLs
 
     instead.
-  ja: __COPY__
+  ja: >-
+    大規模な CL を書く前に、事前にリファクタリングだけの CL を送ればもっとすっきりした実装をする方法が用意できるのではないかと考えてみてください。また、チームメンバーに相談し、その機能を小さな CL に分割できる実装方法を考えつくかどうか確認してみてください。
 ---
 texts:
   en: >-
@@ -336,8 +341,9 @@ texts:
     for a long time, be vigilant about not introducing bugs, and be extra diligent
 
     about writing tests.
-  ja: __COPY__
+  ja: >-
+    上記の施策でもうまく行かない場合 (非常に稀ですが)、大きな CL をレビューすることについて事前にレビュアーから同意を得てください。そうすればレビュアーはこれから来る CL の心構えができます。この状況では、レビュープロセスに時間がかかることが予想されます。バグを生み出さないよう細心の注意を払い、普段以上にテストをしっかり書いてください。
 ---
 texts:
   en: "Next: [How to Handle Reviewer Comments](handling-comments.md)"
-  ja: __COPY__
+  ja: "次: [レビューコメントの対応の仕方](handling-comments.md)"

@@ -46,53 +46,30 @@ CL を分割する他のやり方として、別々のレビュアーを必要�
 
 ## リファクタリングを分離する {#refactoring}
 
-It's usually best to do refactorings in a separate CL from feature changes or
-bug fixes. For example, moving and renaming a class should be in a different CL
-from fixing a bug in that class. It is much easier for reviewers to understand
-the changes introduced by each CL when they are separate.
+機能変更やバグ修正と、リファクタリングは別の CL にするのが普通はベストです。たとえば、クラスを移動したりクラス名を変更したりはそのクラスのバグ修正とは別の CL にするべきです。別々の CL に分けておけば、レビュアーは変更を理解しやすくなります。
 
-Small cleanups such as fixing a local variable name can be included inside of a
-feature change or bug fix CL, though. It's up to the judgment of developers and
-reviewers to decide when a refactoring is so large that it will make the review
-more difficult if included in your current CL.
+とはいえ、ローカル変数の名前を変えるといった小さな修正は機能変更やバグ修正の CL に含めても構いません。どんなときにリファクタリングが大きすぎるかは開発者とレビュアーの判断により決まります。リファクタリングを現在の CL に含めるとレビューがしにくくなるようなら、CL を分割してください。
 
-## Keep related test code in the same CL {#test_code}
+## 関連するテストコードを同じ CL に含める {#test_code}
 
-Avoid splitting test code into a separate CL. Tests validating your code
-modifications should go into the same CL, even if it increases the code line
-count.
+テストコードを別の CL に分けるのは避けてください。コードの修正を検証するテストはコード変更の行数が増えるとしても同じ CL に入れてください。
 
-However, <i>independent</i> test modifications can go into separate CLs first,
-similar to the [refactorings guidelines](#refactoring). That includes:
+けれども、**独立した**テストの修正は別々の CL にして先に提出しても構いません。[リファクタリングのガイドライン](#refactoring)と同様です。たとえば以下のような場合です。
 
-- validating pre-existing, submitted code with new tests.
-- refactoring the test code (e.g. introduce helper functions).
-- introducing larger test framework code (e.g. an integration test).
+- 提出済みの既存コードを新たなテストで検証する
+- テストコードのリファクタリング (例: helper 関数の導入)
+- より大きなテストフレームワークのコードの導入 (例: 統合テスト)
 
-## Don't Break the Build {#break}
+## ビルドを壊さない {#break}
 
-If you have several CLs that depend on each other, you need to find a way to
-make sure the whole system keeps working after each CL is submitted. Otherwise
-you might break the build for all your fellow developers for a few minutes
-between your CL submissions (or even longer if something goes wrong unexpectedly
-with your later CL submissions).
+相互に依存する複数の CL がある場合、CL の提出後もシステム全体が動作するようにする方法を見つける必要があります。そうしないと、すべての CL 提出が完了するまでの間にビルドを壊してしまい、同僚の開発者に迷惑をかけるかもしれません。(あるいは後の CL 提出に何か予期せぬ間違いがあると、ビルドの壊れた状態がもっと長引くこともあります。)
 
-## Can't Make it Small Enough {#cant}
+## 十分小さくできない場合 {#cant}
 
-Sometimes you will encounter situations where it seems like your CL *has* to be
-large. This is very rarely true. Authors who practice writing small CLs can
-almost always find a way to decompose functionality into a series of small
-changes.
+CL を大きく**せざるをえない**ように思える状況になることがあります。非常に稀ですが、そういう状況は確かにあります。小さな CL を書く習慣が定着している開発者は、ほとんどどんな場合でも一機能を複数の小さな変更に分解する方法を見出すことができます。
 
-Before writing a large CL, consider whether preceding it with a refactoring-only
-CL could pave the way for a cleaner implementation. Talk to your teammates and
-see if anybody has thoughts on how to implement the functionality in small CLs
-instead.
+大規模な CL を書く前に、事前にリファクタリングだけの CL を送ればもっとすっきりした実装をする方法が用意できるのではないかと考えてみてください。また、チームメンバーに相談し、その機能を小さな CL に分割できる実装方法を考えつくかどうか確認してみてください。
 
-If all of these options fail (which should be extremely rare) then get consent
-from your reviewers in advance to review a large CL, so they are warned about
-what is coming. In this situation, expect to be going through the review process
-for a long time, be vigilant about not introducing bugs, and be extra diligent
-about writing tests.
+上記の施策でもうまく行かない場合 (非常に稀ですが)、大きな CL をレビューすることについて事前にレビュアーから同意を得てください。そうすればレビュアーはこれから来る CL の心構えができます。この状況では、レビュープロセスに時間がかかることが予想されます。バグを生み出さないよう細心の注意を払い、普段以上にテストをしっかり書いてください。
 
-Next: [How to Handle Reviewer Comments](handling-comments.md)
+次: [レビューコメントの対応の仕方](handling-comments.md)
