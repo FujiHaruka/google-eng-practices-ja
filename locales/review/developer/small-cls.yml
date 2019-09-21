@@ -1,63 +1,70 @@
 texts:
   en: Small CLs
-  ja: __COPY__
+  ja: 小さな CL
 ---
 texts:
   en: Why Write Small CLs? {#why}
-  ja: __COPY__
+  ja: どうして小さな CL を書くのか？ {#why}
 ---
 texts:
   en: "Small, simple CLs are:"
-  ja: __COPY__
+  ja: 小さくシンプルな CL には以下のような利点があります。
 ---
 texts:
   en: >-
     **Reviewed more quickly.** It's easier for a reviewer to find five minutes
         several times to review small CLs than to set aside a 30 minute block to
         review one large CL.
-  ja: __COPY__
+  ja: >-
+    **速くレビューできる。**レビュアーにとって、小さな CL をレビューするための 5 分間を数回確保するほうが、一度の大きな CL をレビューするための 30 分をまとめて確保するよりも容易です。
 ---
 texts:
   en: >-
     **Reviewed more thoroughly.** With large changes, reviewers and authors tend
         to get frustrated by large volumes of detailed commentary shifting back and
         forth—sometimes to the point where important points get missed or dropped.
-  ja: __COPY__
+  ja: >-
+    **隅々までレビューできる。**変更が大規模だとあっちこっちに詳細なコメントを大量に書かねばならず、レビュアーと作成者がストレスを感じやすくなります。ときには重要な点を見落としたり省略したりしてしまうこともあります。
 ---
 texts:
   en: >-
     **Less likely to introduce bugs.** Since you're making fewer changes, it's
         easier for you and your reviewer to reason effectively about the impact of
         the CL and see if a bug has been introduced.
-  ja: __COPY__
+  ja: >-
+    **バグが混入する可能性が減る。**変更箇所が少なければ、開発者もレビュアーも CL の影響範囲が予測しやすく、バグが混入したかどうかを見分けやすくなります。
 ---
 texts:
   en: >-
     **Less wasted work if they are rejected.** If you write a huge CL and then
         your reviewer says that the overall direction is wrong, you've wasted a lot
         of work.
-  ja: __COPY__
+  ja: >
+    **CL が却下されても無駄になる作業が少ない。**巨大な CL を書いてからレビュアーに全体的な方向性が間違っていると言われると、多くの作業が無駄になってしまいます。
 ---
 texts:
   en: >-
     **Easier to merge.** Working on a large CL takes a long time, so you will
         have lots of conflicts when you merge, and you will have to merge
         frequently.
-  ja: __COPY__
+  ja: >-
+    **マージしやすい。**大規模な CL での作業には時間がかかるため、マージする頃には多くのコンフリクトが発生し、頻繁にマージしなければならなくなります。
 ---
 texts:
   en: >-
     **Easier to design well.** It's a lot easier to polish the design and code
         health of a small change than it is to refine all the details of a large
         change.
-  ja: __COPY__
+  ja: >-
+    **設計を改善しやすくなる。**小さな変更の設計やコードの健康状態を改善するほうが、大きな変更の詳細をすべて見直して設計を洗練させるよりもずっと簡単です。
 ---
 texts:
   en: >-
     **Less blocking on reviews.** Sending self-contained portions of your
         overall change allows you to continue coding while you wait for your current
         CL in review.
-  ja: __COPY__
+  ja: >-
+    **レビューによって作業がブロックされなくなる。**あなたがしようとしている変更全体のうち一部を自己完結的な CL にして提出すれば、現在の CL のレビューを待つ間にコーディング作業を続けることができます。
 ---
 texts:
   en: >-
@@ -65,7 +72,8 @@ texts:
         updated between the initial CL submission and a rollback CL, complicating
         the rollback (the intermediate CLs will probably need to be rolled back
         too).
-  ja: __COPY__
+  ja: >-
+    **ロールバックしやすい。**大きな CL は多くのファイルにわたって変更するため、最初に CL を提出してからロールバックの CL までにそれらのファイルが変更され、ロールバックが複雑になります。（その CL 以降の CL もロールバックする必要が生じることもあります）
 ---
 texts:
   en: >-
@@ -80,18 +88,19 @@ texts:
     written it, or require lots of time arguing about why the reviewer should accept
 
     your large change. It's easier to just write small CLs in the first place.
-  ja: __COPY__
+  ja: >-
+    注意していただきたいのですが、**レビュアーにはあなたの変更が大きすぎるというそれだけの理由でただちにその変更を却下できる裁量があります。**普通はそこまでせず、レビュアーはあなたの貢献に感謝しつつも、もっと小さな変更に分けて CL を送ってほしいとリクエストするでしょう。すでにコードを書いたあとで変更を分割するのは骨の折れる作業になりますし、あるいは巨大な変更を受け入れてもらうにしてもレビュアーが納得できるよう議論を交わすのにも多くの時間が必要になります。最初から小さな CL を書くほうが簡単です。
 ---
 texts:
   en: What is Small? {#what_is_small}
-  ja: __COPY__
+  ja: 「小さい」とはどういうことか？ {#what_is_small}
 ---
 texts:
   en: >-
     In general, the right size for a CL is **one self-contained change**. This means
 
     that:
-  ja: __COPY__
+  ja: 一般に、CL の適切なサイズは**単一の自己完結的な変更**です。これは以下のことを意味します。
 ---
 texts:
   en: >-
@@ -100,20 +109,22 @@ texts:
         general it's better to err on the side of writing CLs that are too small vs.
         CLs that are too large. Work with your reviewer to find out what an
         acceptable size is.
-  ja: __COPY__
+  ja: >-
+    CL が**ただ一つのこと**に取り組むミニマルな変更を行っています。これは普通、ある機能の全体を一度に実装するというより、その中の一部分だけを実装する CL です。小さすぎる CL を書いて失敗するほうが大きすぎる CL を書いて失敗するよりもよほど良いです。レビュアーと協力してどんなサイズの CL なら受け入れられるかを探ってみてください。
 ---
 texts:
   en: >-
     Everything the reviewer needs to understand about the CL (except future
         development) is in the CL, the CL's description, the existing codebase, or a
         CL they've already reviewed.
-  ja: __COPY__
+  ja: >-
+    レビュアーがその CL について理解する必要のあるすべての情報 (将来の開発を除く) が CLや、CL ディスクリプション、既存のコードベース、これまでレビューした CL の中にあります。
 ---
 texts:
   en: >-
     The system will continue to work well for its users and for the developers
         after the CL is checked in.
-  ja: __COPY__
+  ja: システムはその CL がチェックインされたあともユーザーにとっても開発者にとっても正常に動作し続けます。
 ---
 texts:
   en: >-
@@ -121,7 +132,7 @@ texts:
         you add a new API, you should include a usage of the API in the same CL so
         that reviewers can better understand how the API will be used. This also
         prevents checking in unused APIs.
-  ja: __COPY__
+  ja: CL がその含意がわかりにくくなるほどに過剰に小さくはありません。新しい API を追加するのなら、同じ CL の中にその API の使い方を含めるべきです。それはレビュアーが API の使い方をきちんと理解できるようになるためです。こうすることは、使われていない API のチェックインを防止します。
 ---
 texts:
   en: >-
@@ -134,7 +145,8 @@ texts:
     spread across also affects its "size." A 200-line change in one file might be
 
     okay, but spread across 50 files it would usually be too large.
-  ja: __COPY__
+  ja: >-
+    どれほど大きければ「大きすぎる」と言えるのかを判断する厳密で手っ取り早いルールはありません。大雑把には 100 行の CL は適度なサイズで、1000 行になると大きすぎると言えますが、これもレビュアーの判断次第です。変更するファイル数も CL の「サイズ」に関係あります。200 行の変更が行われていてもそれが 1 つのファイルで完結していれば許容できるかもしれませんが、 50 ファイルにもわたる変更であれば普通は「大きすぎる」と判断されるでしょう。
 ---
 texts:
   en: >-
@@ -147,7 +159,8 @@ texts:
     When in doubt, write CLs that are smaller than you think you need to write.
 
     Reviewers rarely complain about getting CLs that are too small.
-  ja: __COPY__
+  ja: >-
+    覚えておいていただきたいのですが、あなたはコードを書き始めた瞬間からコードに没頭していて目を閉じてもコードを思い浮かべられるとしても、レビュアーは何のコンテキストも持たないことがよくあります。あなたにとって許容範囲な CL のサイズのように思えても、レビュアーにとっては大きすぎるかもしれません。CL が小さすぎるからといってそのことで不満をこぼすレビュアーはめったにいません。
 ---
 texts:
   en: When are Large CLs Okay? {#large_okay}
