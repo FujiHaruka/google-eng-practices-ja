@@ -14,11 +14,11 @@ texts:
 
     make it available publicly when possible.
   ja: >-
-    Google には、あらゆる言語とあらゆるプロジェクトをカバーする広範なエンジニアリングの慣行があります。
+    Google には、全言語および全プロジェクトをカバーする広範なエンジニアリングの慣行があります。
     
-    ここにあるドキュメントは私達が経験からさまざまなベストプラクティスを長年にわたって培ってきたことを表しています。
+    ここにあるドキュメントは私達が長年の経験からさまざまなベストプラクティスを蓄積してきたことを表しています。
 
-    この知識がオープンソースプロジェクトや他の組織の利益になるかもしれませんから、私達は可能なときにはそれを公開します。
+    この知識がオープンソースプロジェクトや他の組織の利益になることを願って、私達は可能ならそれを誰にでも利用できるように公開します。
 ---
 texts:
   en: "Currently this contains the following documents:"
@@ -29,7 +29,7 @@ texts:
     [Google's Code Review Guidelines](review/index.md), which are actually two
         separate sets of documents:
   ja: >-
-    [Google コードレビューガイドライン](ja/review/index.md)。これは 2 つのドキュメントに分けられます。
+    [Google コードレビューガイドライン](ja/review/index.md)。これは 2 つのドキュメントからなります。
 ---
 texts:
   en: "[The Code Reviewer's Guide](review/reviewer/index.md)"
@@ -57,14 +57,14 @@ texts:
         has been submitted to version control or which is undergoing code review.
         Other organizations often call this a "change" or a "patch."
   ja: >-
-    **CL**: 「changelist」の略。一つの独立した変更を意味していて、バージョン管理下に送信されたものや、まだコードレビュー中のものを指すこともあります。他組織では「変更」「パッチ」とよく呼ばれます。
+    **CL**: 「changelist」の略。一つの独立した変更を意味していて、バージョン管理に提出されたものや、まだコードレビュー中のものを指すこともあります。他組織では「変更」「パッチ」とよく呼ばれます。
 ---
 texts:
   en: >-
     **LGTM**: Means "Looks Good to Me." It is what a code reviewer says when
         approving a CL.
   ja: >-
-    **LGTM**: 「Looks Good to Me」(私には良さそうに見える) という意味。コードレビュアーが CL を承認するときに言う。
+    **LGTM**: 「Looks Good to Me」という意味。コードレビュアーが CL を承認するときに言う。
 ---
 texts:
   en: License
@@ -77,7 +77,7 @@ texts:
     encourages you to share these documents. See
 
     https://creativecommons.org/licenses/by/3.0/ for more details.
-  ja: このプロジェクトのドキュメントは CC-By 3.0 License の下にあり、ここにあるドキュメントをシェアすることが奨励されます。詳細は https://creativecommons.org/licenses/by/3.0/ をご覧ください。
+  ja: このプロジェクトのドキュメントは CC-By 3.0 License の下にあります。ここにあるドキュメントをぜひシェアしてください。詳細は https://creativecommons.org/licenses/by/3.0/ をご覧ください。
 ---
 texts:
   en: <a rel="license" href="https://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a>

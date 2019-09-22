@@ -16,14 +16,14 @@ texts:
 ---
 texts:
   en: At Google we use code review to maintain the quality of our code and products.
-  ja: Google ではコードとプロダクトの品質を維持するためにコードレビューを行っています。
+  ja: Google ではコードとプロダクトの品質を維持するためにコードレビューを実施しています。
 ---
 texts:
   en: >-
     This documentation is the canonical description of Google's code review
 
     processes and policies.
-  ja: このドキュメントは Google のコードレビューのプロセスとポリシーに関する標準的な説明です。
+  ja: このドキュメントは Google のコードレビューのプロセスとポリシーに関する正規の解説です。
 ---
 texts:
   en: >-
@@ -31,7 +31,7 @@ texts:
 
     documents that are a part of this guide:
   ja: >-
-    このページでは私達のコードレビュープロセスを概観します。このガイドは他に二つのドキュメントに大別されます。
+    このページでは私達のコードレビュープロセスを概観します。このガイドはさらに二つのドキュメントに分けられます。
 ---
 texts:
   en: >-
@@ -45,7 +45,7 @@ texts:
     **[The CL Author's Guide](developer/)**: A detailed guide for developers
         whose CLs are going through review.
   ja: >-
-    **[CL 作成者のガイド](developer/)**: CL がレビューを受けている開発者のための詳細なガイド
+    **[CL 作成者のガイド](developer/)**: CL をレビューしてもらう開発者のための詳細なガイド
 ---
 texts:
   en: What Do Code Reviewers Look For? {#look_for}
@@ -64,7 +64,7 @@ texts:
     **Functionality**: Does the code behave as the author likely intended? Is
         the way the code behaves good for its users?
   ja: >-
-    **機能性**: コードは作成者の意図通りに動作するか？コードの挙動はユーザーにとって良いものか？
+    **機能性**: コードは作成者の意図通りに動作するか？ユーザーにとってコードの挙動は適切か？
 ---
 texts:
   en: >-
@@ -83,22 +83,22 @@ texts:
     **Naming**: Did the developer choose clear names for variables, classes,
         methods, etc.?
   ja: >-
-    **命名**: 変数名、クラス名、メソッド名などに明快な名前を選んだか？
+    **命名**: 変数名、クラス名、メソッド名などに明解な名前を選んだか？
 ---
 texts:
   en: "**Comments**: Are the comments clear and useful?"
-  ja: "**コメント**: コメントは明確で有益か？"
+  ja: "**コメント**: コメントは明解で有益か？"
 ---
 texts:
   en: >-
     **Style**: Does the code follow our
         [style guides](http://google.github.io/styleguide/)?
   ja: >-
-    **スタイル**: コードは[スタイルガイド](http://google.github.io/styleguide/)に則っているか？
+    **スタイル**: コードは[スタイルガイド](http://google.github.io/styleguide/)に準拠しているか？
 ---
 texts:
   en: "**Documentation**: Did the developer also update relevant documentation?"
-  ja: "**ドキュメント**: 対応するドキュメントも更新してあるか？"
+  ja: "**ドキュメント**: 関連するドキュメントも更新してあるか？"
 ---
 texts:
   en: See **[How To Do A Code Review](reviewer/)** for more information.
@@ -114,7 +114,7 @@ texts:
 
     responding to your review within a reasonable period of time.
   ja: >-
-    一般的に、レビュアーを探すときには合理的な時間内でレビューに反応してくれる**最高の**レビュアーを見つけたいと思うでしょう。
+    一般的に、レビュアーを探すとなれば合理的な時間内でレビューに反応してくれる**最高の**レビュアーを見つけたいと思うでしょう。
 ---
 texts:
   en: >-
@@ -130,9 +130,9 @@ texts:
   ja: >-
     最高のレビュアーとは、あなたが書いたコードにすみずみまで正確なレビューをしてくれる人です。
 
-    多くの場合、それはコードの所有者です。OWNERS ファイルに記載されていることもありますが、そうでないこともあります。
+    多くの場合、最高のレビュアーはコードの所有者です。OWNERS ファイルに記載されていることもありますが、そうでないこともあります。
 
-    ときには CL の変更箇所をいくつかに分けて、それぞれ違う人にレビューをお願いするのが良い場合もあります。
+    ときには CL の変更箇所をいくつかに分けて、それぞれ別の人にレビューをお願いするのが相応しい場合もあります。
 ---
 texts:
   en: >-
@@ -140,7 +140,7 @@ texts:
 
     them on your change.
   ja: >-
-    理想的なレビュアーを見つけても彼らが忙しくてレビューできないこともありますが、そういうときでも、少なくとも彼らを変更の CC に割り当てるべきです。
+    理想的なレビュアーを見つけたとしても彼らが忙しくてレビューできないこともあります。そういうときでも少なくとも彼らを変更の CC に割り当てるべきです。
 ---
 texts:
   en: In-Person Reviews {#in_person}
@@ -152,7 +152,7 @@ texts:
 
     good code review on it, then that code is considered reviewed.
   ja: >-
-    良いコードレビューのできる人とペアプログラミングで書いたコードは、レビュー済みとみなせます。
+    適切なコードレビューをする資格のある人とペアプログラミングで書いたコードは、レビュー済みとみなせます。
 ---
 texts:
   en: >-
