@@ -12,45 +12,20 @@ CL をレビューに送ると、レビュアーが CL にいくつかのコメ�
 
 一般に、レビュアーが建設的で礼儀正しい言い方でフィードバックをしてくれない場合、そのことを対面で伝えましょう。対面やビデオ通話で会話する機会が持てなければ、個人的なメールを送りましょう。レビュアーの言い方のどこが嫌でどんなふうに変えてほしいのかを丁重に説明してください。この個人的な会話でもレビュアーが非建設的な言い方で応酬するようなら、あるいは態度が全く変わらないようなら、上司に相談するのが適切です。
 
-## Fix the Code {#code}
+## コードを修正する {#code}
 
-If a reviewer says that they don't understand something in your code, your first
-response should be to clarify the code itself. If the code can't be clarified,
-add a code comment that explains why the code is there. If a comment seems
-pointless, only then should your response be an explanation in the code review
-tool.
+レビュアーがあなたのコードに理解できない箇所があると言うなら、最初に行うべきはコード自体を明確にすることです。コードを明確にできないなら、なぜそのコードがそこにあるのか理由を書いたコメントをコードに追加してください。コメントの追加では足りない場合に限り、コードレビューツール上で説明してください。
 
-If a reviewer didn't understand some piece of your code, it's likely other
-future readers of the code won't understand either. Writing a response in the
-code review tool doesn't help future code readers, but clarifying your code or
-adding code comments does help them.
+レビュアーがあなたのコードを理解できければ、将来コードを読む人も理解できない可能性が高いです。コードレビューツール上で説明しても将来コードを読む人には役立ちませんが、コード自体を整理したりコードにコメントを追加したりすれば、将来コードを読むにも役立ちます。
 
-## Think for Yourself {#think}
+## 自分で考える {#think}
 
-Writing a CL can take a lot of work. It's often really satisfying to finally
-send one out for review, feel like it's done, and be pretty sure that no further
-work is needed. So when a reviewer comes back with comments on things that could
-be improved, it's easy to reflexively think the comments are wrong, the reviewer
-is blocking you unnecessarily, or they should just let you submit the CL.
-However, **no matter how certain you are** at this point, take a moment to step
-back and consider if the reviewer is providing valuable feedback that will help
-the codebase and Google. Your first question to yourself should always be, "Is
-the reviewer correct?"
+CL を書くのは大きな労力が伴います。CL をレビューに送り出すとすっかり満足して、これで仕事が完了したと感じ、これ以上作業が必要ないと思い込んでしまうことがよくあります。そうなるとレビュアーが改善点についてコメントを返しても、コメントのほうが間違っていて、レビュアーがあなたを不必要にブロックしているとか、つべこべ言わずに CL を取り込んでくれればいいのにとか反射的に考えてしまいやすいものです。けれども、そのときに**どれだけ自分が正しいと確信していたとしても**、少し立ち止まって、レビュアーがコードベースと Google を良くする価値あるフィードバックを書いているのではないかと考えてみてください。常日頃から「レビュアーが正しいのではないか？」と自問自答してください。
 
-If you can't answer that question, it's likely the reviewer needs to clarify
-their comments.
+その問いに答えを出せないとしたら、レビュアーのコメントがわかりにくいのが原因と考えられるので、レビュアーがもっと明解に書く必要があります。
 
-If you *have* considered it and you still think you're right, feel free to
-respond with an explanation of why your method of doing things is better for the
-codebase, users, and/or Google. Often, reviewers are actually providing
-*suggestions* and they want you to think for yourself about what's best. You
-might actually know something about the users, codebase, or CL that the reviewer
-doesn't know. So fill them in; give them more context. Usually you can come to
-some consensus between yourself and the reviewer based on technical facts.
+その問いを**考えた**上でなお自分が正しいと思えるなら、あなたのやり方のほうがコードベースにとってもユーザーにとっても、また Google にとっても良いといえる理由を気兼ねなく説明してください。レビュアーは実際には**提案**をしていて、何が最良なのかは開発者自身に考えてほしいと思っていることがよくあります。開発者はユーザーについて、コードベースについて、CL についてレビュアーの知らないことを知っていることもあります。そういうときには知識のギャップを埋めてください。レビュアーにコンテキストをもっと与えてください。技術的な事実に基づいて開発者とレビュアーの間で一定のコンセンサスに達することができるでしょう。
 
-## Resolving Conflicts {#conflicts}
+## 意見の対立を解消する {#conflicts}
 
-Your first step in resolving conflicts should always be to try to come to
-consensus with your reviewer. If you can't achieve consensus, see
-[The Standard of Code Review](../reviewer/standard.md), which gives principles
-to follow in such a situation.
+意見の対立を解消するためにまず行うべきはレビュアーとコンセンサスを得られるよう試みることです。コンセンサスに達することができない場合、[コードレビューの基準](../reviewer/standard.md)にそういった状況で対応する際の原則があるので参考にしてください。

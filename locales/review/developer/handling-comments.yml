@@ -78,7 +78,7 @@ texts:
 ---
 texts:
   en: Fix the Code {#code}
-  ja: __COPY__
+  ja: コードを修正する {#code}
 ---
 texts:
   en: >-
@@ -91,7 +91,8 @@ texts:
     pointless, only then should your response be an explanation in the code review
 
     tool.
-  ja: __COPY__
+  ja: >-
+    レビュアーがあなたのコードに理解できない箇所があると言うなら、最初に行うべきはコード自体を明確にすることです。コードを明確にできないなら、なぜそのコードがそこにあるのか理由を書いたコメントをコードに追加してください。コメントの追加では足りない場合に限り、コードレビューツール上で説明してください。
 ---
 texts:
   en: >-
@@ -102,11 +103,12 @@ texts:
     code review tool doesn't help future code readers, but clarifying your code or
 
     adding code comments does help them.
-  ja: __COPY__
+  ja: >-
+    レビュアーがあなたのコードを理解できければ、将来コードを読む人も理解できない可能性が高いです。コードレビューツール上で説明しても将来コードを読む人には役立ちませんが、コード自体を整理したりコードにコメントを追加したりすれば、将来コードを読むにも役立ちます。
 ---
 texts:
   en: Think for Yourself {#think}
-  ja: __COPY__
+  ja: 自分で考える {#think}
 ---
 texts:
   en: >-
@@ -127,14 +129,15 @@ texts:
     the codebase and Google. Your first question to yourself should always be, "Is
 
     the reviewer correct?"
-  ja: __COPY__
+  ja: >-
+    CL を書くのは大きな労力が伴います。CL をレビューに送り出すとすっかり満足して、これで仕事が完了したと感じ、これ以上作業が必要ないと思い込んでしまうことがよくあります。そうなるとレビュアーが改善点についてコメントを返しても、コメントのほうが間違っていて、レビュアーがあなたを不必要にブロックしているとか、つべこべ言わずに CL を取り込んでくれればいいのにとか反射的に考えてしまいやすいものです。けれども、そのときに**どれだけ自分が正しいと確信していたとしても**、少し立ち止まって、レビュアーがコードベースと Google を良くする価値あるフィードバックを書いているのではないかと考えてみてください。常日頃から「レビュアーが正しいのではないか？」と自問自答してください。
 ---
 texts:
   en: >-
     If you can't answer that question, it's likely the reviewer needs to clarify
 
     their comments.
-  ja: __COPY__
+  ja: その問いに答えを出せないとしたら、レビュアーのコメントがわかりにくいのが原因と考えられるので、レビュアーがもっと明解に書く必要があります。
 ---
 texts:
   en: >-
@@ -151,11 +154,12 @@ texts:
     doesn't know. So fill them in; give them more context. Usually you can come to
 
     some consensus between yourself and the reviewer based on technical facts.
-  ja: __COPY__
+  ja: >-
+    その問いを**考えた**上でなお自分が正しいと思えるなら、あなたのやり方のほうがコードベースにとってもユーザーにとっても、また Google にとっても良いといえる理由を気兼ねなく説明してください。レビュアーは実際には**提案**をしていて、何が最良なのかは開発者自身に考えてほしいと思っていることがよくあります。開発者はユーザーについて、コードベースについて、CL についてレビュアーの知らないことを知っていることもあります。そういうときには知識のギャップを埋めてください。レビュアーにコンテキストをもっと与えてください。技術的な事実に基づいて開発者とレビュアーの間で一定のコンセンサスに達することができるでしょう。
 ---
 texts:
   en: Resolving Conflicts {#conflicts}
-  ja: __COPY__
+  ja: 意見の対立を解消する {#conflicts}
 ---
 texts:
   en: >-
@@ -166,4 +170,5 @@ texts:
     [The Standard of Code Review](../reviewer/standard.md), which gives principles
 
     to follow in such a situation.
-  ja: __COPY__
+  ja: >-
+    意見の対立を解消するためにまず行うべきはレビュアーとコンセンサスを得られるよう試みることです。コンセンサスに達することができない場合、[コードレビューの基準](../reviewer/standard.md)にそういった状況で対応する際の原則があるので参考にしてください。
