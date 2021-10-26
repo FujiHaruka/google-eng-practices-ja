@@ -102,7 +102,7 @@ texts:
 ---
 texts:
   en: See **[How To Do A Code Review](reviewer/)** for more information.
-  ja: "詳細は**[コードレビューに仕方](reviewer/)**を確認してください。"
+  ja: "詳細は**[コードレビューの仕方](reviewer/)**を確認してください。"
 ---
 texts:
   en: Picking the Best Reviewers {#best_reviewers}
