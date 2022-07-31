@@ -24,7 +24,7 @@ texts:
     in the code and not the description, it's going to be a lot harder for them to
 
     locate your CL.
-  ja: 将来の開発者はあなたの CL をディスクリプションに基づいて検索します。将来の誰かがあなたの作成した変更を見つけようとして、詳細は忘れているけれどもその変更に関するおぼろげな記憶を頼りに検索するかもしれません。重要な情報がすべてコードにあってディスクリプションに記載されていないと、お目当ての CL を探し出すのが非常に難しくなるでしょう。
+  ja: 将来の開発者はあなたの CL をディスクリプションに基づいて検索します。将来の誰かがあなたの作成した変更を見つけようとして、詳細は忘れているけれどもその変更に関するおぼろげな記憶を頼りに検索するかもしれません。重要な情報がすべてコードにだけ書かれていてディスクリプションに記載されていないと、探している CL を見つけるのが非常に難しくなるでしょう。
 ---
 texts:
   en: First Line {#firstline}
@@ -36,7 +36,7 @@ texts:
 ---
 texts:
   en: Complete sentence, written as though it was an order.
-  ja: 完全な文で、命令のように書く
+  ja: 完全な文で、命令形で書く
 ---
 texts:
   en: Follow by empty line.
@@ -70,7 +70,7 @@ texts:
     You don't have to write the rest of the description as an imperative sentence,
 
     though.
-  ja: 伝統的に、CL のディスクリプションの一行目は完全な文で、命令のように (命令形で) 書きます。たとえば、「**Deleting** the FizzBuzz RPC and **replacing** it with the new system.」と書くのではなく「**Delete** the FizzBuzz RPC and **replace** it with the new system.」と書きます。もっとも、ディスクリプションの他の部分まで命令形で書く必要はありません。
+  ja: 慣習的に、CL のディスクリプションの一行目は完全な文で、命令のように (命令形で) 書きます。たとえば、「**Deleting** the FizzBuzz RPC and **replacing** it with the new system.」と書くのではなく「**Delete** the FizzBuzz RPC and **replace** it with the new system.」と書きます。もっとも、ディスクリプションの他の部分まで命令形で書く必要はありません。
 ---
 texts:
   en: Body is Informative {#informative}
@@ -87,7 +87,7 @@ texts:
     mentioned. If relevant, include background information such as bug numbers,
 
     benchmark results, and links to design documents.
-  ja: 二行目以降のディスクリプションには有益な情報を盛り込んでください。解決されている問題に関する短いディスクリプションを書くこともありますし、どうしてこれが最良の方法なのかを説明することもあります。その方法に欠陥があれば、そのことにも言及してください。また関連があれば、バグ番号やベンチマーク結果、設計ドキュメントのリンク等の背景も書いてください。
+  ja: 二行目以降のディスクリプションには有益な情報を盛り込んでください。解決されている問題に関する短い説明を書くこともありますし、なぜこれが最良の方法なのかを説明することもあります。その方法に欠陥があれば、その点にも言及してください。また関連があれば、バグチケットの番号やベンチマーク結果、設計ドキュメントのリンク等の背景も書いてください。
 ---
 texts:
   en: Even small CLs deserve a little attention to detail. Put the CL in context.
@@ -135,7 +135,7 @@ texts:
     providing useful information, but they are not serving the purpose of a CL
 
     description.
-  ja: いくつかのものは実際にあった CL ディスクリプションです。作成者は有益な情報を提供していると思っているかもしれませんが、上の例は CL ディスクリプションの目的を果たせていません。
+  ja: いくつかのものは実際にあった CL ディスクリプションです。作成者は有益な情報を提供しているつもりかもしれませんが、上の例は CL ディスクリプションの目的を果たせていません。
 ---
 texts:
   en: Good CL Descriptions {#good}
